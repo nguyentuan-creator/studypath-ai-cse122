@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="color-scheme" content="light">
+<title>Luồng người dùng · user-flow.html — StudyPath AI</title>
+<style>
+  /* Sơ đồ luồng người dùng — tài liệu docs, tự chứa kiểu dáng (không phụ thuộc css/base.css).
+     Màu lấy đúng token của base.css để đồng bộ với khung dây. */
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { background: #FFFFFF; color-scheme: light; }
+  body {
+    font-family: "Inter", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px; line-height: 1.45; color: #0F172A; background: #FFFFFF;
+    -webkit-font-smoothing: antialiased; font-variant-numeric: tabular-nums;
+  }
+  .canvas { position: relative; width: 1440px; height: 1400px; margin: 24px auto 28px; }
+  .svg-layer { position: absolute; inset: 0; width: 1440px; height: 1400px; z-index: 1; }
+
+  .doc-title { position: absolute; top: 30px; left: 0; width: 100%; text-align: center; }
+  .doc-title h1 { font-size: 21px; font-weight: 800; letter-spacing: .2px; }
+  .doc-title p { font-size: 12.5px; color: #64748B; margin-top: 5px; }
+  .foot { position: absolute; top: 1368px; left: 0; width: 100%; text-align: center; font-size: 11px; color: #94A3B8; }
+
+  .box { position: absolute; z-index: 2; background: #FFFFFF; border: 1px solid #CBD5E1; border-radius: 10px; padding: 9px 14px; overflow: hidden; }
+  .file { display: block; font-family: ui-monospace, "Cascadia Mono", Consolas, Menlo, monospace; font-size: 11px; font-weight: 600; color: #2563EB; line-height: 1.3; }
+  .t { font-size: 12.5px; font-weight: 650; margin-top: 1px; }
+  .sub { font-size: 10.5px; color: #64748B; line-height: 1.35; margin-top: 2px; }
+  .sub .file { display: inline; font-size: 10.5px; }
+
+  .wide { padding: 10px 18px; }
+  .tall { padding: 12px 16px; }
+
+  .bar { background: #EFF6FF; border: 1.5px solid #2563EB; display: flex; flex-direction: column; justify-content: center; text-align: center; }
+  .bar .t { font-size: 13.5px; font-weight: 800; color: #1D4ED8; letter-spacing: .2px; margin: 0; }
+  .bar .sub { margin-top: 3px; }
+
+  .hd { border-width: 1.5px; display: flex; flex-direction: column; justify-content: center; text-align: center; }
+  .hd .name { font-weight: 700; font-size: 13.5px; letter-spacing: .3px; }
+  .hd .who { font-size: 10.5px; color: #64748B; margin-top: 1px; }
+  .hd-sv { background: #EFF6FF; border-color: #2563EB; } .hd-sv .name { color: #1D4ED8; }
+  .hd-cv { background: #F5F3FF; border-color: #7C3AED; } .hd-cv .name { color: #6D28D9; }
+  .hd-qt { background: #FFFBEB; border-color: #F59E0B; } .hd-qt .name { color: #B45309; }
+
+  .state { background: #F5F3FF; border: 1.5px solid #7C3AED; display: flex; flex-direction: column; justify-content: center; text-align: center; }
+  .state .cap { font-size: 10px; font-weight: 600; letter-spacing: .6px; color: #7C3AED; }
+  .state .big { font-size: 15px; font-weight: 800; color: #7C3AED; margin: 2px 0 1px; letter-spacing: .3px; }
+  .state .sub { margin: 0; }
+
+  .band { background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 15px 22px; }
+  .band h3 { font-size: 13px; font-weight: 700; letter-spacing: .3px; }
+  .band p { font-size: 11.5px; color: #334155; margin-top: 7px; }
+  .band .file { display: inline; font-size: 11px; }
+
+  .ai { display: inline-block; font-size: 9.5px; font-weight: 700; letter-spacing: .3px; color: #6D28D9; background: #F5F3FF; border: 1px solid #DDD6FE; border-radius: 999px; padding: 0 6px; line-height: 15px; vertical-align: 1px; }
+  .ai-std { border: 1.5px dashed #7C3AED; padding: 10px 14px; }
+  .ai-std h3 { font-size: 10.5px; font-weight: 800; letter-spacing: .4px; color: #6D28D9; }
+  .ai-std p { font-size: 10px; color: #475569; line-height: 1.4; margin-top: 5px; }
+
+  text { font-family: "Inter", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+  .lbl { font-size: 10.5px; fill: #64748B; paint-order: stroke; stroke: #FFFFFF; stroke-width: 3.5px; stroke-linejoin: round; }
+  .lbl.sm { font-size: 10px; }
+  .lbl.xs { font-size: 9.5px; }
+  .leg { font-size: 10.5px; fill: #475569; }
+</style>
+</head>
+<body>
+<div class="canvas">
+
+  <svg class="svg-layer" viewBox="0 0 1440 1400" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <marker id="ah" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M0,0 L10,5 L0,10 z" fill="#94A3B8"/>
+      </marker>
+      <marker id="ah-blue" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M0,0 L10,5 L0,10 z" fill="#2563EB"/>
+      </marker>
+      <marker id="ah-green" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M0,0 L10,5 L0,10 z" fill="#16A34A"/>
+      </marker>
+    </defs>
+
+    <g fill="none" stroke="#94A3B8" stroke-width="1.6">
+      <!-- Vào hệ thống -->
+      <path d="M610,168 V218" marker-end="url(#ah)"/>
+      <path d="M830,168 V218" marker-end="url(#ah)"/>
+      <path d="M692,258 H743" marker-end="url(#ah)"/>
+      <path d="M912,258 H984" marker-start="url(#ah)" marker-end="url(#ah)"/>
+      <path d="M610,294 V322 L713,349" marker-end="url(#ah)"/>
+      <path d="M830,294 V322 L727,349" marker-end="url(#ah)"/>
+      <!-- Tách 3 vai trò -->
+      <path d="M720,420 V470"/>
+      <path d="M240,470 H1200"/>
+      <path d="M240,470 V511" marker-end="url(#ah)"/>
+      <path d="M750,470 V511" marker-end="url(#ah)"/>
+      <path d="M1200,470 V511" marker-end="url(#ah)"/>
+      <!-- Sinh viên: rẽ nhánh - gộp -->
+      <path d="M240,680 V710"/>
+      <path d="M145,710 H335"/>
+      <path d="M145,710 V729" marker-end="url(#ah)"/>
+      <path d="M335,710 V729" marker-end="url(#ah)"/>
+      <path d="M145,895 V925 H240"/>
+      <path d="M335,895 V925 H240"/>
+      <path d="M240,925 V948" marker-end="url(#ah)"/>
+      <!-- Cố vấn: chuỗi màn -->
+      <path d="M750,680 V729" marker-end="url(#ah)"/>
+      <path d="M750,895 V944" marker-end="url(#ah)"/>
+      <path d="M750,1030 V1079" marker-end="url(#ah)"/>
+      <!-- Quản trị: chuỗi màn -->
+      <path d="M1200,680 V729" marker-end="url(#ah)"/>
+      <path d="M1200,815 V864" marker-end="url(#ah)"/>
+      <path d="M1200,950 V999" marker-end="url(#ah)"/>
+      <!-- Vòng lặp Sinh viên - Cố vấn -->
+      <path d="M425,980 H475 V850 H564" stroke="#2563EB" stroke-width="2" marker-end="url(#ah-blue)"/>
+      <path d="M570,795 H515 V1015 H429" stroke="#16A34A" stroke-width="2" marker-end="url(#ah-green)"/>
+    </g>
+
+    <!-- Nhãn mũi tên -->
+    <text class="lbl xs" x="948" y="247" text-anchor="middle">quên mật khẩu</text>
+    <text class="lbl xs" x="948" y="277" text-anchor="middle">đặt lại xong</text>
+
+    <text class="lbl sm" x="152" y="726">lập kế hoạch</text>
+    <text class="lbl sm" x="342" y="726">hoặc đề xuất AI</text>
+    <text class="lbl sm" x="247" y="916">lưu &amp; gửi duyệt</text>
+
+    <text class="lbl" x="758" y="712">mở hàng đợi chờ duyệt</text>
+    <text class="lbl" x="758" y="927">quản lý phản hồi</text>
+    <text class="lbl" x="758" y="1062">tra hồ sơ sinh viên</text>
+
+    <text class="lbl" x="1208" y="712">quản lý học phần</text>
+    <text class="lbl" x="1208" y="847">cấu hình chương trình</text>
+    <text class="lbl" x="1208" y="982">quản lý người dùng</text>
+
+    <!-- Chú thích vòng lặp -->
+    <circle cx="445" cy="962" r="9" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.6"/>
+    <text x="445" y="966" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2563EB">1</text>
+    <circle cx="552" cy="779" r="9" fill="#FFFFFF" stroke="#16A34A" stroke-width="1.6"/>
+    <text x="552" y="783" text-anchor="middle" font-size="10.5" font-weight="700" fill="#16A34A">2</text>
+
+    <circle cx="90" cy="1094" r="4" fill="#2563EB"/>
+    <text class="leg" x="101" y="1098">1 · SV gửi kế hoạch</text>
+    <text class="leg" x="101" y="1117">chờ cố vấn duyệt</text>
+    <circle cx="90" cy="1137" r="4" fill="#16A34A"/>
+    <text class="leg" x="101" y="1141">2 · Duyệt hoặc</text>
+    <text class="leg" x="101" y="1160">yêu cầu sửa</text>
+    <text class="leg" x="101" y="1179">→ SV sửa, gửi lại</text>
+  </svg>
+
+  <div class="doc-title">
+    <h1>SƠ ĐỒ QUY TRÌNH SỬ DỤNG — StudyPath AI</h1>
+    <p>Từ đăng nhập → phân nhánh theo 3 vai trò · 23 màn hình · bản vẽ luồng người dùng trình giảng viên duyệt</p>
+  </div>
+
+  <!-- ===== Vào hệ thống ===== -->
+  <div class="box" style="left:490px; top:92px; width:460px; height:76px">
+    <div class="t">Khách truy cập — <span class="file" style="display:inline">index.html</span></div>
+    <div class="sub">xem học phần &amp; lộ trình mẫu · <span class="file">visitor-course-catalog.html</span> / <span class="file">visitor-course-detail.html</span> / <span class="file">visitor-sample-roadmaps.html</span></div>
+  </div>
+
+  <div class="box" style="left:530px; top:224px; width:160px; height:70px">
+    <span class="file">register.html</span>
+    <div class="t">Đăng ký tài khoản</div>
+    <div class="sub">→ sang đăng nhập</div>
+  </div>
+
+  <div class="box" style="left:750px; top:224px; width:160px; height:70px">
+    <span class="file">login.html</span>
+    <div class="t">Đăng nhập</div>
+    <div class="sub">email &amp; mật khẩu</div>
+  </div>
+
+  <div class="box" style="left:990px; top:224px; width:240px; height:70px">
+    <span class="file">forgot-password.html</span>
+    <div class="t">Khôi phục mật khẩu</div>
+    <div class="sub">gửi email đặt lại</div>
+  </div>
+
+  <div class="box bar" style="left:430px; top:356px; width:580px; height:64px">
+    <div class="t">ĐĂNG NHẬP THÀNH CÔNG — ĐIỀU HƯỚNG THEO VAI TRÒ TÀI KHOẢN</div>
+    <div class="sub">mỗi vai trò vào thẳng bảng điều khiển của mình</div>
+  </div>
+
+  <!-- ===== Đầu mục 3 vai trò ===== -->
+  <div class="box hd hd-sv" style="left:50px; top:516px; width:380px; height:54px">
+    <div class="name">SINH VIÊN</div>
+    <div class="who">lập kế hoạch &amp; theo dõi tiến độ · 3 màn</div>
+  </div>
+  <div class="box hd hd-cv" style="left:570px; top:516px; width:360px; height:54px">
+    <div class="name">CỐ VẤN HỌC TẬP</div>
+    <div class="who">duyệt kế hoạch &amp; phản hồi · 4 màn</div>
+  </div>
+  <div class="box hd hd-qt" style="left:1020px; top:516px; width:360px; height:54px">
+    <div class="name">QUẢN TRỊ VIÊN</div>
+    <div class="who">học phần &amp; cấu hình hệ thống · 4 màn</div>
+  </div>
+
+  <!-- ===== Cột Sinh viên ===== -->
+  <div class="box wide" style="left:50px; top:600px; width:380px; height:80px">
+    <span class="file">student-dashboard.html</span>
+    <div class="t">Tổng quan tiến độ</div>
+    <div class="sub">cảnh báo rủi ro <span class="ai">AI-2</span> · hành động nhanh</div>
+  </div>
+
+  <div class="box tall" style="left:55px; top:735px; width:180px; height:160px">
+    <span class="file">student-semester-plan.html</span>
+    <div class="t">Lập kế hoạch học kỳ</div>
+    <div class="sub">chọn môn → kiểm tra tín chỉ · <span class="ai">AI-2</span> cảnh báo quá tải (ngưỡng 18 TC) → giảm tải / chấp nhận rủi ro</div>
+  </div>
+
+  <div class="box tall" style="left:245px; top:735px; width:180px; height:160px">
+    <span class="file">student-ai-roadmap.html</span>
+    <div class="t">Đề xuất lộ trình AI</div>
+    <div class="sub"><span class="ai">AI-1</span> mục tiêu nghề nghiệp + quỹ thời gian → lộ trình gợi ý · <span class="ai">AI-2</span> rủi ro tín chỉ → “Vì sao?” → Chấp nhận / Sửa / Từ chối / Tạo lại → Lưu</div>
+  </div>
+
+  <div class="box state" style="left:55px; top:955px; width:370px; height:90px">
+    <div class="cap">SAU KHI LƯU</div>
+    <div class="big">CHỜ CỐ VẤN DUYỆT</div>
+    <div class="sub">kế hoạch nằm trong hàng đợi duyệt của cố vấn</div>
+  </div>
+
+  <!-- ===== Cột Cố vấn ===== -->
+  <div class="box wide" style="left:570px; top:600px; width:360px; height:80px">
+    <span class="file">advisor-dashboard.html</span>
+    <div class="t">Tổng quan cố vấn</div>
+    <div class="sub">KPI · hàng đợi “Kế hoạch chờ duyệt” · cảnh báo rủi ro <span class="ai">AI-2</span></div>
+  </div>
+
+  <div class="box tall" style="left:570px; top:735px; width:360px; height:160px">
+    <span class="file">advisor-student-plan-review.html</span>
+    <div class="t">Duyệt kế hoạch sinh viên</div>
+    <div class="sub">xem kế hoạch + <span class="ai">AI-3</span> tóm tắt &amp; gợi ý câu hỏi → Duyệt / Yêu cầu chỉnh sửa (kèm lý do) / Từ chối</div>
+  </div>
+
+  <div class="box wide" style="left:570px; top:950px; width:360px; height:80px">
+    <span class="file">advisor-feedback-management.html</span>
+    <div class="t">Quản lý phản hồi</div>
+    <div class="sub">tạo – sửa – đóng góp ý cho sinh viên</div>
+  </div>
+
+  <div class="box wide" style="left:570px; top:1085px; width:360px; height:80px">
+    <span class="file">advisor-students.html</span>
+    <div class="t">Hồ sơ sinh viên phụ trách</div>
+    <div class="sub">kèm mức rủi ro <span class="ai">AI-2</span></div>
+  </div>
+
+  <!-- ===== Cột Quản trị ===== -->
+  <div class="box wide" style="left:1020px; top:600px; width:360px; height:80px">
+    <span class="file">admin-dashboard.html</span>
+    <div class="t">Tổng quan hệ thống</div>
+    <div class="sub">số liệu hoạt động gần đây</div>
+  </div>
+
+  <div class="box wide" style="left:1020px; top:735px; width:360px; height:80px">
+    <span class="file">admin-course-management.html</span>
+    <div class="t">Quản lý học phần</div>
+    <div class="sub">CRUD · Đang mở ⇄ Tạm ngừng · tiên quyết</div>
+  </div>
+
+  <div class="box wide" style="left:1020px; top:870px; width:360px; height:80px">
+    <span class="file">admin-program-settings.html</span>
+    <div class="t">Cấu hình chương trình</div>
+    <div class="sub">chương trình đào tạo · quy tắc tín chỉ</div>
+  </div>
+
+  <div class="box wide" style="left:1020px; top:1005px; width:360px; height:80px">
+    <span class="file">admin-user-management.html</span>
+    <div class="t">Quản lý người dùng</div>
+    <div class="sub">CRUD tài khoản · gán cặp Cố vấn – Sinh viên</div>
+  </div>
+
+  <div class="box ai-std" style="left:1020px; top:1092px; width:360px; height:120px">
+    <h3>TRẢI NGHIỆM AI CHUẨN — DÙNG CHUNG AI-1/2/3</h3>
+    <p>Nhập → Kiểm tra hợp lệ → Đang xử lý (đang tải / khung xương / tiến độ) → Kết quả AI → “Vì sao có kết quả này?” → Chấp nhận / Sửa / Từ chối / Tạo lại → Lưu</p>
+    <p>Khi thất bại / không chắc chắn: Chỉnh sửa · Thử lại · Bỏ qua · Báo cáo · Dùng thủ công</p>
+  </div>
+
+  <!-- ===== Dùng chung ===== -->
+  <div class="box band" style="left:50px; top:1215px; width:1330px; height:130px">
+    <h3>DÙNG CHUNG CHO CẢ 3 VAI TRÒ — MỌI TRANG SAU KHI ĐĂNG NHẬP</h3>
+    <p>Tiện ích trên thanh trên cùng: tìm kiếm nhanh · chuông thông báo → <span class="file">notifications.html</span> · avatar → <span class="file">profile.html</span> / <span class="file">settings.html</span> / Đăng xuất (về <span class="file">index.html</span>)</p>
+    <p>Chắn truy cập &amp; lỗi: sai vai trò → <span class="file">403.html</span> · URL không tồn tại → <span class="file">404.html</span> · phiên hết hạn → tự quay về <span class="file">login.html</span></p>
+  </div>
+
+  <div class="foot">Luồng người dùng StudyPath AI · khớp bảng kiểm kê <b>docs/screen-list.md</b> (23 màn) và trạng thái <b>docs/screen-states.md</b> · quy trình AI <b>docs/roles-and-features.md</b></div>
+
+</div>
+
+<script>
+(function () {
+  function fit() {
+    var vw = window.innerWidth || 0;
+    if (vw > 0 && vw < 1464) { document.body.style.zoom = (vw - 16) / 1440; }
+    else { document.body.style.zoom = ''; }
+  }
+  fit();
+  window.addEventListener('resize', fit);
+})();
+</script>
+</body>
+</html>

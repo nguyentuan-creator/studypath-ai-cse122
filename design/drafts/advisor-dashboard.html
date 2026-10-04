@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="color-scheme" content="light">
+<title>advisor-dashboard · Tổng quan Cố vấn — StudyPath AI</title>
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { background: #E9EEF5; }
+  body {
+    font-family: "Segoe UI", Inter, Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #E9EEF5; color: #0F172A;
+    -webkit-font-smoothing: antialiased;
+    font-variant-numeric: tabular-nums;
+  }
+  svg { display: block; }
+  button { font-family: inherit; cursor: default; }
+  .sheet { width: 1440px; margin: 24px auto 28px; }
+
+  .annot { display: flex; justify-content: space-between; align-items: center; font-size: 12.5px; color: #64748B; margin: 0 4px 10px; }
+  .annot b { color: #334155; font-weight: 600; }
+  .annot.bottom { margin: 18px 4px 0; justify-content: center; text-align: center; }
+
+  .app { background: #F8FAFC; border: 1px solid #DBE3EC; border-radius: 14px; overflow: hidden; box-shadow: 0 22px 48px -30px rgba(15, 23, 42, .35); }
+
+  .topbar { height: 62px; background: #fff; border-bottom: 1px solid #E2E8F0; display: flex; align-items: center; gap: 18px; padding: 0 22px; }
+  .brand { display: flex; align-items: center; gap: 10px; flex: none; }
+  .brand .mark { width: 34px; height: 34px; border-radius: 10px; background: linear-gradient(135deg, #3B82F6, #1D4ED8); color: #fff; display: flex; align-items: center; justify-content: center; }
+  .brand .name { font-size: 15.5px; font-weight: 700; letter-spacing: .1px; }
+  .search { flex: 1; max-width: 440px; height: 38px; border: 1px solid #E2E8F0; background: #F8FAFC; border-radius: 10px; display: flex; align-items: center; gap: 9px; padding: 0 12px; color: #94A3B8; font-size: 13.5px; }
+  .topbar .spacer { flex: 1; }
+  .icon-btn { width: 38px; height: 38px; border-radius: 10px; border: 1px solid #E2E8F0; background: #fff; display: flex; align-items: center; justify-content: center; color: #475569; position: relative; }
+  .icon-btn .dot { position: absolute; top: 8px; right: 9px; width: 8px; height: 8px; border-radius: 50%; background: #DC2626; box-shadow: 0 0 0 2px #fff; }
+  .user { display: flex; align-items: center; gap: 10px; padding-left: 16px; border-left: 1px solid #E2E8F0; }
+  .avatar { width: 36px; height: 36px; border-radius: 50%; background: #DBEAFE; color: #1D4ED8; font-size: 12.5px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+  .user .nm { font-size: 13.5px; font-weight: 600; }
+  .user .rl { font-size: 11.5px; color: #64748B; margin-top: 1px; }
+
+  .layout { display: flex; }
+  .sidebar { width: 240px; background: #fff; border-right: 1px solid #E2E8F0; padding: 16px 12px; min-height: 790px; }
+  .nav-item { display: flex; align-items: center; gap: 10px; height: 40px; padding: 0 12px; border-radius: 10px; font-size: 13.5px; color: #475569; margin-bottom: 4px; }
+  .nav-item.active { background: #EFF6FF; color: #1D4ED8; font-weight: 600; }
+
+  .main { flex: 1; background: #F8FAFC; padding: 24px 28px 30px; min-width: 0; }
+  .page-head { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 18px; }
+  .page-head h1 { font-size: 23px; font-weight: 700; letter-spacing: -.2px; }
+  .page-head p { font-size: 13.5px; color: #64748B; margin-top: 4px; }
+
+  .kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .kpi { background: #fff; border: 1px solid #E2E8F0; border-radius: 12px; padding: 16px 16px 14px; display: flex; justify-content: space-between; gap: 12px; }
+  .kpi .lbl { font-size: 12.5px; color: #64748B; font-weight: 500; line-height: 1.35; }
+  .kpi .val { font-size: 27px; font-weight: 700; letter-spacing: -.4px; margin-top: 6px; }
+  .kpi .val.bad { color: #DC2626; }
+  .kpi .sub { font-size: 12px; color: #64748B; margin-top: 6px; }
+  .kpi .sub.warn { color: #D97706; }
+  .kpi .sub.ok { color: #16A34A; }
+  .kpi .sub.bad { color: #DC2626; }
+  .kpi .ic { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex: none; }
+  .ic.blue { background: #EFF6FF; color: #2563EB; }
+  .ic.purple { background: #F5F3FF; color: #7C3AED; }
+  .ic.green { background: #F0FDF4; color: #16A34A; }
+  .ic.red { background: #FEF2F2; color: #DC2626; }
+
+  .row2 { display: grid; grid-template-columns: 1.45fr 1fr; gap: 14px; margin-top: 14px; align-items: stretch; }
+  .card { background: #fff; border: 1px solid #E2E8F0; border-radius: 12px; }
+  .card-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 16px 18px 0; }
+  .card-head h2 { font-size: 14.5px; font-weight: 600; letter-spacing: -.1px; }
+  .card-head .hint { font-size: 12px; color: #64748B; flex: none; }
+  .chip-ai { display: inline-flex; align-items: center; gap: 6px; background: #F5F3FF; color: #7C3AED; font-size: 11px; font-weight: 600; padding: 4px 9px; border-radius: 999px; flex: none; }
+
+  .chart-card { display: flex; flex-direction: column; padding-bottom: 16px; }
+  .chart-card .head-right { display: flex; align-items: center; gap: 10px; }
+  .bars { flex: 1; display: flex; flex-direction: column; justify-content: space-evenly; padding: 14px 18px 0; gap: 10px; }
+  .bar-row { display: flex; align-items: center; gap: 12px; }
+  .bar-row .lb { width: 42px; font-size: 13px; color: #334155; font-weight: 500; flex: none; }
+  .track { flex: 1; height: 12px; background: #F1F5F9; border-radius: 999px; overflow: hidden; }
+  .fill { height: 100%; border-radius: 999px; }
+  .fill.low { background: #16A34A; width: 100%; }
+  .fill.mid { background: #F59E0B; width: 62%; }
+  .fill.high { background: #DC2626; width: 23%; }
+  .bar-row .num { width: 34px; text-align: right; font-size: 13px; font-weight: 600; color: #334155; flex: none; }
+  .chart-note { margin: 12px 18px 0; padding-top: 11px; border-top: 1px dashed #E2E8F0; font-size: 12px; color: #64748B; line-height: 1.5; }
+
+  .ai-card { padding-bottom: 8px; }
+  .ai-rows { padding: 4px 18px 4px; }
+  .ai-row { display: flex; gap: 11px; padding: 12px 0; border-top: 1px solid #F1F5F9; align-items: flex-start; }
+  .ai-row:first-child { border-top: none; }
+  .ai-ic { width: 32px; height: 32px; border-radius: 9px; flex: none; display: flex; align-items: center; justify-content: center; }
+  .ai-ic.high { background: #FEF2F2; color: #DC2626; }
+  .ai-ic.med { background: #FFFBEB; color: #D97706; }
+  .ai-main { flex: 1; min-width: 0; }
+  .ai-name { font-size: 13.5px; font-weight: 600; }
+  .ai-why { font-size: 12.5px; color: #64748B; margin-top: 3px; line-height: 1.45; }
+  .btn-ghost { flex: none; border: 1px solid #E2E8F0; background: #fff; color: #2563EB; font-size: 12px; font-weight: 600; padding: 6px 10px; border-radius: 8px; }
+
+  .table-card { margin-top: 14px; overflow: hidden; }
+  .table-card .card-head { padding: 16px 20px 12px; }
+  table { width: 100%; border-collapse: collapse; }
+  thead th { text-align: left; font-size: 11px; letter-spacing: .6px; text-transform: uppercase; color: #64748B; font-weight: 600; padding: 10px 20px; background: #F8FAFC; border-top: 1px solid #F1F5F9; border-bottom: 1px solid #F1F5F9; white-space: nowrap; }
+  tbody td { padding: 13px 20px; border-bottom: 1px solid #F1F5F9; font-size: 13.5px; color: #334155; vertical-align: middle; }
+  tbody tr:last-child td { border-bottom: none; }
+  thead th:last-child, tbody td:last-child { text-align: right; }
+  .stu { display: flex; align-items: center; gap: 11px; }
+  .stu .av { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex: none; }
+  .av.b1 { background: #DBEAFE; color: #1D4ED8; }
+  .av.v1 { background: #EDE9FE; color: #6D28D9; }
+  .av.a1 { background: #FEF3C7; color: #B45309; }
+  .av.g1 { background: #DCFCE7; color: #15803D; }
+  .stu .nm { font-size: 13.5px; font-weight: 600; color: #0F172A; }
+  .stu .id { font-size: 12px; color: #64748B; margin-top: 2px; }
+  .badge-pending { display: inline-flex; align-items: center; gap: 6px; background: #F5F3FF; color: #6D28D9; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 999px; }
+  .badge-pending .dot { width: 6px; height: 6px; border-radius: 50%; background: #7C3AED; }
+  .btn-primary-sm { background: #2563EB; color: #fff; border: none; font-size: 12.5px; font-weight: 600; padding: 7px 14px; border-radius: 8px; }
+  .table-foot { display: flex; align-items: center; justify-content: space-between; padding: 12px 20px 14px; border-top: 1px solid #F1F5F9; font-size: 12.5px; color: #64748B; }
+  .table-foot a { color: #2563EB; font-weight: 600; text-decoration: none; font-size: 12.5px; }
+
+  .states { margin-top: 28px; }
+  .states-head { display: flex; align-items: baseline; justify-content: space-between; margin: 0 4px 12px; }
+  .states-head h2 { font-size: 14.5px; font-weight: 600; }
+  .states-head span { font-size: 12px; color: #64748B; }
+  .state-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .state-card { background: #fff; border: 1px solid #E2E8F0; border-radius: 12px; overflow: hidden; }
+  .state-cap { display: flex; align-items: center; gap: 8px; padding: 10px 14px; border-bottom: 1px solid #F1F5F9; font-size: 12px; color: #475569; }
+  .state-cap .tag { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 999px; }
+  .tag.gray { background: #F1F5F9; color: #475569; }
+  .tag.blue { background: #EFF6FF; color: #2563EB; }
+  .tag.red { background: #FEF2F2; color: #DC2626; }
+  .state-body { min-height: 152px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 7px; padding: 18px; text-align: center; }
+  .state-body .t { font-size: 13.5px; font-weight: 600; }
+  .state-body .s { font-size: 12.5px; color: #64748B; line-height: 1.5; }
+  .state-body.loading { justify-content: center; gap: 2px; padding: 14px 20px; }
+  .skel { display: flex; align-items: center; gap: 11px; width: 100%; padding: 9px 2px; }
+  .skel .c { width: 30px; height: 30px; border-radius: 50%; background: #E9EEF5; flex: none; }
+  .skel .lines { flex: 1; }
+  .skel .l1 { height: 9px; background: #E9EEF5; border-radius: 5px; width: 52%; }
+  .skel .l2 { height: 9px; background: #EFF2F7; border-radius: 5px; width: 34%; margin-top: 7px; }
+  .btn-outline-sm { border: 1px solid #BFDBFE; background: #fff; color: #2563EB; font-size: 12.5px; font-weight: 600; padding: 7px 14px; border-radius: 8px; margin-top: 6px; }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <div class="annot">
+    <span><b>advisor-dashboard</b> · Màn 1 — Tổng quan Cố vấn học tập</span>
+    <span>StudyPath AI · Desktop 1440px · Trạng thái chính: bình thường</span>
+  </div>
+
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="mark">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg>
+        </div>
+        <div class="name">StudyPath AI</div>
+      </div>
+      <div class="search">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.2-3.2"/></svg>
+        <span>Tìm sinh viên, kế hoạch, học phần…</span>
+      </div>
+      <div class="spacer"></div>
+      <div class="icon-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 8-3 8h18s-3-1-3-8"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
+        <span class="dot"></span>
+      </div>
+      <div class="user">
+        <div class="avatar">PH</div>
+        <div>
+          <div class="nm">Phạm Thu Hà</div>
+          <div class="rl">Cố vấn học tập</div>
+        </div>
+      </div>
+    </header>
+
+    <div class="layout">
+      <aside class="sidebar">
+        <div class="nav-item active">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></svg>
+          Tổng quan
+        </div>
+        <div class="nav-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg>
+          Xem xét kế hoạch
+        </div>
+        <div class="nav-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Quản lý góp ý
+        </div>
+        <div class="nav-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          Hồ sơ sinh viên
+        </div>
+        <div class="nav-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><line x1="21" y1="4" x2="14" y2="4"/><line x1="10" y1="4" x2="3" y2="4"/><line x1="21" y1="12" x2="12" y2="12"/><line x1="8" y1="12" x2="3" y2="12"/><line x1="21" y1="20" x2="16" y2="20"/><line x1="12" y1="20" x2="3" y2="20"/><line x1="14" y1="2" x2="14" y2="6"/><line x1="8" y1="10" x2="8" y2="14"/><line x1="16" y1="18" x2="16" y2="22"/></svg>
+          Cài đặt
+        </div>
+      </aside>
+
+      <main class="main">
+        <div class="page-head">
+          <div>
+            <h1>Tổng quan</h1>
+            <p>Theo dõi sinh viên và các kế hoạch cần xử lý</p>
+          </div>
+        </div>
+
+        <section class="kpis">
+          <div class="kpi">
+            <div>
+              <div class="lbl">Sinh viên đang phụ trách</div>
+              <div class="val">24</div>
+              <div class="sub">+2 trong tháng này</div>
+            </div>
+            <div class="ic blue">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+          </div>
+          <div class="kpi">
+            <div>
+              <div class="lbl">Kế hoạch chờ duyệt</div>
+              <div class="val">5</div>
+              <div class="sub warn">3 hạn xử lý trong tuần này</div>
+            </div>
+            <div class="ic purple">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg>
+            </div>
+          </div>
+          <div class="kpi">
+            <div>
+              <div class="lbl">Góp ý đã gửi trong tuần</div>
+              <div class="val">12</div>
+              <div class="sub ok">+4 so với tuần trước</div>
+            </div>
+            <div class="ic green">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+          </div>
+          <div class="kpi">
+            <div>
+              <div class="lbl">Sinh viên có cảnh báo rủi ro</div>
+              <div class="val bad">3</div>
+              <div class="sub bad">Cần chú ý xử lý sớm</div>
+            </div>
+            <div class="ic red">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            </div>
+          </div>
+        </section>
+
+        <section class="row2">
+          <div class="card chart-card">
+            <div class="card-head">
+              <h2>Phân bố sinh viên theo mức rủi ro khối lượng học tập</h2>
+              <span class="hint">Tổng: 24 sinh viên</span>
+            </div>
+            <div class="bars">
+              <div class="bar-row">
+                <span class="lb">Thấp</span>
+                <div class="track"><div class="fill low"></div></div>
+                <span class="num">13</span>
+              </div>
+              <div class="bar-row">
+                <span class="lb">Vừa</span>
+                <div class="track"><div class="fill mid"></div></div>
+                <span class="num">8</span>
+              </div>
+              <div class="bar-row">
+                <span class="lb">Cao</span>
+                <div class="track"><div class="fill high"></div></div>
+                <span class="num">3</span>
+              </div>
+            </div>
+            <div class="chart-note">Ngưỡng an toàn tham chiếu: ≤ 18 tín chỉ/học kỳ · Mức rủi ro do mô-đun AI-2 (Workload Risk) ước tính.</div>
+          </div>
+
+          <div class="card ai-card">
+            <div class="card-head">
+              <h2>Cảnh báo từ AI</h2>
+              <span class="chip-ai">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg>
+                Đề xuất bởi AI
+              </span>
+            </div>
+            <div class="ai-rows">
+              <div class="ai-row">
+                <div class="ai-ic high">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                </div>
+                <div class="ai-main">
+                  <div class="ai-name">Nguyễn Gia Bảo</div>
+                  <div class="ai-why">Kế hoạch 22 tín chỉ, vượt ngưỡng an toàn 18 tín chỉ.</div>
+                </div>
+                <button type="button" class="btn-ghost">Xem chi tiết</button>
+              </div>
+              <div class="ai-row">
+                <div class="ai-ic med">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                </div>
+                <div class="ai-main">
+                  <div class="ai-name">Trần Minh Khôi</div>
+                  <div class="ai-why">5 môn trong một học kỳ, nguy cơ quá tải.</div>
+                </div>
+                <button type="button" class="btn-ghost">Xem chi tiết</button>
+              </div>
+              <div class="ai-row">
+                <div class="ai-ic med">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                </div>
+                <div class="ai-main">
+                  <div class="ai-name">Đỗ Hải Yến</div>
+                  <div class="ai-why">Chưa đạt 2 môn tiên quyết của môn đã đăng ký.</div>
+                </div>
+                <button type="button" class="btn-ghost">Xem chi tiết</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card table-card">
+          <div class="card-head">
+            <h2>Kế hoạch đang chờ duyệt</h2>
+            <span class="hint">Cập nhật 29/09/2026</span>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Sinh viên</th>
+                <th>Học kỳ</th>
+                <th>Ngày gửi</th>
+                <th>Số tín chỉ</th>
+                <th>Trạng thái</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="stu">
+                    <div class="av b1">TK</div>
+                    <div>
+                      <div class="nm">Trần Minh Khôi</div>
+                      <div class="id">22110001</div>
+                    </div>
+                  </div>
+                </td>
+                <td>HK1 2026–2027</td>
+                <td>21/09/2026</td>
+                <td>18 TC</td>
+                <td><span class="badge-pending"><span class="dot"></span>Chờ duyệt</span></td>
+                <td><button type="button" class="btn-primary-sm">Xem xét</button></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="stu">
+                    <div class="av v1">LT</div>
+                    <div>
+                      <div class="nm">Lê Thu Trang</div>
+                      <div class="id">22110045</div>
+                    </div>
+                  </div>
+                </td>
+                <td>HK1 2026–2027</td>
+                <td>19/09/2026</td>
+                <td>16 TC</td>
+                <td><span class="badge-pending"><span class="dot"></span>Chờ duyệt</span></td>
+                <td><button type="button" class="btn-primary-sm">Xem xét</button></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="stu">
+                    <div class="av a1">NB</div>
+                    <div>
+                      <div class="nm">Nguyễn Gia Bảo</div>
+                      <div class="id">22110112</div>
+                    </div>
+                  </div>
+                </td>
+                <td>HK1 2026–2027</td>
+                <td>18/09/2026</td>
+                <td>22 TC</td>
+                <td><span class="badge-pending"><span class="dot"></span>Chờ duyệt</span></td>
+                <td><button type="button" class="btn-primary-sm">Xem xét</button></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="stu">
+                    <div class="av g1">PM</div>
+                    <div>
+                      <div class="nm">Phạm Nhật Minh</div>
+                      <div class="id">22110087</div>
+                    </div>
+                  </div>
+                </td>
+                <td>HK1 2026–2027</td>
+                <td>12/09/2026</td>
+                <td>14 TC</td>
+                <td><span class="badge-pending"><span class="dot"></span>Chờ duyệt</span></td>
+                <td><button type="button" class="btn-primary-sm">Xem xét</button></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="table-foot">
+            <span>Hiển thị 4 trong 5 kế hoạch</span>
+            <a href="#">Xem tất cả</a>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <section class="states">
+    <div class="states-head">
+      <h2>Các trạng thái của khu vực “Kế hoạch đang chờ duyệt”</h2>
+      <span>Rỗng · Đang tải · Lỗi — theo danh sách trạng thái bắt buộc</span>
+    </div>
+    <div class="state-grid">
+      <div class="state-card">
+        <div class="state-cap"><span class="tag gray">Rỗng</span>Không có dữ liệu</div>
+        <div class="state-body">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg>
+          <div class="t">Chưa có kế hoạch nào chờ duyệt</div>
+          <div class="s">Kế hoạch mới do sinh viên gửi sẽ xuất hiện tại đây.</div>
+        </div>
+      </div>
+      <div class="state-card">
+        <div class="state-cap"><span class="tag blue">Đang tải</span>Đang nạp dữ liệu</div>
+        <div class="state-body loading">
+          <div class="skel"><div class="c"></div><div class="lines"><div class="l1"></div><div class="l2"></div></div></div>
+          <div class="skel"><div class="c"></div><div class="lines"><div class="l1"></div><div class="l2"></div></div></div>
+          <div class="skel"><div class="c"></div><div class="lines"><div class="l1"></div><div class="l2"></div></div></div>
+        </div>
+      </div>
+      <div class="state-card">
+        <div class="state-cap"><span class="tag red">Lỗi</span>Tải thất bại</div>
+        <div class="state-body">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <div class="t">Không tải được danh sách kế hoạch</div>
+          <div class="s">Kiểm tra kết nối mạng và thử lại.</div>
+          <button type="button" class="btn-outline-sm">Thử lại</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="annot bottom">
+    © 2026 StudyPath AI · Nhóm CSE122 · Ảnh tham chiếu màn advisor-dashboard (desktop 1440px) — kèm bản phân tích bố cục/thành phần theo mục 18
+  </div>
+
+</div>
+<script>
+  (function () {
+    function fit() {
+      var vw = window.innerWidth || 0;
+      if (vw > 0 && vw < 1464) {
+        document.body.style.zoom = (vw - 16) / 1440;
+      } else {
+        document.body.style.zoom = '';
+      }
+    }
+    fit();
+    window.addEventListener('resize', fit);
+  })();
+</script>
+</body>
+</html>
