@@ -8,9 +8,9 @@
 
 | Mã | Họ tên | Phụ trách chính |
 |---|---|---|
-| SV1 | *(điền)* | Khách |
-| SV2 | *(điền)* | Sinh viên |
-| SV3 | *(điền)* | Cố vấn học tập + Quản trị viên |
+| SV1 | Hồ Trung Anh | Khách |
+| SV2 | Hứa Đình Kiên | Sinh viên |
+| SV3 | Nguyễn Bá Hoàng Tuân | Cố vấn học tập + Quản trị viên |
 
 ## Liên kết
 
