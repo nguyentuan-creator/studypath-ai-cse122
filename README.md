@@ -8,13 +8,13 @@
 
 | Mã | Họ tên | Phụ trách chính |
 |---|---|---|
-| SV1 | *(điền)* | Khách |
-| SV2 | *(điền)* | Sinh viên |
-| SV3 | *(điền)* | Cố vấn học tập + Quản trị viên |
+| SV1 | Hồ Trung Anh | Khách |
+| SV2 | Hứa Đình Kiên | Sinh viên |
+| SV3 | Nguyễn Bá Hoàng Tuân | Cố vấn học tập + Quản trị viên |
 
 ## Liên kết
 
-- Bảng công việc (Trello): *(dán link)*
+- Bảng công việc (Trello): https://trello.com/b/A2ziMN34/lịch-trình-phân-công-và-làm-bài-tập-ltw
 - Bản mô phỏng (Figma/Canva): xem `design/figma-link.txt`
 - Video OBS: *(cập nhật dần theo từng màn hình)*
 
