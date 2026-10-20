@@ -1,1 +1,85 @@
-/* StudyPath AI — responsive (WP3 sẽ bổ sung) */
+/* =========================================================
+   StudyPath AI — responsive dùng chung
+   Phần dưới chỉ áp dụng cho trang Danh mục học phần (Khách),
+   bổ sung cho các breakpoint cơ bản trong base.css.
+   Dùng tiền tố body.page-catalog để tăng specificity, vì file này
+   được nạp TRƯỚC style.css (quy ước base → responsive → style trang).
+   ========================================================= */
+
+/* Tablet: lưới còn 2 cột, bộ lọc xếp thành 2 cột */
+@media (max-width: 1024px) {
+  body.page-catalog .course-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  body.page-catalog .filters-bar {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  body.page-catalog .checkbox-group {
+    padding-bottom: 0;
+  }
+
+  body.page-catalog .filter-actions {
+    grid-column: 1 / -1;
+    justify-content: flex-end;
+  }
+}
+
+/* Mobile: mọi lưới xếp thành 1 cột, không vỡ layout */
+@media (max-width: 768px) {
+  body.page-catalog .header-inner {
+    flex-wrap: wrap;
+    height: auto;
+    padding: var(--space-1) var(--space-2);
+    row-gap: var(--space-1);
+  }
+
+  body.page-catalog .main-nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    margin: 0;
+  }
+
+  body.page-catalog .header-actions {
+    margin-left: auto;
+  }
+
+  body.page-catalog .course-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.page-catalog .filters-bar {
+    grid-template-columns: 1fr;
+  }
+
+  body.page-catalog .toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  body.page-catalog .sort-group {
+    justify-content: flex-end;
+  }
+
+  body.page-catalog .page-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Màn hình nhỏ: modal chi tiết và phân trang gọn */
+@media (max-width: 640px) {
+  body.page-catalog .course-detail {
+    grid-template-columns: 1fr;
+  }
+
+  body.page-catalog .pagination {
+    flex-wrap: wrap;
+  }
+
+  body.page-catalog .page-footer {
+    justify-content: center;
+  }
+}
