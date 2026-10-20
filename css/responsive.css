@@ -1,1 +1,14 @@
-/* StudyPath AI — responsive (WP3 sẽ bổ sung) */
+/* =========================================================
+   StudyPath AI — responsive dùng chung
+   Phần dưới chỉ áp dụng cho trang Đăng nhập.
+   ========================================================= */
+
+@media (max-width: 640px) {
+  body.page-login .auth-page {
+    padding: var(--space-2);
+  }
+
+  body.page-login .auth-card {
+    padding: var(--space-3);
+  }
+}
