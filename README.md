@@ -16,7 +16,8 @@
 
 - Bảng công việc (Trello): https://trello.com/b/A2ziMN34/lịch-trình-phân-công-và-làm-bài-tập-ltw
 - Bản mô phỏng (Figma/Canva): xem `design/figma-link.txt`
-- Video OBS: *(cập nhật dần theo từng màn hình)*
+- Video OBS:
+  - [SV1 — Course Catalog](https://youtu.be/LsYfoWZs8-U)
 
 ## Cấu trúc thư mục
 
