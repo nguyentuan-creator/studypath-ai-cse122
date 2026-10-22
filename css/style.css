@@ -1,1 +1,54 @@
-/* StudyPath AI — style dùng chung (WP3 sẽ bổ sung) */
+/* =========================================================
+   StudyPath AI — style trang Forbidden (403.html)
+   Scoped dưới body.page-403, không ảnh hưởng màn khác.
+   ========================================================= */
+
+body.page-403 .forbidden-page {
+  min-height: 100vh;
+  display: flex;
+  padding: var(--space-3);
+}
+
+body.page-403 .forbidden-card {
+  margin: auto;
+  text-align: center;
+  max-width: 420px;
+}
+
+body.page-403 .forbidden-code {
+  font-size: 64px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--color-primary);
+  line-height: 1.1;
+}
+
+body.page-403 .forbidden-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: var(--space-2);
+}
+
+body.page-403 .forbidden-desc {
+  font-size: 13.5px;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+  margin-top: 8px;
+}
+
+body.page-403 .forbidden-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: var(--space-3);
+  flex-wrap: wrap;
+}
+
+body.page-403 .forbidden-actions .btn {
+  height: 38px;
+  font-size: 13.5px;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  padding: 0 16px;
+}

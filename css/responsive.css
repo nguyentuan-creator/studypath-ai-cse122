@@ -1,1 +1,18 @@
-/* StudyPath AI — responsive (WP3 sẽ bổ sung) */
+/* =========================================================
+   StudyPath AI — responsive trang Forbidden (403)
+   Lưu ý: file này nạp TRƯỚC style.css nên selector phải có
+   độ ưu tiên cao hơn (prefix body.page-403).
+   ========================================================= */
+@media (max-width: 640px) {
+  body.page-403 .forbidden-page {
+    padding: var(--space-2);
+  }
+
+  body.page-403 .forbidden-actions {
+    flex-direction: column;
+  }
+
+  body.page-403 .forbidden-actions .btn {
+    width: 100%;
+  }
+}
