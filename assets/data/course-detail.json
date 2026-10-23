@@ -1,0 +1,153 @@
+{
+  "courses": [
+    {
+      "code": "IT3060",
+      "name": "Cơ sở dữ liệu",
+      "credits": 3,
+      "type": "Bắt buộc",
+      "program": "CNTT K17",
+      "faculty": "Khoa Công nghệ thông tin",
+      "status": "Đang mở",
+      "description": "Học phần cung cấp kiến thức nền tảng về mô hình dữ liệu, thiết kế cơ sở dữ liệu quan hệ, ngôn ngữ truy vấn SQL và các kỹ thuật quản trị dữ liệu trong hệ thống thông tin hiện đại.",
+      "objectives": [
+        "Hiểu mô hình thực thể — liên kết và mô hình dữ liệu quan hệ.",
+        "Thiết kế, chuẩn hóa và đánh giá một cơ sở dữ liệu hoàn chỉnh.",
+        "Sử dụng SQL để tạo lập, truy vấn và quản lý dữ liệu."
+      ],
+      "mainContents": [
+        { "no": "01", "title": "Mô hình ER" },
+        { "no": "02", "title": "Đại số quan hệ" },
+        { "no": "03", "title": "SQL cơ bản & nâng cao" },
+        { "no": "04", "title": "Chuẩn hóa dữ liệu" },
+        { "no": "05", "title": "Giao dịch & đồng thời" },
+        { "no": "06", "title": "Chỉ mục và tối ưu" }
+      ],
+      "prerequisite": "IT1010",
+      "recommendBefore": "MA2010",
+      "relatedCourses": [
+        { "code": "IT4040", "name": "Cấu trúc dữ liệu và giải thuật", "credits": 3 },
+        { "code": "IT5060", "name": "Mạng máy tính", "credits": 3 },
+        { "code": "IT1020", "name": "Kỹ thuật lập trình", "credits": 4 }
+      ]
+    },
+    {
+      "code": "IT1010",
+      "name": "Nhập môn lập trình",
+      "credits": 4,
+      "type": "Bắt buộc",
+      "program": "CNTT K17",
+      "faculty": "Khoa Công nghệ thông tin",
+      "status": "Đang mở",
+      "description": "Học phần giới thiệu các khái niệm cơ bản về lập trình: kiểu dữ liệu, cấu trúc điều khiển, hàm và mảng thông qua ngôn ngữ C/C++.",
+      "objectives": [
+        "Hiểu và vận dụng cú pháp cơ bản của ngôn ngữ lập trình C.",
+        "Phân tích và giải quyết bài toán nhỏ bằng chương trình máy tính.",
+        "Rèn luyện tư duy thuật toán và phong cách lập trình rõ ràng."
+      ],
+      "mainContents": [
+        { "no": "01", "title": "Kiểu dữ liệu & biến" },
+        { "no": "02", "title": "Cấu trúc điều khiển" },
+        { "no": "03", "title": "Hàm & mảng" },
+        { "no": "04", "title": "Con trỏ cơ bản" },
+        { "no": "05", "title": "Chuỗi ký tự" },
+        { "no": "06", "title": "Đọc/ghi tệp" }
+      ],
+      "prerequisite": "",
+      "recommendBefore": "",
+      "relatedCourses": [
+        { "code": "IT1020", "name": "Kỹ thuật lập trình", "credits": 4 },
+        { "code": "IT3060", "name": "Cơ sở dữ liệu", "credits": 3 },
+        { "code": "IT4040", "name": "Cấu trúc dữ liệu và giải thuật", "credits": 3 }
+      ]
+    },
+    {
+      "code": "IT1020",
+      "name": "Kỹ thuật lập trình",
+      "credits": 4,
+      "type": "Bắt buộc",
+      "program": "CNTT K17",
+      "faculty": "Khoa Công nghệ thông tin",
+      "status": "Đang mở",
+      "description": "Học phần nâng cao kỹ năng lập trình với cấu trúc dữ liệu cơ bản, kỹ thuật debug và tổ chức chương trình hướng module.",
+      "objectives": [
+        "Thành thạo kỹ thuật tổ chức chương trình thành các module.",
+        "Sử dụng thành thạo cấu trúc dữ liệu cơ bản: danh sách, ngăn xếp, hàng đợi.",
+        "Áp dụng quy trình debug và kiểm thử đơn vị."
+      ],
+      "mainContents": [
+        { "no": "01", "title": "Tổ chức chương trình" },
+        { "no": "02", "title": "Cấu trúc dữ liệu cơ bản" },
+        { "no": "03", "title": "Kỹ thuật đệ quy" },
+        { "no": "04", "title": "Debug & kiểm thử" },
+        { "no": "05", "title": "Lập trình file nâng cao" }
+      ],
+      "prerequisite": "IT1010",
+      "recommendBefore": "",
+      "relatedCourses": [
+        { "code": "IT1010", "name": "Nhập môn lập trình", "credits": 4 },
+        { "code": "IT3060", "name": "Cơ sở dữ liệu", "credits": 3 },
+        { "code": "IT5060", "name": "Mạng máy tính", "credits": 3 }
+      ]
+    },
+    {
+      "code": "IT4040",
+      "name": "Cấu trúc dữ liệu và giải thuật",
+      "credits": 3,
+      "type": "Bắt buộc",
+      "program": "CNTT K17",
+      "faculty": "Khoa Công nghệ thông tin",
+      "status": "Đang mở",
+      "description": "Học phần trang bị hệ thống kiến thức về cấu trúc dữ liệu (cây, đồ thị, bảng băm) và các giải thuật tìm kiếm, sắp xếp cùng phân tích độ phức tạp.",
+      "objectives": [
+        "Nắm vững các cấu trúc dữ liệu cây, đồ thị, bảng băm.",
+        "Phân tích độ phức tạp thời gian và bộ nhớ của giải thuật.",
+        "Lựa chọn cấu trúc dữ liệu phù hợp cho bài toán thực tế."
+      ],
+      "mainContents": [
+        { "no": "01", "title": "Sắp xếp & tìm kiếm" },
+        { "no": "02", "title": "Danh sách liên kết" },
+        { "no": "03", "title": "Cây & cây tìm kiếm" },
+        { "no": "04", "title": "Bảng băm" },
+        { "no": "05", "title": "Đồ thị & duyệt đồ thị" },
+        { "no": "06", "title": "Quy hoạch động" }
+      ],
+      "prerequisite": "IT1020",
+      "recommendBefore": "MA2010",
+      "relatedCourses": [
+        { "code": "IT1020", "name": "Kỹ thuật lập trình", "credits": 4 },
+        { "code": "IT3060", "name": "Cơ sở dữ liệu", "credits": 3 },
+        { "code": "IT5060", "name": "Mạng máy tính", "credits": 3 }
+      ]
+    },
+    {
+      "code": "IT5060",
+      "name": "Mạng máy tính",
+      "credits": 3,
+      "type": "Bắt buộc",
+      "program": "CNTT K17",
+      "faculty": "Khoa Công nghệ thông tin",
+      "status": "Đang mở",
+      "description": "Học phần trình bày kiến thức nền tảng về mạng máy tính: mô hình OSI/TCP-IP, các giao thức truyền thông và ứng dụng mạng hiện đại.",
+      "objectives": [
+        "Hiểu mô hình phân tầng OSI và bộ giao thức TCP/IP.",
+        "Phân tích hoạt động của các giao thức mạng phổ biến.",
+        "Thực hành cấu hình mạng cơ bản và chẩn đoán lỗi."
+      ],
+      "mainContents": [
+        { "no": "01", "title": "Mô hình OSI/TCP-IP" },
+        { "no": "02", "title": "Tầng vật lý & liên kết" },
+        { "no": "03", "title": "Tầng mạng & IP" },
+        { "no": "04", "title": "Tầng giao vận TCP/UDP" },
+        { "no": "05", "title": "Tầng ứng dụng" },
+        { "no": "06", "title": "An toàn mạng cơ bản" }
+      ],
+      "prerequisite": "IT1020",
+      "recommendBefore": "",
+      "relatedCourses": [
+        { "code": "IT4040", "name": "Cấu trúc dữ liệu và giải thuật", "credits": 3 },
+        { "code": "IT3060", "name": "Cơ sở dữ liệu", "credits": 3 },
+        { "code": "IT1020", "name": "Kỹ thuật lập trình", "credits": 4 }
+      ]
+    }
+  ]
+}
