@@ -4,7 +4,8 @@
      <link base.css> → <link responsive.css> → <link style.css trang>
    Design system: nền trắng, primary #2563EB, AI #7C3AED,
    chữ slate #0F172A / #64748B, bo góc 10–14px, lưới 8px, Inter/Segoe UI,
-   bố cục chung: sidebar trái + topbar trên.
+   bố cục chung: header full-width + aside trái + nội dung chính
+   (đặc tả: docs/ui-shell.md).
    ========================================================= */
 
 /* ============ 1. DESIGN TOKENS ============ */
@@ -63,7 +64,7 @@
 
   /* Bố cục chung */
   --sidebar-width: 240px;
-  --topbar-height: 64px;
+  --header-height: 64px;
 }
 
 /* ============ 1b. CHẾ ĐỘ TỐI ============ */
@@ -173,32 +174,36 @@ h3 {
   text-align: center;
 }
 
-/* ============ 4. BỐ CỤC CHUNG (SIDEBAR + TOPBAR) ============ */
-.app-shell {
+/* ============ 4. BỐ CỤC CHUNG: HEADER FULL-WIDTH + ASIDE + MAIN ============ */
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  height: var(--header-height);
   display: flex;
-  min-height: 100vh;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 0 var(--space-3);
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
 }
 
-.sidebar {
-  width: var(--sidebar-width);
-  background-color: var(--color-surface);
-  border-right: 1px solid var(--color-border);
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
+.app-header .brand {
+  padding: 0;
+  flex-shrink: 0;
 }
 
 .brand {
   display: flex;
   align-items: center;
   gap: var(--space-1);
-  padding: var(--space-2);
   font-size: var(--font-size-lg);
   font-weight: 700;
   color: var(--color-primary);
+}
+
+.brand:hover {
+  text-decoration: none;
 }
 
 .brand-mark {
@@ -213,21 +218,87 @@ h3 {
   flex-shrink: 0;
 }
 
+.header-actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.header-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-left: var(--space-2);
+  border-left: 1px solid var(--color-border);
+}
+
+.header-user .user-name {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  line-height: 1.3;
+  text-align: right;
+}
+
+.header-user .user-role {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--color-text-muted);
+}
+
+.icon-btn.menu-btn {
+  display: none;
+}
+
+.bell-dot {
+  position: absolute;
+  top: 8px;
+  right: 9px;
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-danger);
+  border-radius: var(--radius-full);
+}
+
+.app-body {
+  display: flex;
+  align-items: flex-start;
+  min-height: calc(100vh - var(--header-height));
+}
+
+.sidebar {
+  width: var(--sidebar-width);
+  flex-shrink: 0;
+  position: sticky;
+  top: var(--header-height);
+  height: calc(100vh - var(--header-height));
+  overflow-y: auto;
+  background-color: var(--color-surface);
+  border-right: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+}
+
 .sidebar-nav {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  padding: var(--space-1) var(--space-2);
+  padding: var(--space-2);
 }
 
 .nav-item {
   display: flex;
   align-items: center;
-  gap: var(--space-1);
+  gap: 10px;
   padding: 10px var(--space-1);
   border-radius: var(--radius-sm);
   color: var(--color-text-muted);
   font-weight: 500;
+}
+
+.nav-item svg {
+  flex-shrink: 0;
 }
 
 .nav-item:hover {
@@ -241,6 +312,16 @@ h3 {
   color: var(--color-primary);
 }
 
+.nav-item--disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.nav-item--disabled:hover {
+  background-color: transparent;
+  color: var(--color-text-muted);
+}
+
 .nav-section {
   padding: var(--space-2) var(--space-1) 4px;
   font-size: 0.75rem;
@@ -250,71 +331,21 @@ h3 {
   color: var(--color-text-muted);
 }
 
-.main-area {
-  flex: 1;
-  margin-left: var(--sidebar-width);
-  display: flex;
-  flex-direction: column;
-}
-
-.topbar {
-  height: var(--topbar-height);
-  background-color: var(--color-surface);
-  border-bottom: 1px solid var(--color-border);
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  padding: 0 var(--space-3);
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-
-.topbar-search {
-  flex: 1;
-  max-width: 400px;
-}
-
-.topbar-actions {
-  margin-left: auto;
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-}
-
-.topbar-user {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.topbar-user .user-name {
-  font-size: var(--font-size-sm);
-  font-weight: 600;
-  line-height: 1.25;
-  text-align: right;
-}
-
-.topbar-user .user-role {
-  display: block;
-  font-size: 0.75rem;
-  font-weight: 400;
-  color: var(--color-text-muted);
-}
-
-.bell-dot {
-  position: absolute;
-  top: 8px;
-  right: 9px;
-  width: 8px;
-  height: 8px;
-  background-color: var(--color-danger);
-  border-radius: var(--radius-full);
-}
-
 .main-content {
-  padding: var(--space-3);
   flex: 1;
+  min-width: 0;
+  padding: var(--space-3);
+}
+
+.sidebar-overlay {
+  position: fixed;
+  inset: var(--header-height) 0 0;
+  z-index: 55;
+  background-color: rgba(15, 23, 42, 0.45);
+}
+
+.sidebar-overlay[hidden] {
+  display: none;
 }
 
 .page-head {
@@ -885,14 +916,22 @@ h3 {
     width: 68px;
   }
 
+  .sidebar-nav {
+    padding: var(--space-1);
+  }
+
+  .sidebar .nav-item {
+    justify-content: center;
+    padding: 10px;
+  }
+
   .sidebar .nav-item span,
-  .sidebar .brand span,
   .sidebar .nav-section {
     display: none;
   }
 
-  .main-area {
-    margin-left: 68px;
+  .main-content {
+    padding: var(--space-2);
   }
 
   .stat-grid,
@@ -905,22 +944,63 @@ h3 {
   }
 }
 
-@media (max-width: 640px) {
-  .sidebar {
+@media (max-width: 760px) {
+  .app-header {
+    gap: var(--space-1);
+    padding: 0 var(--space-2);
+  }
+
+  .icon-btn.menu-btn {
+    display: inline-flex;
+  }
+
+  .header-user {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .header-user .user-name {
     display: none;
   }
 
-  .main-area {
-    margin-left: 0;
+  .sidebar {
+    position: fixed;
+    top: var(--header-height);
+    bottom: 0;
+    left: 0;
+    z-index: 60;
+    width: var(--sidebar-width);
+    height: auto;
+    transform: translateX(-100%);
+    transition: transform 0.2s ease;
+    box-shadow: var(--shadow-md);
+  }
+
+  .sidebar-nav {
+    padding: var(--space-1) var(--space-2);
+  }
+
+  .sidebar .nav-item {
+    justify-content: flex-start;
+    padding: 10px var(--space-1);
+  }
+
+  .sidebar .nav-item span {
+    display: inline;
+  }
+
+  body.sidebar-open .sidebar {
+    transform: translateX(0);
+  }
+
+  .main-content {
+    padding: var(--space-2);
   }
 
   .stat-grid,
   .grid-2,
-  .grid-3 {
+  .grid-3,
+  .grid-sidebar {
     grid-template-columns: 1fr;
-  }
-
-  .topbar-search {
-    max-width: none;
   }
 }
