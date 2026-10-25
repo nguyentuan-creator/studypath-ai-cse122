@@ -6,7 +6,10 @@
       "email": "sinhvien@studypath.edu.vn",
       "password": "123456",
       "role": "student",
-      "roleLabel": "Sinh viên"
+      "roleLabel": "Sinh viên",
+      "studentId": "2551060731",
+      "program": "Công nghệ thông tin (K17)",
+      "year": "Năm 3"
     },
     {
       "id": 2,
@@ -23,6 +26,94 @@
       "password": "123456",
       "role": "admin",
       "roleLabel": "Quản trị viên"
+    },
+    {
+      "id": 4,
+      "name": "Hứa Đình Kiên",
+      "email": "kien.hua@studypath.edu.vn",
+      "password": "123456",
+      "role": "student",
+      "roleLabel": "Sinh viên",
+      "studentId": "2551060707",
+      "program": "Công nghệ thông tin (K17)",
+      "year": "Năm 3"
+    },
+    {
+      "id": 5,
+      "name": "Hồ Trung Anh",
+      "email": "trunganh.ho@studypath.edu.vn",
+      "password": "123456",
+      "role": "student",
+      "roleLabel": "Sinh viên",
+      "studentId": "2551060712",
+      "program": "Công nghệ thông tin (K17)",
+      "year": "Năm 3"
+    },
+    {
+      "id": 6,
+      "name": "Nguyễn Bá Hoàng Tuân",
+      "email": "tuan.nguyen@studypath.edu.vn",
+      "password": "123456",
+      "role": "student",
+      "roleLabel": "Sinh viên",
+      "studentId": "2551060725",
+      "program": "Công nghệ thông tin (K17)",
+      "year": "Năm 3"
+    },
+    {
+      "id": 7,
+      "name": "Trần Minh Khang",
+      "email": "khang.tran@studypath.edu.vn",
+      "password": "123456",
+      "role": "student",
+      "roleLabel": "Sinh viên",
+      "studentId": "2551060756",
+      "program": "Công nghệ thông tin (K17)",
+      "year": "Năm 3"
+    },
+    {
+      "id": 8,
+      "name": "Lê Thu Trang",
+      "email": "trang.le@studypath.edu.vn",
+      "password": "123456",
+      "role": "student",
+      "roleLabel": "Sinh viên",
+      "studentId": "2551060763",
+      "program": "Công nghệ thông tin (K17)",
+      "year": "Năm 3"
+    },
+    {
+      "id": 9,
+      "name": "Võ Hoàng Nam",
+      "email": "nam.vo@studypath.edu.vn",
+      "password": "123456",
+      "role": "student",
+      "roleLabel": "Sinh viên",
+      "studentId": "2551060778",
+      "program": "Công nghệ thông tin (K17)",
+      "year": "Năm 3"
+    },
+    {
+      "id": 10,
+      "name": "Đặng Ngọc Mai",
+      "email": "mai.dang@studypath.edu.vn",
+      "password": "123456",
+      "role": "student",
+      "roleLabel": "Sinh viên",
+      "studentId": "2551060784",
+      "program": "Công nghệ thông tin (K17)",
+      "year": "Năm 3"
+    },
+    {
+      "id": 11,
+      "name": "Bùi Anh Thư",
+      "email": "thu.bui@studypath.edu.vn",
+      "password": "123456",
+      "role": "student",
+      "roleLabel": "Sinh viên",
+      "studentId": "2551060790",
+      "program": "Công nghệ thông tin (K17)",
+      "year": "Năm 3"
     }
   ]
 }

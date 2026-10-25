@@ -23,8 +23,7 @@
   const dataCache = Object.create(null);
   const pendingRequests = Object.create(null);
   const memoryStore = Object.create(null);
-  let usersCache = null;
-  let nextUserId = 100;
+  let baseUsersCache = null;
 
   const storage = (function () {
     try {
@@ -245,12 +244,38 @@
     };
   }
 
-  async function loadUsers() {
-    if (usersCache !== null) {
-      return usersCache;
+  function getRegisteredUsers() {
+    const list = readStore("registeredUsers", []);
+    return Array.isArray(list) ? list : [];
+  }
+
+  function applyUserOverrides(users) {
+    const overrides = readStore("userOverrides", null);
+    if (overrides === null || typeof overrides !== "object" || Array.isArray(overrides)) {
+      return users;
     }
-    usersCache = unwrap(await loadData("users"), "users");
-    return usersCache;
+
+    return users.map(function (user) {
+      const override = overrides[String(user.id)];
+      if (override === null || typeof override !== "object") {
+        return user;
+      }
+      return Object.assign({}, user, override);
+    });
+  }
+
+  function nextUserIdFor(users) {
+    return users.reduce(function (max, user) {
+      const id = Number(user.id);
+      return Number.isFinite(id) && id > max ? id : max;
+    }, 0) + 1;
+  }
+
+  async function loadUsers() {
+    if (baseUsersCache === null) {
+      baseUsersCache = unwrap(await loadData("users"), "users");
+    }
+    return applyUserOverrides(baseUsersCache.concat(getRegisteredUsers()));
   }
 
   async function login(email, password) {
@@ -277,7 +302,10 @@
       name: user.name,
       email: user.email,
       role: user.role,
-      roleLabel: user.roleLabel
+      roleLabel: user.roleLabel,
+      studentId: user.studentId || "",
+      program: user.program || "",
+      year: user.year || ""
     };
     sessionStorage.setItem(CURRENT_USER_KEY, JSON.stringify(sessionUser));
   }
@@ -293,6 +321,33 @@
     } catch (error) {
       return null;
     }
+  }
+
+  function updateCurrentUser(patch) {
+    const current = getCurrentUser();
+    if (current === null) {
+      const error = new Error("Chưa có người dùng đăng nhập");
+      error.code = "NO_SESSION";
+      throw error;
+    }
+
+    const clean = {};
+    ["name", "program", "year"].forEach(function (field) {
+      if (patch && typeof patch[field] === "string" && patch[field].trim() !== "") {
+        clean[field] = patch[field].trim();
+      }
+    });
+
+    const stored = readStore("userOverrides", {});
+    const overrides =
+      stored !== null && typeof stored === "object" && !Array.isArray(stored) ? stored : {};
+    const key = String(current.id);
+    overrides[key] = Object.assign({}, overrides[key] || {}, clean);
+    writeStore("userOverrides", overrides);
+
+    const updated = Object.assign({}, current, clean);
+    sessionStorage.setItem(CURRENT_USER_KEY, JSON.stringify(updated));
+    return updated;
   }
 
   function normalizeEmail(email) {
@@ -314,16 +369,20 @@
     }
 
     const newUser = {
-      id: nextUserId++,
+      id: nextUserIdFor(data),
       name: String(userInfo.name).trim(),
       email: email,
       password: userInfo.password,
       role: "student",
       roleLabel: "Sinh viên",
       studentId: userInfo.studentId || "",
-      program: userInfo.program || ""
+      program: userInfo.program || "",
+      year: userInfo.year || "Năm 1"
     };
-    data.push(newUser);
+
+    const registered = getRegisteredUsers();
+    registered.push(newUser);
+    writeStore("registeredUsers", registered);
     return newUser;
   }
 
@@ -366,6 +425,7 @@
     login: login,
     setCurrentUser: setCurrentUser,
     getCurrentUser: getCurrentUser,
+    updateCurrentUser: updateCurrentUser,
     register: register,
     loadData: loadData,
     readStore: readStore,
