@@ -1,1 +1,433 @@
-/* StudyPath AI — style dùng chung (WP3 sẽ bổ sung) */
+/* =========================================================
+   StudyPath AI — style trang Chi tiết học phần (Khách)
+   Scoped trong .page-course-detail, không ảnh hưởng màn khác.
+   ========================================================= */
+
+/* ===== Khung trang ===== */
+.page-course-detail .page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-course-detail .page-content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-3);
+  flex: 1;
+}
+
+/* ===== Thanh điều hướng trên ===== */
+.page-course-detail .site-header {
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.page-course-detail .header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-3);
+  height: 64px;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.page-course-detail .brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  flex: none;
+}
+
+.page-course-detail .brand:hover {
+  text-decoration: none;
+}
+
+.page-course-detail .brand-mark {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-course-detail .brand-name {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.page-course-detail .main-nav {
+  display: flex;
+  gap: var(--space-1);
+  margin: 0 auto;
+}
+
+.page-course-detail .nav-tab {
+  padding: 8px 14px;
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+.page-course-detail .nav-tab:hover {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.page-course-detail .nav-tab.active {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.page-course-detail .header-actions {
+  display: flex;
+  gap: var(--space-1);
+  flex: none;
+}
+
+/* ===== Breadcrumb ===== */
+.page-course-detail .breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 12.5px;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-3);
+}
+
+.page-course-detail .breadcrumb a {
+  color: var(--color-text-muted);
+}
+
+.page-course-detail .breadcrumb a:hover {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.page-course-detail .breadcrumb-sep {
+  color: var(--color-border);
+}
+
+.page-course-detail .breadcrumb-current {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+/* ===== Đầu trang chi tiết ===== */
+.page-course-detail .detail-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-3);
+}
+
+.page-course-detail .detail-tags {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.page-course-detail .status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--color-success, #16a34a);
+}
+
+.page-course-detail .status-pill::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.page-course-detail .status-pill.is-closed {
+  color: var(--color-text-muted);
+}
+
+.page-course-detail .detail-head h1 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: var(--space-1);
+}
+
+.page-course-detail .detail-meta {
+  font-size: 13.5px;
+  color: var(--color-text-muted);
+  margin-top: 6px;
+}
+
+.page-course-detail .detail-actions {
+  display: flex;
+  gap: var(--space-1);
+  flex-wrap: wrap;
+}
+
+.page-course-detail .detail-actions .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 38px;
+  font-size: 13.5px;
+}
+
+/* ===== Bố cục 2 cột ===== */
+.page-course-detail .detail-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: var(--space-3);
+  align-items: start;
+}
+
+/* ===== Khối nội dung chính ===== */
+.page-course-detail .detail-main h2 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: var(--space-2);
+}
+
+.page-course-detail .detail-main h3 {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-top: var(--space-3);
+  margin-bottom: var(--space-1);
+}
+
+.page-course-detail .detail-main h3:first-of-type {
+  margin-top: 0;
+}
+
+.page-course-detail .detail-desc {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--color-text);
+}
+
+.page-course-detail .objective-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.page-course-detail .objective-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+.page-course-detail .objective-list svg {
+  flex: none;
+  margin-top: 2px;
+  color: var(--color-primary);
+}
+
+.page-course-detail .content-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-2);
+}
+
+.page-course-detail .content-grid li {
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.page-course-detail .content-grid .content-no {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 2px;
+}
+
+/* ===== Sidebar ===== */
+.page-course-detail .detail-side {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.page-course-detail .detail-side h2 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: var(--space-2);
+}
+
+/* Thông tin nhanh */
+.page-course-detail .fact-list {
+  margin: 0;
+}
+
+.page-course-detail .fact-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 13px;
+}
+
+.page-course-detail .fact-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.page-course-detail .fact-row svg {
+  flex: none;
+  color: var(--color-text-muted);
+}
+
+.page-course-detail .fact-label {
+  color: var(--color-text-muted);
+}
+
+.page-course-detail .fact-value {
+  margin-left: auto;
+  font-weight: 600;
+  text-align: right;
+}
+
+.page-course-detail .fact-value.is-open {
+  color: var(--color-success, #16a34a);
+}
+
+/* Lưu vào kế hoạch */
+.page-course-detail .plan-card p {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-2);
+}
+
+/* Học phần liên quan */
+.page-course-detail .related-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-course-detail .related-list a {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 13px;
+}
+
+.page-course-detail .related-list li:last-child a {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.page-course-detail .related-list a:hover {
+  text-decoration: none;
+}
+
+.page-course-detail .related-list a:hover .related-name {
+  color: var(--color-primary);
+}
+
+.page-course-detail .related-code {
+  font-weight: 700;
+  color: var(--color-text);
+  flex: none;
+}
+
+.page-course-detail .related-name {
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+.page-course-detail .related-credits {
+  margin-left: auto;
+  flex: none;
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+/* ===== Trạng thái lỗi / rỗng ===== */
+.page-course-detail .empty-state-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.page-course-detail .empty-state-desc {
+  font-size: 13.5px;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-1);
+}
+
+/* ===== Skeleton ===== */
+.page-course-detail .skel-head {
+  margin-bottom: var(--space-3);
+}
+
+.page-course-detail .skel-tag {
+  width: 120px;
+  height: 22px;
+  border-radius: var(--radius-sm);
+}
+
+.page-course-detail .skel-title {
+  width: 320px;
+  max-width: 70%;
+  height: 28px;
+  margin-top: var(--space-2);
+}
+
+.page-course-detail .skel-meta {
+  width: 420px;
+  max-width: 90%;
+  height: 16px;
+  margin-top: var(--space-1);
+}
+
+.page-course-detail #detailSkeleton .detail-layout {
+  margin-top: 0;
+}
+
+.page-course-detail .skel-card-main {
+  padding: var(--space-3);
+}
+
+.page-course-detail .skel-line {
+  height: 14px;
+  margin-bottom: var(--space-2);
+}
+
+.page-course-detail .skel-line.short {
+  width: 60%;
+}
+
+.page-course-detail .skel-side {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.page-course-detail .skel-side-box {
+  height: 180px;
+}

@@ -1,1 +1,52 @@
-/* StudyPath AI — responsive (WP3 sẽ bổ sung) */
+/* =========================================================
+   StudyPath AI — responsive trang Chi tiết học phần (Khách)
+   File này nạp TRƯỚC style.css nên dùng tiền tố body.page-course-detail
+   để tăng specificity; chỉ đặt thuộc tính style.css không khai báo.
+   ========================================================= */
+
+/* Tablet hẹp: sidebar thu hơn */
+@media (max-width: 1024px) {
+  body.page-course-detail .detail-layout {
+    grid-template-columns: minmax(0, 1fr) 280px;
+  }
+}
+
+/* Tablet dọc / mobile lớn: đổi thành 1 cột */
+@media (max-width: 768px) {
+  body.page-course-detail .header-inner {
+    flex-wrap: wrap;
+    height: auto;
+    padding: var(--space-1) var(--space-2);
+    row-gap: var(--space-1);
+  }
+
+  body.page-course-detail .main-nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    margin: 0;
+  }
+
+  body.page-course-detail .header-actions {
+    margin-left: auto;
+  }
+
+  body.page-course-detail .detail-layout {
+    grid-template-columns: 1fr;
+  }
+
+  body.page-course-detail .content-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  body.page-course-detail .detail-actions {
+    width: 100%;
+  }
+}
+
+/* Mobile nhỏ */
+@media (max-width: 640px) {
+  body.page-course-detail .content-grid {
+    grid-template-columns: 1fr;
+  }
+}
