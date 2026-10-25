@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hồ sơ cá nhân | StudyPath AI</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/profile.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="student-dashboard.html">
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2 2 8l10 6 10-6-10-6z"></path>
+            <path d="M6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5"></path>
+          </svg>
+        </span>
+        <span>StudyPath AI</span>
+      </a>
+      <nav class="sidebar-nav" aria-label="Điều hướng chính">
+        <a class="nav-item" href="student-dashboard.html">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"></rect><rect x="14" y="3" width="7" height="7" rx="1.5"></rect><rect x="3" y="14" width="7" height="7" rx="1.5"></rect><rect x="14" y="14" width="7" height="7" rx="1.5"></rect></svg>
+          <span>Tổng quan</span>
+        </a>
+        <a class="nav-item" href="student-semester-plan.html">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          <span>Kế hoạch học kỳ</span>
+        </a>
+        <a class="nav-item" href="student-ai-roadmap.html">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+          <span>Lộ trình AI</span>
+        </a>
+        <a class="nav-item" href="notifications.html">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+          <span>Thông báo</span>
+        </a>
+        <a class="nav-item" href="settings.html">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+          <span>Cài đặt</span>
+        </a>
+      </nav>
+    </aside>
+
+    <div class="main-area">
+      <header class="topbar">
+        <div class="topbar-search">
+          <input type="search" class="form-input" placeholder="Tìm sinh viên, kế hoạch, học phần..." aria-label="Tìm kiếm">
+        </div>
+        <div class="topbar-actions">
+          <button type="button" class="icon-btn" aria-label="Thông báo">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+            <span class="bell-dot" aria-hidden="true"></span>
+          </button>
+          <div class="topbar-user">
+            <div class="user-name">Hứa Đình Kiên<span class="user-role">2551060707</span></div>
+            <span class="avatar avatar-sm">K</span>
+          </div>
+        </div>
+      </header>
+
+      <main class="main-content">
+        <div class="page-head">
+          <div>
+            <h1>Hồ sơ cá nhân</h1>
+            <p class="text-muted">Thông tin tài khoản của bạn</p>
+          </div>
+        </div>
+
+        <div class="grid-sidebar">
+          <form id="profile-form" novalidate>
+            <section class="card mb-2" aria-labelledby="info-heading">
+              <div class="card-head">
+                <h2 id="info-heading">Thông tin cá nhân</h2>
+                <p class="text-sm text-muted">Trường có nhãn "Khóa" chỉ quản trị viên được sửa</p>
+              </div>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label class="form-label" for="full-name">Họ và tên <span class="required" aria-hidden="true">*</span></label>
+                  <input type="text" id="full-name" class="form-input" value="Hứa Đình Kiên" required>
+                  <p class="form-error" aria-live="polite"></p>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="email">Email</label>
+                  <div class="input-locked">
+                    <input type="email" id="email" class="form-input" value="kien.hua@truong.edu.vn" disabled>
+                    <span class="tag tag-gray">Khóa</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="student-id">MSSV</label>
+                  <div class="input-locked">
+                    <input type="text" id="student-id" class="form-input" value="2551060707" disabled>
+                    <span class="tag tag-gray">Khóa</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="program">Chương trình</label>
+                  <input type="text" id="program" class="form-input" value="Công nghệ thông tin (K17)" disabled>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="year">Năm học</label>
+                  <input type="text" id="year" class="form-input" value="Năm 3">
+                </div>
+              </div>
+            </section>
+
+            <section class="card mb-2" aria-labelledby="password-heading">
+              <div class="card-head">
+                <h2 id="password-heading">Đổi mật khẩu</h2>
+              </div>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label class="form-label" for="current-password">Mật khẩu hiện tại</label>
+                  <input type="password" id="current-password" class="form-input" placeholder="••••••••" autocomplete="current-password">
+                  <p class="form-error" aria-live="polite"></p>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="new-password">Mật khẩu mới</label>
+                  <input type="password" id="new-password" class="form-input" placeholder="••••••••" autocomplete="new-password">
+                  <p class="form-error" aria-live="polite"></p>
+                </div>
+              </div>
+            </section>
+
+            <div id="save-success" class="alert alert-success hidden" role="alert">
+              Đã lưu thay đổi thành công.
+            </div>
+
+            <div class="page-actions">
+              <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
+              <button type="button" id="btn-reset" class="btn btn-secondary">Hoàn tác</button>
+            </div>
+          </form>
+
+          <aside class="card profile-summary" aria-label="Tóm tắt hồ sơ">
+            <span class="avatar avatar-lg">K</span>
+            <h2>Hứa Đình Kiên</h2>
+            <span class="tag tag-blue">Sinh viên</span>
+            <p class="text-sm text-muted">MSSV 2551060707 · CNTT (K17)</p>
+          </aside>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="../js/profile.js"></script>
+</body>
+</html>

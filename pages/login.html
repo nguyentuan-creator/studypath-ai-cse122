@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="StudyPath AI – Đăng nhập để quản lý lộ trình học tập của bạn.">
+  <title>Đăng nhập – StudyPath AI</title>
+  <!-- Thứ tự nạp theo quy ước nhóm: base.css → responsive.css → style.css (trang) -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="page-login">
+
+  <main class="auth-page">
+    <section class="auth-card" aria-labelledby="loginTitle">
+
+      <div class="auth-brand">
+        <span class="auth-brand-mark" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 10L12 5 2 10l10 5 10-5z"></path>
+            <path d="M6 12v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"></path>
+          </svg>
+        </span>
+        <span class="auth-brand-name">StudyPath AI</span>
+      </div>
+
+      <h1 class="auth-title" id="loginTitle">Đăng nhập</h1>
+      <p class="auth-subtitle">Đăng nhập để quản lý lộ trình học tập của bạn.</p>
+
+      <div class="alert alert-danger auth-error hidden" id="loginError" role="alert"></div>
+
+      <form class="auth-form" id="loginForm">
+        <div class="form-group">
+          <label class="form-label" for="loginEmail">Email <span class="auth-required" aria-hidden="true">*</span></label>
+          <input
+            type="email"
+            id="loginEmail"
+            name="email"
+            class="form-input"
+            placeholder="ten@truong.edu.vn"
+            autocomplete="username"
+            autocapitalize="none"
+            spellcheck="false"
+            required
+            autofocus
+          >
+        </div>
+
+        <div class="form-group">
+          <div class="auth-label-row">
+            <label class="form-label" for="loginPassword">Mật khẩu <span class="auth-required" aria-hidden="true">*</span></label>
+            <a href="forgot-password.html" class="auth-forgot">Quên mật khẩu?</a>
+          </div>
+          <input
+            type="password"
+            id="loginPassword"
+            name="password"
+            class="form-input"
+            placeholder="••••••••"
+            autocomplete="current-password"
+            required
+          >
+        </div>
+
+        <button type="submit" class="btn btn-primary auth-submit" id="loginSubmit">
+          <span class="auth-spinner" aria-hidden="true"></span>
+          <span class="auth-submit-label">Đăng nhập</span>
+        </button>
+      </form>
+
+      <p class="auth-switch">Chưa có tài khoản? <a href="register.html">Đăng ký</a></p>
+
+    </section>
+  </main>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/modules/auth-login.js"></script>
+</body>
+</html>
