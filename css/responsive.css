@@ -1,19 +1,14 @@
 /* =========================================================
-   StudyPath AI — responsive trang Đăng ký
-   Lưu ý: file này nạp TRƯỚC style.css nên selector phải có
-   độ ưu tiên cao hơn (prefix body.page-register).
+   StudyPath AI — responsive dùng chung
+   Phần dưới chỉ áp dụng cho trang Đăng nhập.
    ========================================================= */
+
 @media (max-width: 640px) {
-  body.page-register .auth-page {
+  body.page-login .auth-page {
     padding: var(--space-2);
   }
 
-  body.page-register .auth-card {
+  body.page-login .auth-card {
     padding: var(--space-3);
-  }
-
-  body.page-register .reg-grid {
-    grid-template-columns: 1fr;
-    gap: 0;
   }
 }
