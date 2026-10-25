@@ -66,6 +66,41 @@
   --topbar-height: 64px;
 }
 
+/* ============ 1b. CHẾ ĐỘ TỐI ============ */
+/* Bật bằng cách đặt data-theme="dark" trên thẻ <html>;
+   js/settings.js tự đặt theo cài đặt đã lưu của người dùng. */
+:root[data-theme="dark"] {
+  --color-text: #e2e8f0;
+  --color-text-muted: #94a3b8;
+  --color-bg: #020617;
+  --color-surface: #0f172a;
+  --color-border: #334155;
+
+  /* Nền tint của tag/trạng thái: dùng màu đậm phủ trong suốt thay vì pastel */
+  --color-primary-light: rgba(37, 99, 235, 0.25);
+  --color-ai-light: rgba(124, 58, 237, 0.28);
+  --color-success-light: rgba(22, 163, 74, 0.25);
+  --color-warning-light: rgba(217, 119, 6, 0.25);
+  --color-danger-light: rgba(220, 38, 38, 0.25);
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.45);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.55);
+}
+
+/* Chữ nằm trên nền tint trong chế độ tối cần tông sáng hơn */
+:root[data-theme="dark"] .nav-item.active { color: #93c5fd; }
+:root[data-theme="dark"] .tag-blue,
+:root[data-theme="dark"] .alert-info { color: #93c5fd; }
+:root[data-theme="dark"] .tag-green,
+:root[data-theme="dark"] .alert-success { color: #86efac; }
+:root[data-theme="dark"] .tag-amber,
+:root[data-theme="dark"] .alert-warning { color: #fcd34d; }
+:root[data-theme="dark"] .tag-red,
+:root[data-theme="dark"] .alert-danger { color: #fca5a5; }
+:root[data-theme="dark"] .tag-purple,
+:root[data-theme="dark"] .chip-ai,
+:root[data-theme="dark"] .alert-ai { color: #c4b5fd; }
+
 /* ============ 2. RESET & NỀN TẢNG ============ */
 * {
   margin: 0;
@@ -166,6 +201,18 @@ h3 {
   color: var(--color-primary);
 }
 
+.brand-mark {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+}
+
 .sidebar-nav {
   display: flex;
   flex-direction: column;
@@ -233,6 +280,36 @@ h3 {
   display: flex;
   align-items: center;
   gap: var(--space-2);
+}
+
+.topbar-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.topbar-user .user-name {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  line-height: 1.25;
+  text-align: right;
+}
+
+.topbar-user .user-role {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--color-text-muted);
+}
+
+.bell-dot {
+  position: absolute;
+  top: 8px;
+  right: 9px;
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-danger);
+  border-radius: var(--radius-full);
 }
 
 .main-content {
@@ -323,6 +400,10 @@ h3 {
   font-size: var(--font-size-sm);
 }
 
+.btn-block {
+  width: 100%;
+}
+
 /* ============ 6. FORM ============ */
 .form-group {
   display: flex;
@@ -334,6 +415,10 @@ h3 {
 .form-label {
   font-weight: 500;
   font-size: var(--font-size-sm);
+}
+
+.required {
+  color: var(--color-danger);
 }
 
 .form-input,
@@ -605,6 +690,30 @@ h3 {
 .alert-ai {
   background-color: var(--color-ai-light);
   color: var(--color-ai);
+}
+
+/* Thông báo nhanh bật lên góc màn hình — JS điều khiển thêm/bỏ .show */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 200;
+  background-color: var(--color-text);
+  color: var(--color-surface);
+  padding: 10px 16px;
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+  max-width: 320px;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ============ 12. MODAL ============ */
