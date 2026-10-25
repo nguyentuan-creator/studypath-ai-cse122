@@ -256,7 +256,7 @@
     showSkeleton();
 
     try {
-      const data = await StudyPathAPI.loadCatalog();
+      const data = await StudyPathAPI.loadData("courses");
       programs = data.programs;
       courses = data.courses;
       isLoaded = true;

@@ -1,61 +1,44 @@
 /* =========================================================
    StudyPath AI — style dùng chung
-   Phần dưới chỉ áp dụng cho trang Danh mục học phần (Khách).
-   Mọi selector được scope trong .page-catalog để không ảnh hưởng
+   Phần dưới chỉ áp dụng cho trang Đăng nhập.
+   Mọi selector được scope trong .page-login để không ảnh hưởng
    các màn hình khác dùng chung file này.
    ========================================================= */
 
-/* ===== Trang Danh mục học phần — Khách ===== */
+/* ===== Trang Đăng nhập ===== */
 
-/* Khung trang */
-.page-catalog .page {
+/* Khung trang: card nằm giữa màn hình */
+.page-login .auth-page {
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-}
-
-.page-catalog .page-content {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
   padding: var(--space-3);
-  flex: 1;
 }
 
-/* Thanh điều hướng trên */
-.page-catalog .site-header {
+/* Card đăng nhập */
+.page-login .auth-card {
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  padding: var(--space-4);
   background-color: var(--color-surface);
-  border-bottom: 1px solid var(--color-border);
-  position: sticky;
-  top: 0;
-  z-index: 10;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 18px 40px -24px rgba(15, 23, 42, 0.28);
 }
 
-.page-catalog .header-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 var(--space-3);
-  height: 64px;
+/* Thương hiệu */
+.page-login .auth-brand {
   display: flex;
   align-items: center;
-  gap: var(--space-3);
-}
-
-.page-catalog .brand {
-  display: flex;
-  align-items: center;
+  justify-content: center;
   gap: var(--space-1);
-  flex: none;
+  margin-bottom: var(--space-3);
 }
 
-.page-catalog .brand:hover {
-  text-decoration: none;
-}
-
-.page-catalog .brand-mark {
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
+.page-login .auth-brand-mark {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
   background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
   color: #ffffff;
   display: inline-flex;
@@ -63,306 +46,121 @@
   justify-content: center;
 }
 
-.page-catalog .brand-name {
-  font-size: var(--font-size-lg);
+.page-login .auth-brand-name {
+  font-size: 15px;
   font-weight: 700;
   color: var(--color-text);
 }
 
-.page-catalog .main-nav {
-  display: flex;
-  gap: var(--space-1);
-  margin: 0 auto;
+/* Tiêu đề */
+.page-login .auth-title {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+  line-height: 1.25;
 }
 
-.page-catalog .nav-tab {
-  padding: 8px 14px;
-  border-radius: var(--radius-md);
-  font-weight: 500;
+.page-login .auth-subtitle {
+  margin-top: 6px;
+  font-size: var(--font-size-sm);
   color: var(--color-text-muted);
 }
 
-.page-catalog .nav-tab:hover {
-  background-color: var(--color-bg);
-  color: var(--color-text);
-  text-decoration: none;
+/* Thông báo lỗi xác thực */
+.page-login .auth-error {
+  margin-top: var(--space-2);
 }
 
-.page-catalog .nav-tab.active {
-  background-color: var(--color-primary-light);
-  color: var(--color-primary);
+/* Biểu mẫu */
+.page-login .auth-form {
+  margin-top: 22px;
 }
 
-.page-catalog .header-actions {
-  display: flex;
-  gap: var(--space-1);
-  flex: none;
+.page-login .auth-form .form-group {
+  margin-bottom: 14px;
 }
 
-/* Đầu trang */
-.page-catalog .page-head {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: var(--space-2);
-  margin-bottom: var(--space-3);
-  flex-wrap: wrap;
+.page-login .auth-form .form-label {
+  font-size: 13px;
+  font-weight: 600;
 }
 
-.page-catalog .page-note {
-  padding-bottom: 4px;
+.page-login .auth-required {
+  color: var(--color-danger);
 }
 
-/* Thanh tìm kiếm và bộ lọc */
-.page-catalog .filters-bar {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr auto auto;
-  gap: var(--space-2);
-  align-items: end;
-  margin-bottom: var(--space-2);
-}
-
-.page-catalog .filters-bar .form-group {
-  margin-bottom: 0;
-}
-
-.page-catalog .checkbox-group {
-  padding-bottom: 10px;
-}
-
-.page-catalog .checkbox-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+.page-login .auth-form .form-input {
+  height: 40px;
+  padding: 8px 12px;
   font-size: var(--font-size-sm);
-  font-weight: 500;
-  cursor: pointer;
-  user-select: none;
+  border-radius: var(--radius-sm);
 }
 
-.page-catalog .checkbox-label input[type="checkbox"] {
-  width: 16px;
-  height: 16px;
-  accent-color: var(--color-primary);
-  cursor: pointer;
+.page-login .auth-form .form-input::placeholder {
+  color: #94a3b8;
 }
 
-.page-catalog .filter-actions {
+.page-login .auth-label-row {
   display: flex;
+  align-items: baseline;
+  justify-content: space-between;
   gap: var(--space-1);
 }
 
-/* Dòng công cụ: tóm tắt + sắp xếp */
-.page-catalog .toolbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-2);
-  margin-bottom: var(--space-2);
-  flex-wrap: wrap;
-}
-
-.page-catalog .sort-group {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.page-catalog .sort-group .form-label {
+.page-login .auth-label-row .form-label {
   margin: 0;
 }
 
-.page-catalog .sort-group .form-select {
-  width: auto;
+.page-login .auth-forgot {
+  font-size: 12.5px;
+  font-weight: 600;
+  line-height: 1.4;
+  white-space: nowrap;
 }
 
-/* Lưới học phần */
-.page-catalog .course-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-2);
-}
-
-.page-catalog .course-card {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-1);
-  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
-}
-
-.page-catalog .course-card:hover {
-  border-color: var(--color-primary);
-  box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
-}
-
-.page-catalog .course-card-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-1);
-}
-
-.page-catalog .course-code {
+/* Nút đăng nhập + trạng thái đang xử lý */
+.page-login .auth-submit {
+  width: 100%;
+  height: 40px;
+  padding: 0 var(--space-2);
   font-size: var(--font-size-sm);
   font-weight: 600;
-  letter-spacing: 0.04em;
-  color: var(--color-text-muted);
+  border-radius: var(--radius-sm);
 }
 
-.page-catalog .course-status {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: var(--font-size-sm);
-  font-weight: 500;
+.page-login .auth-submit:disabled {
+  opacity: 0.7;
+  cursor: wait;
 }
 
-.page-catalog .status-dot {
-  width: 8px;
-  height: 8px;
+.page-login .auth-spinner {
+  display: none;
+  width: 15px;
+  height: 15px;
+  border: 2px solid rgba(255, 255, 255, 0.45);
+  border-top-color: #ffffff;
   border-radius: 50%;
+  animation: auth-spin 0.7s linear infinite;
 }
 
-.page-catalog .status-open .status-dot {
-  background-color: var(--color-primary);
+.page-login .auth-submit.is-loading .auth-spinner {
+  display: inline-block;
 }
 
-.page-catalog .status-paused .status-dot {
-  background-color: var(--color-danger);
+@keyframes auth-spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-.page-catalog .course-name {
-  font-size: var(--font-size-lg);
+/* Liên kết chuyển sang đăng ký */
+.page-login .auth-switch {
+  margin-top: var(--space-2);
+  text-align: center;
+  font-size: 13px;
+  color: var(--color-text-muted);
 }
 
-.page-catalog .course-meta {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.page-catalog .course-card-foot {
-  margin-top: auto;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.page-catalog .card-link {
-  border: none;
-  background: none;
-  padding: 0;
-  font-family: inherit;
-  font-size: var(--font-size-sm);
+.page-login .auth-switch a {
   font-weight: 600;
-  color: var(--color-primary);
-  cursor: pointer;
-}
-
-.page-catalog .card-link:hover {
-  text-decoration: underline;
-}
-
-/* Phân trang */
-.page-catalog .pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: var(--space-1);
-  margin-top: var(--space-3);
-}
-
-.page-catalog .page-btn {
-  min-width: 36px;
-  padding: 8px 12px;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  background-color: var(--color-surface);
-  font-family: inherit;
-  font-weight: 500;
-  cursor: pointer;
-}
-
-.page-catalog .page-btn:hover:not(:disabled):not(.active) {
-  border-color: var(--color-primary);
-  color: var(--color-primary);
-}
-
-.page-catalog .page-btn.active {
-  background-color: var(--color-primary);
-  border-color: var(--color-primary);
-  color: #ffffff;
-}
-
-.page-catalog .page-btn:disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-}
-
-.page-catalog .page-ellipsis {
-  padding: 0 4px;
-  color: var(--color-text-muted);
-}
-
-/* Chân trang */
-.page-catalog .page-footer {
-  border-top: 1px solid var(--color-border);
-  padding: var(--space-2) var(--space-3);
-  display: flex;
-  justify-content: flex-end;
-}
-
-.page-catalog .guest-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: var(--font-size-sm);
-  color: var(--color-text-muted);
-}
-
-.page-catalog .guest-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: var(--color-success);
-}
-
-/* Modal chi tiết */
-.page-catalog .course-detail {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-2);
-  margin: var(--space-2) 0;
-}
-
-.page-catalog .course-detail dt {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-muted);
-}
-
-.page-catalog .course-detail dd {
-  font-weight: 600;
-}
-
-/* Skeleton trạng thái đang tải */
-.page-catalog .skeleton-card {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-1);
-}
-
-.page-catalog .skeleton-title {
-  height: 20px;
-  width: 40%;
-}
-
-.page-catalog .skeleton-line {
-  height: 14px;
-  width: 90%;
-}
-
-.page-catalog .skeleton-chip {
-  height: 28px;
-  width: 60%;
 }
