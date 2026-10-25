@@ -187,6 +187,25 @@
   font-size: 13.5px;
 }
 
+/* ===== Ghi chú khi chỉ có dữ liệu danh mục ===== */
+.page-course-detail .detail-fallback-note {
+  margin-bottom: var(--space-3);
+  padding: 10px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg);
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+/* ===== Mục chưa khả dụng ===== */
+.page-course-detail .nav-tab.is-disabled,
+.page-course-detail .btn.is-disabled {
+  opacity: 0.55;
+  pointer-events: none;
+  cursor: default;
+}
+
 /* ===== Bố cục 2 cột ===== */
 .page-course-detail .detail-layout {
   display: grid;

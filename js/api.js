@@ -396,6 +396,7 @@
       course.prerequisite = (catalog.prereqs || []).join(", ");
     }
 
+    course.hasDetail = detail !== undefined;
     course.description = course.description || (catalog !== undefined ? catalog.description : "");
     course.type = course.type || "—";
     course.objectives = Array.isArray(course.objectives) ? course.objectives : [];

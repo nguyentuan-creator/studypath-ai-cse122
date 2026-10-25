@@ -28,6 +28,7 @@
     error: document.getElementById("detailError"),
     empty: document.getElementById("detailEmpty"),
     content: document.getElementById("detailContent"),
+    fallbackNote: document.getElementById("dFallbackNote"),
     retry: document.getElementById("retryLoad"),
     crumbCode: document.getElementById("crumbCode"),
     code: document.getElementById("dCode"),
@@ -83,13 +84,15 @@
     document.title = course.name + " (" + course.code + ") — StudyPath AI";
     els.crumbCode.textContent = course.code;
     els.code.textContent = course.code;
+    els.fallbackNote.classList.toggle("hidden", course.hasDetail !== false);
 
     const isOpen = course.status === OPEN_STATUS;
     els.status.textContent = course.status;
     els.status.classList.toggle("is-closed", !isOpen);
 
     els.name.textContent = course.name;
-    els.meta.textContent = course.credits + " tín chỉ · " + course.faculty + " · " + course.type + " — " + course.program;
+    const typePart = course.type && course.type !== "—" ? " · " + course.type : "";
+    els.meta.textContent = course.credits + " tín chỉ · " + course.faculty + typePart + " — " + course.program;
     els.desc.textContent = course.description;
 
     const hasObjectives = course.objectives.length > 0;

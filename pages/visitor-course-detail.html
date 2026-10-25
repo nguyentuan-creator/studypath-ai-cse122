@@ -6,8 +6,6 @@
 <meta name="color-scheme" content="light">
 <title>Chi tiết học phần – StudyPath AI</title>
 <link rel="stylesheet" href="../css/base.css">
-<link rel="stylesheet" href="../css/responsive.css">
-<link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="../css/visitor-course-detail.css">
 </head>
 <body class="page-course-detail">
@@ -29,7 +27,7 @@
       <nav class="main-nav" aria-label="Điều hướng chính">
         <a href="visitor-course-catalog.html" class="nav-tab">Trang chủ</a>
         <a href="visitor-course-catalog.html" class="nav-tab active" aria-current="page">Học phần</a>
-        <a href="visitor-sample-roadmaps.html" class="nav-tab">Lộ trình mẫu</a>
+        <a href="#" class="nav-tab is-disabled" aria-disabled="true" tabindex="-1">Lộ trình mẫu</a>
       </nav>
 
       <div class="header-actions">
@@ -98,7 +96,7 @@
           <p class="detail-meta" id="dMeta"></p>
         </div>
         <div class="detail-actions">
-          <a class="btn btn-secondary" href="visitor-sample-roadmaps.html">
+          <a class="btn btn-secondary is-disabled" href="#" aria-disabled="true" tabindex="-1">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
             </svg>
@@ -114,6 +112,10 @@
           </a>
         </div>
       </section>
+
+      <p class="detail-fallback-note hidden" id="dFallbackNote" role="status">
+        Thông tin chi tiết đang cập nhật. Nội dung bên dưới được tổng hợp từ danh mục học phần.
+      </p>
 
       <div class="detail-layout">
 
