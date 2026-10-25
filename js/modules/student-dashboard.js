@@ -18,8 +18,8 @@ const KPIS = [
   },
   {
     label: "GPA tích lũy",
-    value: "3.15",
-    delta: "+0.15 so với HK trước",
+    value: "3.25",
+    delta: "+0.25 so với HK trước",
     deltaClass: "green",
     icon: "grad",
   },
