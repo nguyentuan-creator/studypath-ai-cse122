@@ -1,0 +1,159 @@
+/* =========================================================
+   StudyPath AI — advisor-dashboard
+   Nạp sau base.css và responsive.css.
+   ========================================================= */
+
+.page-advisor-dashboard .main-area,
+.page-advisor-dashboard .main-content {
+  min-width: 0;
+}
+
+.page-advisor-dashboard .stat-card {
+  gap: 2px;
+}
+
+.page-advisor-dashboard .stat-value {
+  line-height: 1.2;
+}
+
+.page-advisor-dashboard .stat-note {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+/* Màn chưa hoàn thiện: không tạo liên kết chết */
+.page-advisor-dashboard .nav-item--disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.page-advisor-dashboard .nav-item--disabled:hover {
+  background-color: transparent;
+  color: var(--color-text-muted);
+}
+
+.page-advisor-dashboard .table-card {
+  margin-top: var(--space-3);
+  padding: 0;
+  overflow: hidden;
+}
+
+.page-advisor-dashboard .table-card .card-head {
+  padding: var(--space-2);
+  margin-bottom: 0;
+  flex-wrap: wrap;
+}
+
+.page-advisor-dashboard .table-card .table-wrapper {
+  border: 0;
+  border-top: 1px solid var(--color-border);
+  border-radius: 0;
+}
+
+.page-advisor-dashboard .data-table th,
+.page-advisor-dashboard .data-table td {
+  padding: 12px var(--space-2);
+}
+
+.page-advisor-dashboard .data-table .cell-actions {
+  text-align: right;
+}
+
+.student-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.student-meta {
+  min-width: 0;
+}
+
+.student-code {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.student-plan {
+  max-width: 260px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+.plans-loading {
+  border-top: 1px solid var(--color-border);
+}
+
+.skeleton-row {
+  display: grid;
+  grid-template-columns: 1.7fr 0.9fr 0.55fr 0.8fr 0.5fr;
+  gap: var(--space-2);
+  align-items: center;
+  padding: 14px var(--space-2);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.skeleton-row:last-child {
+  border-bottom: 0;
+}
+
+.skeleton-row .skeleton {
+  height: 14px;
+}
+
+.plans-state {
+  padding: var(--space-4) var(--space-2);
+}
+
+.plans-state h3 {
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+}
+
+.plans-state p {
+  max-width: 420px;
+  font-size: var(--font-size-sm);
+}
+
+.plans-state .btn {
+  margin-top: var(--space-1);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 640px) {
+  .page-advisor-dashboard .topbar {
+    gap: var(--space-1);
+    padding: 0 var(--space-2);
+  }
+
+  .page-advisor-dashboard .topbar-user .user-name {
+    display: none;
+  }
+
+  .page-advisor-dashboard .main-content {
+    padding: var(--space-2);
+  }
+
+  .page-advisor-dashboard .data-table {
+    min-width: 720px;
+  }
+
+  .student-plan {
+    max-width: 180px;
+  }
+}

@@ -1,0 +1,270 @@
+{
+  "aiSuggestions": [
+    {
+      "id": "SUG-001",
+      "studentId": "2551060707",
+      "planId": "PL-2026-001",
+      "type": "workload",
+      "riskLevel": "medium",
+      "confidence": 0.86,
+      "reasons": [
+        "16 tín chỉ cao hơn 1 tín chỉ so với mức khuyến nghị 15 của học kỳ trước.",
+        "Hai môn IT3060 và IT4040 có buổi thực hành trùng thứ 4."
+      ],
+      "recommendedCourses": [7, 15, 19],
+      "status": "accepted"
+    },
+    {
+      "id": "SUG-002",
+      "studentId": "2551060707",
+      "planId": "PL-2026-001",
+      "type": "roadmap",
+      "riskLevel": "high",
+      "confidence": 0.74,
+      "reasons": [
+        "Chưa có môn tiên quyết IT4040 cho hướng Khoa học dữ liệu.",
+        "Nên đưa IT3040 sang HK2 để giảm tải học kỳ hiện tại."
+      ],
+      "recommendedCourses": [19, 7, 6],
+      "status": "edited"
+    },
+    {
+      "id": "SUG-003",
+      "studentId": "2551060707",
+      "planId": "PL-2026-002",
+      "type": "workload",
+      "riskLevel": "low",
+      "confidence": 0.91,
+      "reasons": [
+        "13 tín chỉ nằm trong ngưỡng an toàn 12–16 tín chỉ.",
+        "Không phát hiện trùng lịch giữa 4 môn trong kế hoạch."
+      ],
+      "recommendedCourses": [8, 13, 17, 18],
+      "status": "generated"
+    },
+    {
+      "id": "SUG-004",
+      "studentId": "2551060712",
+      "planId": "PL-2026-003",
+      "type": "roadmap",
+      "riskLevel": "medium",
+      "confidence": 0.82,
+      "reasons": [
+        "Cần hoàn thành IT1020 trước IT3010 theo lộ trình 4 năm.",
+        "Thứ tự môn hiện tại phù hợp chuẩn đầu ra học kỳ 3."
+      ],
+      "recommendedCourses": [1, 2, 3, 5],
+      "status": "accepted"
+    },
+    {
+      "id": "SUG-005",
+      "studentId": "2551060712",
+      "planId": "PL-2026-003",
+      "type": "workload",
+      "riskLevel": "high",
+      "confidence": 0.68,
+      "reasons": [
+        "5 môn với 16 tín chỉ có thể quá tải trong 3 tuần đầu học kỳ.",
+        "IT1050 yêu cầu khoảng 8 giờ thực hành mỗi tuần."
+      ],
+      "recommendedCourses": [1, 2, 3],
+      "status": "generated"
+    },
+    {
+      "id": "SUG-006",
+      "studentId": "2551060712",
+      "planId": "PL-2026-004",
+      "type": "roadmap",
+      "riskLevel": "low",
+      "confidence": 0.89,
+      "reasons": [
+        "Các môn bổ sung đã lấp đủ tín chỉ tự chọn còn thiếu.",
+        "Không có môn nào trùng với kế hoạch đã được duyệt trước đó."
+      ],
+      "recommendedCourses": [9, 11, 12, 14],
+      "status": "dismissed"
+    },
+    {
+      "id": "SUG-007",
+      "studentId": "2551060725",
+      "planId": "PL-2026-005",
+      "type": "workload",
+      "riskLevel": "medium",
+      "confidence": 0.78,
+      "reasons": [
+        "16 tín chỉ gồm 2 môn đồ án nên khối lượng thực tế cao hơn số tín chỉ.",
+        "Nên giãn IT4020 sang HK2 nếu tuần 6–8 có bảo vệ giữa kỳ."
+      ],
+      "recommendedCourses": [16, 17, 18],
+      "status": "generated"
+    },
+    {
+      "id": "SUG-008",
+      "studentId": "2551060725",
+      "planId": "PL-2026-005",
+      "type": "roadmap",
+      "riskLevel": "high",
+      "confidence": 0.71,
+      "reasons": [
+        "Thiếu IT4030 để đủ điều kiện xét tốt nghiệp.",
+        "Cần thêm 1 môn tự chọn đạt tối thiểu 3 tín chỉ."
+      ],
+      "recommendedCourses": [18, 20, 17],
+      "status": "edited"
+    },
+    {
+      "id": "SUG-009",
+      "studentId": "2551060725",
+      "planId": "PL-2026-006",
+      "type": "workload",
+      "riskLevel": "high",
+      "confidence": 0.63,
+      "reasons": [
+        "15 tín chỉ học kỳ hè vượt giới hạn 9 tín chỉ của học kỳ hè.",
+        "Hai môn IT3010 và IT5010 có lịch thi sát nhau."
+      ],
+      "recommendedCourses": [10, 21],
+      "status": "dismissed"
+    },
+    {
+      "id": "SUG-010",
+      "studentId": "2551060731",
+      "planId": "PL-2026-007",
+      "type": "roadmap",
+      "riskLevel": "medium",
+      "confidence": 0.84,
+      "reasons": [
+        "Lộ trình 4 học kỳ đã bao phủ đủ 3 nhóm tự chọn.",
+        "Nên ưu tiên IT2020 ở học kỳ gần nhất để kịp làm đồ án."
+      ],
+      "recommendedCourses": [7, 15, 19],
+      "status": "accepted"
+    },
+    {
+      "id": "SUG-011",
+      "studentId": "2551060756",
+      "planId": "PL-2026-008",
+      "type": "workload",
+      "riskLevel": "medium",
+      "confidence": 0.77,
+      "reasons": [
+        "Học song bằng cần thêm 4 tín chỉ ngoài chương trình chính.",
+        "Lịch IT2010 trùng 2 buổi với lớp của chương trình thứ nhất."
+      ],
+      "recommendedCourses": [6, 13, 16],
+      "status": "generated"
+    },
+    {
+      "id": "SUG-012",
+      "studentId": "2551060763",
+      "planId": "PL-2026-009",
+      "type": "roadmap",
+      "riskLevel": "high",
+      "confidence": 0.88,
+      "reasons": [
+        "Hướng Khoa học dữ liệu yêu cầu IT3040 trước IT5010.",
+        "Kế hoạch hiện tại đặt IT3040 quá muộn so với chuẩn đầu ra."
+      ],
+      "recommendedCourses": [13, 15, 20],
+      "status": "generated"
+    },
+    {
+      "id": "SUG-013",
+      "studentId": "2551060763",
+      "planId": "PL-2026-009",
+      "type": "workload",
+      "riskLevel": "medium",
+      "confidence": 0.72,
+      "reasons": [
+        "17 tín chỉ là mức cao nhất trong 3 học kỳ gần đây.",
+        "Nên chuyển IT5020 sang học kỳ sau để giảm 4 tín chỉ."
+      ],
+      "recommendedCourses": [13, 15, 11],
+      "status": "accepted"
+    },
+    {
+      "id": "SUG-014",
+      "studentId": "2551060778",
+      "planId": "PL-2026-011",
+      "type": "roadmap",
+      "riskLevel": "low",
+      "confidence": 0.92,
+      "reasons": [
+        "Thứ tự IT1010 trước IT2020 đúng điều kiện tiên quyết.",
+        "Còn thiếu 1 môn tự chọn để đủ 15 tín chỉ."
+      ],
+      "recommendedCourses": [1, 7, 17],
+      "status": "edited"
+    },
+    {
+      "id": "SUG-015",
+      "studentId": "2551060784",
+      "planId": "PL-2026-012",
+      "type": "workload",
+      "riskLevel": "medium",
+      "confidence": 0.69,
+      "reasons": [
+        "4 môn An toàn thông tin có 3 buổi thực hành mỗi tuần.",
+        "IT4010 yêu cầu làm việc nhóm 6 người, nên cân nhắc giảm 1 môn."
+      ],
+      "recommendedCourses": [4, 12, 16, 21],
+      "status": "generated"
+    },
+    {
+      "id": "SUG-016",
+      "studentId": "2551060784",
+      "planId": "PL-2026-012",
+      "type": "roadmap",
+      "riskLevel": "high",
+      "confidence": 0.58,
+      "reasons": [
+        "Dữ liệu điểm môn tiên quyết chưa đầy đủ nên gợi ý có độ tin cậy thấp.",
+        "Cần cố vấn xác nhận IT5020 có được tính là môn tự chọn không."
+      ],
+      "recommendedCourses": [12, 21],
+      "status": "generated"
+    },
+    {
+      "id": "SUG-017",
+      "studentId": "2551060790",
+      "planId": "PL-2026-013",
+      "type": "workload",
+      "riskLevel": "low",
+      "confidence": 0.94,
+      "reasons": [
+        "16 tín chỉ phù hợp với sinh viên năm 4 đã hoàn thành 105 tín chỉ.",
+        "Không có xung đột lịch giữa IT4010 và IT4020."
+      ],
+      "recommendedCourses": [10, 16, 17, 18],
+      "status": "accepted"
+    },
+    {
+      "id": "SUG-018",
+      "studentId": "2551060731",
+      "planId": "PL-2026-015",
+      "type": "roadmap",
+      "riskLevel": "medium",
+      "confidence": 0.81,
+      "reasons": [
+        "Cần IT4040 làm tiền đề cho đồ án tốt nghiệp ở HK2.",
+        "Hiện kế hoạch chưa có môn tự chọn về Khoa học dữ liệu."
+      ],
+      "recommendedCourses": [2, 6, 19],
+      "status": "generated"
+    },
+    {
+      "id": "SUG-019",
+      "studentId": "2551060756",
+      "planId": "PL-2026-016",
+      "type": "workload",
+      "riskLevel": "high",
+      "confidence": 0.55,
+      "reasons": [
+        "17 tín chỉ học kỳ hè vượt quy định tối đa 9 tín chỉ.",
+        "Dữ liệu lịch thực tập chưa có nên chưa thể xác nhận xung đột."
+      ],
+      "recommendedCourses": [5, 10],
+      "status": "dismissed"
+    }
+  ]
+}

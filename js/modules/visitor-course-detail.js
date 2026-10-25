@@ -36,9 +36,12 @@
     meta: document.getElementById("dMeta"),
     desc: document.getElementById("dDesc"),
     objectives: document.getElementById("dObjectives"),
+    objectivesTitle: document.getElementById("objectivesTitle"),
     contents: document.getElementById("dContents"),
+    contentsTitle: document.getElementById("contentsTitle"),
     facts: document.getElementById("dFacts"),
-    related: document.getElementById("dRelated")
+    related: document.getElementById("dRelated"),
+    relatedSection: document.getElementById("relatedSection")
   };
 
   function getCourseCode() {
@@ -89,6 +92,10 @@
     els.meta.textContent = course.credits + " tín chỉ · " + course.faculty + " · " + course.type + " — " + course.program;
     els.desc.textContent = course.description;
 
+    const hasObjectives = course.objectives.length > 0;
+    els.objectivesTitle.classList.toggle("hidden", !hasObjectives);
+    els.objectives.classList.toggle("hidden", !hasObjectives);
+
     els.objectives.textContent = "";
     course.objectives.forEach(function (text) {
       const li = document.createElement("li");
@@ -98,6 +105,10 @@
       li.appendChild(span);
       els.objectives.appendChild(li);
     });
+
+    const hasContents = course.mainContents.length > 0;
+    els.contentsTitle.classList.toggle("hidden", !hasContents);
+    els.contents.classList.toggle("hidden", !hasContents);
 
     els.contents.textContent = "";
     course.mainContents.forEach(function (item) {
@@ -120,6 +131,8 @@
     els.facts.appendChild(makeFactRow(ICONS.status, "Trạng thái", course.status, isOpen ? "is-open" : ""));
 
     els.related.textContent = "";
+    const hasRelated = course.relatedCourses.length > 0;
+    els.relatedSection.classList.toggle("hidden", !hasRelated);
     (course.relatedCourses || []).forEach(function (item) {
       const li = document.createElement("li");
       const a = document.createElement("a");

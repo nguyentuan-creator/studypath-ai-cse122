@@ -1,0 +1,58 @@
+{
+  "notifications": [
+    {
+      "id": 1,
+      "title": "Kế hoạch HK1 đã được duyệt",
+      "description": "Cố vấn Phạm Thu Hà đã duyệt kế hoạch học kỳ 1 - 2026-2027",
+      "category": "Kế hoạch",
+      "categoryKey": "plan",
+      "time": "10 phút trước",
+      "read": false
+    },
+    {
+      "id": 2,
+      "title": "Góp ý mới từ cố vấn",
+      "description": "“Nên chuyển IT3080 sang HK2 vì trùng lịch thực hành.”",
+      "category": "Góp ý",
+      "categoryKey": "feedback",
+      "time": "2 giờ trước",
+      "read": false
+    },
+    {
+      "id": 3,
+      "title": "Cảnh báo quá tải từ AI",
+      "description": "Kế hoạch 21 tín chỉ vượt ngưỡng an toàn 18 tín chỉ/học kỳ",
+      "category": "AI-2",
+      "categoryKey": "ai",
+      "time": "Hôm qua",
+      "read": false
+    },
+    {
+      "id": 4,
+      "title": "Nhắc hạn gửi kế hoạch",
+      "description": "Hạn gửi kế hoạch HK1 2026-2027: 05/10/2026",
+      "category": "Nhắc lịch",
+      "categoryKey": "reminder",
+      "time": "Hôm qua",
+      "read": false
+    },
+    {
+      "id": 5,
+      "title": "Cố vấn đã phản hồi góp ý của bạn",
+      "description": "“Đồng ý, IT3080 sẽ chuyển sang HK2 trong kế hoạch cập nhật.”",
+      "category": "Góp ý",
+      "categoryKey": "feedback",
+      "time": "2 ngày trước",
+      "read": true
+    },
+    {
+      "id": 6,
+      "title": "Lộ trình AI đã tạo xong",
+      "description": "Lộ trình gợi ý cho chương trình Công nghệ thông tin đã sẵn sàng xem",
+      "category": "AI-1",
+      "categoryKey": "ai",
+      "time": "3 ngày trước",
+      "read": true
+    }
+  ]
+}
