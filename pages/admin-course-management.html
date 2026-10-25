@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Quản lý danh mục học phần StudyPath AI."><title>Quản lý học phần – StudyPath AI</title><link rel="stylesheet" href="../css/base.css"><link rel="stylesheet" href="../css/responsive.css"><link rel="stylesheet" href="../css/admin-shell.css"><link rel="stylesheet" href="../css/admin-course-management.css"></head>
+<body class="page-admin-console page-admin-courses" data-page="admin-courses">
+  <header class="app-header">
+    <button type="button" class="icon-btn menu-btn" data-shell="menu" aria-label="Mở menu" aria-controls="app-sidebar" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    </button>
+    <a class="brand" href="admin-dashboard.html" data-shell="brand">
+      <span class="brand-mark"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 2 8l10 6 10-6-10-6z"></path><path d="M6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5"></path></svg></span>
+      <span>StudyPath AI</span>
+    </a>
+    <div class="header-actions">
+      <div class="header-user">
+        <div class="user-name">
+          <span id="adminName" data-shell-user="name"></span>
+          <span class="user-role" data-shell-user="meta"></span>
+        </div>
+        <span class="avatar avatar-sm admin-avatar" id="adminInitials" data-shell-user="avatar" aria-hidden="true"></span>
+      </div>
+      <button type="button" class="btn btn-secondary btn-sm" id="logoutBtn">Đăng xuất</button>
+    </div>
+  </header>
+
+  <div class="app-body">
+    <aside class="sidebar" id="app-sidebar">
+      <nav class="sidebar-nav" aria-label="Điều hướng Quản trị viên" data-shell="nav"></nav>
+    </aside>
+    <main class="main-content">
+<div class="page-head"><div><h1>Quản lý học phần</h1><p class="text-muted text-sm"><strong id="courseTotal">0</strong> học phần · <span id="courseInactiveTotal">0</span> tạm ngưng</p></div><button class="btn btn-primary btn-sm" id="openCourseForm" type="button">＋ Thêm học phần</button></div>
+      <section class="card course-filters"><div class="form-group"><label class="form-label" for="courseSearch">Tìm kiếm</label><input class="form-input" id="courseSearch" type="search" placeholder="Tìm theo mã hoặc tên học phần…"></div><div class="form-group"><label class="form-label" for="courseProgramFilter">Chương trình</label><select class="form-select" id="courseProgramFilter"><option value="all">Tất cả</option></select></div><div class="form-group"><label class="form-label" for="courseStatusFilter">Trạng thái</label><select class="form-select" id="courseStatusFilter"><option value="all">Tất cả</option><option value="active">Đang mở</option><option value="paused">Tạm ngưng</option></select></div><button class="btn btn-primary btn-sm" id="courseFilterBtn" type="button">Lọc</button></section>
+      <section class="card course-table-card"><div class="card-head"><h2>Danh sách học phần</h2><span class="text-muted text-sm">“Vô hiệu hóa” = ẩn khỏi lựa chọn mới, giữ dữ liệu kế hoạch cũ</span></div><div class="table-wrapper"><table class="data-table course-table"><thead><tr><th>Mã</th><th>Tên học phần</th><th>TC</th><th>Chương trình</th><th>Trạng thái</th><th>Cập nhật</th><th><span class="vis-hidden">Thao tác</span></th></tr></thead><tbody id="coursesBody"></tbody></table><div class="empty-state hidden" id="coursesEmpty"><p class="empty-title">Không tìm thấy học phần</p><button class="btn btn-secondary btn-sm" id="clearCourseFilters" type="button">Đặt lại bộ lọc</button></div><div class="table-foot"><span class="text-muted text-sm" id="courseSummary"></span><div class="pagination" id="coursePagination"></div></div></div></section>
+      <div class="admin-modal" id="courseEditor" role="dialog" aria-modal="true" aria-labelledby="courseEditorTitle" aria-hidden="true" hidden><section class="card editor-card"><div class="card-head"><h2 id="courseEditorTitle">Thêm học phần</h2><button class="icon-btn" id="closeCourseForm" type="button" aria-label="Đóng">×</button></div><form id="courseForm" novalidate><input type="hidden" id="courseEditingCode"><div class="course-form-grid"><div class="form-group"><label class="form-label" for="courseCode">Mã học phần *</label><input class="form-input" id="courseCode" required placeholder="IT7070"><small class="form-error hidden" id="codeError"></small></div><div class="form-group"><label class="form-label" for="courseName">Tên học phần *</label><input class="form-input" id="courseName" required placeholder="Phân tích và thiết kế hệ thống"></div><div class="form-group"><label class="form-label" for="courseCredits">Số tín chỉ *</label><input class="form-input" id="courseCredits" type="number" min="1" max="12" required value="3"></div><div class="form-group"><label class="form-label" for="courseProgram">Chương trình</label><select class="form-select" id="courseProgram"></select></div><div class="form-group"><label class="form-label" for="courseGroup">Loại</label><select class="form-select" id="courseGroup"><option>Bắt buộc</option><option>Tự chọn</option></select></div><div class="form-group course-description"><label class="form-label" for="courseDescription">Mô tả</label><textarea class="form-textarea" id="courseDescription" placeholder="Mô tả ngắn về học phần…"></textarea></div><div class="form-group course-description"><label class="form-label">Học phần tiên quyết</label><div class="prerequisite-box" id="prerequisiteList"></div></div></div><div class="form-actions"><button class="btn btn-secondary btn-sm" id="cancelCourseForm" type="button">Hủy</button><button class="btn btn-primary btn-sm" type="submit">Lưu học phần</button></div></form></section></div>
+      <div class="toast hidden" id="adminToast" role="status" aria-live="polite"></div>
+    </main>
+  </div>
+  <div class="sidebar-overlay" data-shell="overlay" hidden></div>
+  <script src="../js/api.js"></script>
+  <script src="../js/shell.js"></script>
+  <script src="../js/auth-guard.js"></script>
+  <script src="../js/modules/admin-course-management.js"></script>
+</body>
+</html>
