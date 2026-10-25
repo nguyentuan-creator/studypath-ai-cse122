@@ -3,25 +3,48 @@
   "use strict";
 
   var ICONS = {
-    check: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>',
-    warn: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>'
+    check:
+      '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>',
+    warn: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>',
   };
 
   var SEMESTERS = [
     { id: "HK1", credits: 14, courses: "IT1010 · MA1010 · PH1010 · EN1010" },
     { id: "HK2", credits: 16, courses: "IT1020 · MA2010 · MA1020 · EN1020" },
-    { id: "HK3", credits: 20, courses: "IT2020 · IT2030 · IT2040 · ST2010 · SO1010", risk: true },
+    {
+      id: "HK3",
+      credits: 20,
+      courses: "IT2020 · IT2030 · IT2040 · ST2010 · SO1010",
+      risk: true,
+    },
     { id: "HK4", credits: 16, courses: "IT3060 · IT4040 · IT3050 · IT5060" },
-    { id: "HK5", credits: 18, courses: "IT4050 · IT4060 · IT3070 · IT4070 · EN2030" },
-    { id: "HK6", credits: 18, courses: "IT5010 · IT5020 · IT5030 · IT5040 · MA3010" },
+    {
+      id: "HK5",
+      credits: 18,
+      courses: "IT4050 · IT4060 · IT3070 · IT4070 · EN2030",
+    },
+    {
+      id: "HK6",
+      credits: 18,
+      courses: "IT5010 · IT5020 · IT5030 · IT5040 · MA3010",
+    },
     { id: "HK7", credits: 16, courses: "IT5050 · IT5070 · IT6010 · IT6020" },
-    { id: "HK8", credits: 14, courses: "IT6030 · IT6040 · IT6050 · IT6060" }
+    { id: "HK8", credits: 14, courses: "IT6030 · IT6040 · IT6050 · IT6060" },
   ];
 
   var TIME_MAP = {
-    low: { label: "< 10 giờ / tuần", note: "Mức chọn hiện tại cho phép học 12–14 tín chỉ / học kỳ." },
-    mid: { label: "10–20 giờ / tuần", note: "Mức chọn hiện tại cho phép học 14–16 tín chỉ / học kỳ." },
-    high: { label: "> 20 giờ / tuần", note: "Mức chọn hiện tại cho phép học 16–20 tín chỉ / học kỳ." }
+    low: {
+      label: "< 10 giờ / tuần",
+      note: "Mức chọn hiện tại cho phép học 12–14 tín chỉ / học kỳ.",
+    },
+    mid: {
+      label: "10–20 giờ / tuần",
+      note: "Mức chọn hiện tại cho phép học 14–16 tín chỉ / học kỳ.",
+    },
+    high: {
+      label: "> 20 giờ / tuần",
+      note: "Mức chọn hiện tại cho phép học 16–20 tín chỉ / học kỳ.",
+    },
   };
 
   var resultCard = document.getElementById("result-card");
@@ -71,18 +94,30 @@
 
   function semCardHTML(sem) {
     return (
-      '<article class="sem-card' + (sem.risk ? " sem-card--risk" : "") + '">' +
-        '<div class="sem-top">' +
-          "<h3>" + sem.id + "</h3>" +
-          (sem.risk
-            ? '<span class="sem-ai2">AI-2</span>'
-            : '<span class="sem-status" aria-label="Đã kiểm tra tiên quyết">' + ICONS.check + "</span>") +
-        "</div>" +
-        '<p class="sem-credits">' + sem.credits + " tín chỉ</p>" +
-        '<p class="sem-courses">' + sem.courses + "</p>" +
-        (sem.risk
-          ? '<p class="sem-risk-note">' + ICONS.warn + " Rủi ro cao · tải học tập lớn</p>"
-          : "") +
+      '<article class="sem-card' +
+      (sem.risk ? " sem-card--risk" : "") +
+      '">' +
+      '<div class="sem-top">' +
+      "<h3>" +
+      sem.id +
+      "</h3>" +
+      (sem.risk
+        ? '<span class="sem-ai2">AI-2</span>'
+        : '<span class="sem-status" aria-label="Đã kiểm tra tiên quyết">' +
+          ICONS.check +
+          "</span>") +
+      "</div>" +
+      '<p class="sem-credits">' +
+      sem.credits +
+      " tín chỉ</p>" +
+      '<p class="sem-courses">' +
+      sem.courses +
+      "</p>" +
+      (sem.risk
+        ? '<p class="sem-risk-note">' +
+          ICONS.warn +
+          " Rủi ro cao · tải học tập lớn</p>"
+        : "") +
       "</article>"
     );
   }
@@ -130,11 +165,12 @@
 
       fitValue.textContent = "94%";
       updatedDate.textContent = "Cập nhật 23/10/2026";
-      resultMeta.textContent = "8 học kỳ · 132 tín chỉ · Mục tiêu " + currentCareer();
+      resultMeta.textContent =
+        "8 học kỳ · 132 tín chỉ · Mục tiêu " + currentCareer();
 
       renderSemesters();
-      showToast("Đã tạo lộ trình mới (mô phỏng) — độ phù hợp 94%.");
-    }, 900);
+      showToast("Đã tạo lộ trình mới (mô phỏng) — độ phù hợp 90%.");
+    }, 500);
   }
 
   prefChips.addEventListener("click", function (event) {
