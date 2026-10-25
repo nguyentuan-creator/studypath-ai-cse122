@@ -105,10 +105,6 @@ Quy tắc:
 | Hồ sơ | `profile` | `pages/profile.html` |
 | Cài đặt | `settings` | `pages/settings.html` |
 | Tổng quan cố vấn | `advisor-dashboard` | `pages/advisor-dashboard.html` |
-| Tổng quan quản trị | `admin-dashboard` | `pages/admin-dashboard.html` |
-| Quản lý học phần | `admin-courses` | `pages/admin-course-management.html` |
-| Cấu hình chương trình | `admin-programs` | `pages/admin-program-settings.html` |
-| Quản lý người dùng | `admin-users` | `pages/admin-user-management.html` |
 
 Màn hình mới: thêm key tương ứng vào `NAV_BY_ROLE` trong `js/shell.js`.
 
@@ -118,7 +114,7 @@ Toàn bộ nav nằm trong `js/shell.js` — **nguồn duy nhất**, không lặ
 
 - `NAV_BY_ROLE.student`: Tổng quan, Kế hoạch học kỳ, Lộ trình AI, Thông báo, Hồ sơ, Cài đặt.
 - `NAV_BY_ROLE.advisor`: Tổng quan cố vấn + 3 mục đang khoá (Xem xét kế hoạch, Quản lý góp ý, Hồ sơ sinh viên) + Thông báo, Hồ sơ, Cài đặt.
-- `NAV_BY_ROLE.admin`: Tổng quan, Học phần, Chương trình, Người dùng, Thông báo, Hồ sơ, Cài đặt. `HOME_BY_ROLE.admin` trỏ tới `admin-dashboard.html`.
+- `NAV_BY_ROLE.admin`: chưa cấu hình vì 4 trang admin chưa có. Khi SV3 hoàn thiện `admin-dashboard.html`, thêm nav và `HOME_BY_ROLE.admin`; không tạo link chết trước.
 - Khách không có nav và không vào app shell; chỉ dùng `site-header` ở các trang công khai.
 
 Khi màn hình cố vấn hoàn thiện: bỏ `disabled`, thêm `href` và thêm `key` vào trang tương ứng. Không tạo link chết.

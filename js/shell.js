@@ -70,22 +70,12 @@
       { key: "notifications", href: "notifications.html", label: "Thông báo", icon: "notifications" },
       { key: "profile", href: "profile.html", label: "Hồ sơ", icon: "profile" },
       { key: "settings", href: "settings.html", label: "Cài đặt", icon: "settings" }
-    ],
-    admin: [
-      { key: "admin-dashboard", href: "admin-dashboard.html", label: "Tổng quan", icon: "dashboard" },
-      { key: "admin-courses", href: "admin-course-management.html", label: "Học phần", icon: "plan" },
-      { key: "admin-programs", href: "admin-program-settings.html", label: "Chương trình", icon: "roadmap" },
-      { key: "admin-users", href: "admin-user-management.html", label: "Người dùng", icon: "students" },
-      { key: "notifications", href: "notifications.html", label: "Thông báo", icon: "notifications" },
-      { key: "profile", href: "profile.html", label: "Hồ sơ", icon: "profile" },
-      { key: "settings", href: "settings.html", label: "Cài đặt", icon: "settings" }
     ]
   };
 
   var HOME_BY_ROLE = {
     student: "student-dashboard.html",
-    advisor: "advisor-dashboard.html",
-    admin: "admin-dashboard.html"
+    advisor: "advisor-dashboard.html"
   };
 
   function getCurrentUser() {
