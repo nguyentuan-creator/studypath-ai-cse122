@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lộ trình AI | StudyPath AI</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/student-ai-roadmap.css">
+</head>
+<body data-page="roadmap">
+  <header class="app-header">
+    <button type="button" class="icon-btn menu-btn" data-shell="menu" aria-label="Mở menu" aria-controls="app-sidebar" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    </button>
+
+    <a class="brand" href="student-dashboard.html" data-shell="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2 2 8l10 6 10-6-10-6z"></path>
+          <path d="M6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5"></path>
+        </svg>
+      </span>
+      <span>StudyPath AI</span>
+    </a>
+
+    <div class="header-actions">
+      <a class="icon-btn" href="notifications.html" aria-label="Thông báo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+        <span class="bell-dot" aria-hidden="true"></span>
+      </a>
+      <div class="header-user">
+        <div class="user-name">
+          <span data-shell-user="name"></span>
+          <span class="user-role" data-shell-user="meta"></span>
+        </div>
+        <span class="avatar avatar-sm" data-shell-user="avatar" aria-hidden="true"></span>
+      </div>
+    </div>
+  </header>
+
+  <div class="app-body">
+    <aside class="sidebar" id="app-sidebar">
+      <nav class="sidebar-nav" aria-label="Điều hướng chính" data-shell="nav"></nav>
+    </aside>
+
+    <main class="main-content">
+        <div class="page-head">
+          <div>
+            <div class="title-row">
+              <h1>Lộ trình gợi ý bằng AI</h1>
+              <span class="tag tag-purple">AI-1 Roadmap Recommender</span>
+            </div>
+            <p class="text-muted">Cá nhân hóa lộ trình dựa trên mục tiêu, kết quả học tập và quỹ thời gian của bạn.</p>
+          </div>
+          <p class="text-sm text-muted" id="updated-date">Cập nhật 04/10/2026</p>
+        </div>
+
+        <div class="roadmap-layout">
+          <!-- Hồ sơ mục tiêu -->
+          <section class="card profile-card" id="profile-card" aria-labelledby="profile-heading">
+            <div class="card-head">
+              <h2 id="profile-heading">Hồ sơ mục tiêu</h2>
+              <span class="ai-badge" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3z"></path><path d="M19 15l.9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9L19 15z"></path></svg>
+              </span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="career-select">Nghề nghiệp mục tiêu</label>
+              <div class="select-with-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                <select id="career-select" class="form-select">
+                  <option selected>Kỹ sư phần mềm</option>
+                  <option>Chuyên viên phân tích dữ liệu</option>
+                  <option>Chuyên viên an ninh mạng</option>
+                  <option>Kỹ sư AI / Machine Learning</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <span class="form-label" id="pref-label">Sở thích / môn mạnh</span>
+              <div class="pref-chips" role="group" aria-labelledby="pref-label" id="pref-chips">
+                <button type="button" class="pref-chip active" aria-pressed="true">Lập trình</button>
+                <button type="button" class="pref-chip active" aria-pressed="true">Giải thuật</button>
+                <button type="button" class="pref-chip active" aria-pressed="true">Cơ sở dữ liệu</button>
+                <button type="button" class="pref-chip" aria-pressed="false">Phát triển Web</button>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <span class="form-label" id="time-label">Quỹ thời gian mỗi tuần</span>
+              <div class="time-seg" role="radiogroup" aria-labelledby="time-label">
+                <input type="radio" name="timeBudget" id="time-low" value="low" class="time-seg-input">
+                <label for="time-low" class="time-seg-label">&lt; 10 giờ</label>
+                <input type="radio" name="timeBudget" id="time-mid" value="mid" class="time-seg-input">
+                <label for="time-mid" class="time-seg-label">10–20 giờ</label>
+                <input type="radio" name="timeBudget" id="time-high" value="high" class="time-seg-input" checked>
+                <label for="time-high" class="time-seg-label">&gt; 20 giờ</label>
+              </div>
+              <p class="form-hint" id="time-note">Mức chọn hiện tại cho phép học 16–20 tín chỉ / học kỳ.</p>
+            </div>
+
+            <div class="form-group">
+              <span class="form-label">Ưu tiên</span>
+              <div class="prior-list">
+                <label class="prior-item"><input type="checkbox" class="prior-check" checked> Hoàn thành đúng 8 học kỳ</label>
+                <label class="prior-item"><input type="checkbox" class="prior-check" checked> Ưu tiên môn thế mạnh</label>
+                <label class="prior-item"><input type="checkbox" class="prior-check"> Giảm tải học kỳ thực tập</label>
+              </div>
+            </div>
+
+            <div class="profile-actions">
+              <button type="button" id="btn-generate" class="btn btn-primary btn-block">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3z"></path><path d="M19 15l.9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9L19 15z"></path></svg>
+                Tạo lộ trình
+              </button>
+              <a href="student-semester-plan.html" class="btn btn-secondary btn-block">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+                Nhập thủ công
+              </a>
+            </div>
+          </section>
+
+          <!-- Kết quả -->
+          <div class="roadmap-results">
+            <section class="card" id="result-card" aria-labelledby="result-heading">
+              <div class="card-head result-head">
+                <div class="result-head-left">
+                  <h2 id="result-heading">Kết quả AI đề xuất</h2>
+                  <span class="tag tag-green" id="result-tag">Mới tạo</span>
+                </div>
+                <div class="fit-score">
+                  <span class="fit-label">Độ phù hợp</span>
+                  <span class="fit-value" id="fit-value">92%</span>
+                </div>
+              </div>
+              <p class="text-sm text-muted result-meta" id="result-meta">8 học kỳ · 132 tín chỉ · Mục tiêu Kỹ sư phần mềm</p>
+
+              <div id="reject-note" class="alert alert-warning hidden" role="alert">
+                Bạn đã từ chối đề xuất này. Nhấn "Tạo lại" để AI sinh lộ trình khác.
+              </div>
+
+              <div class="sem-grid" id="sem-grid"></div>
+              <div class="sem-grid hidden" id="sem-grid-more"></div>
+
+              <button type="button" class="link-more" id="btn-more-sems" aria-expanded="false" aria-controls="sem-grid-more">
+                Xem tiếp HK5–HK8 <span aria-hidden="true">→</span>
+              </button>
+            </section>
+
+            <section class="card mt-2" aria-labelledby="why-heading">
+              <div class="card-head">
+                <h2 id="why-heading">Vì sao có kết quả này?</h2>
+                <span class="tag tag-purple">Có thể giải thích</span>
+              </div>
+              <p class="text-sm text-muted mb-1">AI cân bằng năng lực hiện tại, tiên quyết và mục tiêu nghề nghiệp.</p>
+
+              <div class="reason-grid">
+                <div class="reason-tile">
+                  <span class="reason-icon" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"></path><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"></path></svg>
+                  </span>
+                  <div>
+                    <p class="reason-label">GPA hiện tại</p>
+                    <p class="reason-value">3.20</p>
+                  </div>
+                </div>
+                <div class="reason-tile">
+                  <span class="reason-icon" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="20" x2="6" y2="14"></line><line x1="12" y1="20" x2="12" y2="8"></line><line x1="18" y1="20" x2="18" y2="4"></line></svg>
+                  </span>
+                  <div>
+                    <p class="reason-label">Tiến độ</p>
+                    <p class="reason-value">84/130 tín chỉ</p>
+                  </div>
+                </div>
+                <div class="reason-tile">
+                  <span class="reason-icon" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"></circle><path d="M20 21a8 8 0 0 0-16 0"></path></svg>
+                  </span>
+                  <div>
+                    <p class="reason-label">Môn mạnh</p>
+                    <p class="reason-value">Lập trình · Giải thuật</p>
+                  </div>
+                </div>
+                <div class="reason-tile">
+                  <span class="reason-icon" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  </span>
+                  <div>
+                    <p class="reason-label">Tiên quyết</p>
+                    <p class="reason-value">Đã kiểm tra</p>
+                  </div>
+                </div>
+                <div class="reason-tile">
+                  <span class="reason-icon" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  </span>
+                  <div>
+                    <p class="reason-label">Quỹ thời gian</p>
+                    <p class="reason-value" id="time-reason">&gt; 20 giờ / tuần</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="result-actions">
+                <button type="button" id="btn-accept" class="btn btn-primary">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                  Chấp nhận &amp; tạo kế hoạch
+                </button>
+                <button type="button" id="btn-edit" class="btn btn-secondary">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+                  Sửa
+                </button>
+                <button type="button" id="btn-reject" class="btn btn-danger-soft">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                  Từ chối
+                </button>
+                <button type="button" id="btn-regen" class="btn btn-soft">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+                  Tạo lại
+                </button>
+              </div>
+            </section>
+          </div>
+        </div>
+    </main>
+  </div>
+
+  <div class="sidebar-overlay" data-shell="overlay" hidden></div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/shell.js"></script>
+  <script src="../js/modules/student-ai-roadmap.js"></script>
+</body>
+</html>
