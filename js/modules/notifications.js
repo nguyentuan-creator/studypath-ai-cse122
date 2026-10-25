@@ -163,7 +163,8 @@
   async function load() {
     showSkeleton();
     try {
-      items = await StudyPathAPI.getNotifications();
+      const data = await StudyPathAPI.loadData("notifications");
+      items = data.notifications;
       render();
     } catch (error) {
       console.error("Tải thông báo thất bại:", error);

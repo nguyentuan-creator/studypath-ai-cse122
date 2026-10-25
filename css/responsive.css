@@ -1,28 +1,14 @@
 /* =========================================================
-   StudyPath AI — responsive trang Thông báo
-   Lưu ý: file này nạp TRƯỚC style.css nên selector phải có
-   độ ưu tiên cao hơn (prefix body.page-notifications).
+   StudyPath AI — responsive dùng chung
+   Phần dưới chỉ áp dụng cho trang Đăng nhập.
    ========================================================= */
+
 @media (max-width: 640px) {
-  body.page-notifications .topbar {
-    gap: var(--space-1);
-    padding: 0 var(--space-2);
+  body.page-login .auth-page {
+    padding: var(--space-2);
   }
 
-  body.page-notifications .topbar-user-info {
-    display: none;
-  }
-
-  body.page-notifications .page-head {
-    align-items: flex-start;
-  }
-
-  body.page-notifications .notif-item {
-    flex-wrap: wrap;
-  }
-
-  body.page-notifications .notif-meta {
-    width: 100%;
-    padding-left: 50px;
+  body.page-login .auth-card {
+    padding: var(--space-3);
   }
 }
