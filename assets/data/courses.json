@@ -1,0 +1,1764 @@
+{
+  "programs": [
+    {
+      "name": "Công nghệ thông tin",
+      "faculty": "Khoa Công nghệ thông tin"
+    },
+    {
+      "name": "Khoa học máy tính",
+      "faculty": "Khoa Toán — Tin"
+    },
+    {
+      "name": "Kỹ thuật phần mềm",
+      "faculty": "Khoa Công nghệ thông tin"
+    },
+    {
+      "name": "Hệ thống thông tin",
+      "faculty": "Khoa Hệ thống thông tin"
+    },
+    {
+      "name": "An toàn thông tin",
+      "faculty": "Khoa An toàn thông tin"
+    },
+    {
+      "name": "Khoa học dữ liệu",
+      "faculty": "Khoa Khoa học dữ liệu & AI"
+    }
+  ],
+  "courses": [
+    {
+      "id": 1,
+      "code": "IT1010",
+      "name": "Nhập môn lập trình",
+      "credits": 4,
+      "prereqs": [],
+      "program": "Công nghệ thông tin",
+      "faculty": "Khoa Công nghệ thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Nhập môn lập trình (IT1010) do Khoa Công nghệ thông tin phụ trách, thuộc chương trình Công nghệ thông tin."
+    },
+    {
+      "id": 2,
+      "code": "IT1020",
+      "name": "Kỹ thuật lập trình",
+      "credits": 4,
+      "prereqs": [
+        "IT1010",
+        "MA2010"
+      ],
+      "program": "Công nghệ thông tin",
+      "faculty": "Khoa Công nghệ thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Kỹ thuật lập trình (IT1020) do Khoa Công nghệ thông tin phụ trách, thuộc chương trình Công nghệ thông tin."
+    },
+    {
+      "id": 3,
+      "code": "IT1030",
+      "name": "Kiến trúc máy tính",
+      "credits": 3,
+      "prereqs": [
+        "IT1020",
+        "MA2010"
+      ],
+      "program": "Công nghệ thông tin",
+      "faculty": "Khoa Công nghệ thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Kiến trúc máy tính (IT1030) do Khoa Công nghệ thông tin phụ trách, thuộc chương trình Công nghệ thông tin."
+    },
+    {
+      "id": 4,
+      "code": "IT1040",
+      "name": "Hệ điều hành",
+      "credits": 3,
+      "prereqs": [
+        "IT1030",
+        "MA2010"
+      ],
+      "program": "Công nghệ thông tin",
+      "faculty": "Khoa Công nghệ thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Hệ điều hành (IT1040) do Khoa Công nghệ thông tin phụ trách, thuộc chương trình Công nghệ thông tin."
+    },
+    {
+      "id": 5,
+      "code": "IT1050",
+      "name": "Kỹ thuật số",
+      "credits": 5,
+      "prereqs": [
+        "IT1040",
+        "MA2010"
+      ],
+      "program": "Công nghệ thông tin",
+      "faculty": "Khoa Công nghệ thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Kỹ thuật số (IT1050) do Khoa Công nghệ thông tin phụ trách, thuộc chương trình Công nghệ thông tin."
+    },
+    {
+      "id": 6,
+      "code": "IT2010",
+      "name": "Lập trình hướng đối tượng",
+      "credits": 4,
+      "prereqs": [
+        "IT1050"
+      ],
+      "program": "Công nghệ thông tin",
+      "faculty": "Khoa Công nghệ thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Lập trình hướng đối tượng (IT2010) do Khoa Công nghệ thông tin phụ trách, thuộc chương trình Công nghệ thông tin."
+    },
+    {
+      "id": 7,
+      "code": "IT2020",
+      "name": "Lập trình web cơ bản",
+      "credits": 4,
+      "prereqs": [
+        "IT2010",
+        "MA2010"
+      ],
+      "program": "Công nghệ thông tin",
+      "faculty": "Khoa Công nghệ thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Lập trình web cơ bản (IT2020) do Khoa Công nghệ thông tin phụ trách, thuộc chương trình Công nghệ thông tin."
+    },
+    {
+      "id": 8,
+      "code": "IT2030",
+      "name": "Lập trình thiết bị di động",
+      "credits": 3,
+      "prereqs": [
+        "IT2020",
+        "MA2010"
+      ],
+      "program": "Công nghệ thông tin",
+      "faculty": "Khoa Công nghệ thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Lập trình thiết bị di động (IT2030) do Khoa Công nghệ thông tin phụ trách, thuộc chương trình Công nghệ thông tin."
+    },
+    {
+      "id": 9,
+      "code": "IT2040",
+      "name": "Đồ họa máy tính",
+      "credits": 3,
+      "prereqs": [
+        "IT2030",
+        "MA2010"
+      ],
+      "program": "Công nghệ thông tin",
+      "faculty": "Khoa Công nghệ thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Đồ họa máy tính (IT2040) do Khoa Công nghệ thông tin phụ trách, thuộc chương trình Công nghệ thông tin."
+    },
+    {
+      "id": 10,
+      "code": "IT3010",
+      "name": "Lập trình nâng cao",
+      "credits": 5,
+      "prereqs": [
+        "IT2040"
+      ],
+      "program": "Công nghệ thông tin",
+      "faculty": "Khoa Công nghệ thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Lập trình nâng cao (IT3010) do Khoa Công nghệ thông tin phụ trách, thuộc chương trình Công nghệ thông tin."
+    },
+    {
+      "id": 11,
+      "code": "IT3020",
+      "name": "Xử lý ảnh số",
+      "credits": 4,
+      "prereqs": [
+        "IT3010",
+        "MA2010"
+      ],
+      "program": "Công nghệ thông tin",
+      "faculty": "Khoa Công nghệ thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Xử lý ảnh số (IT3020) do Khoa Công nghệ thông tin phụ trách, thuộc chương trình Công nghệ thông tin."
+    },
+    {
+      "id": 12,
+      "code": "IT3030",
+      "name": "Truyền thông dữ liệu",
+      "credits": 4,
+      "prereqs": [
+        "IT3020",
+        "MA2010"
+      ],
+      "program": "Công nghệ thông tin",
+      "faculty": "Khoa Công nghệ thông tin",
+      "status": "Tạm ngưng",
+      "description": "Học phần Truyền thông dữ liệu (IT3030) do Khoa Công nghệ thông tin phụ trách, thuộc chương trình Công nghệ thông tin."
+    },
+    {
+      "id": 13,
+      "code": "IT3040",
+      "name": "Khai thác dữ liệu",
+      "credits": 3,
+      "prereqs": [
+        "IT3030",
+        "MA2010"
+      ],
+      "program": "Công nghệ thông tin",
+      "faculty": "Khoa Công nghệ thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Khai thác dữ liệu (IT3040) do Khoa Công nghệ thông tin phụ trách, thuộc chương trình Công nghệ thông tin."
+    },
+    {
+      "id": 14,
+      "code": "IT3050",
+      "name": "Hệ thống nhúng",
+      "credits": 3,
+      "prereqs": [
+        "IT3040",
+        "MA2010"
+      ],
+      "program": "Công nghệ thông tin",
+      "faculty": "Khoa Công nghệ thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Hệ thống nhúng (IT3050) do Khoa Công nghệ thông tin phụ trách, thuộc chương trình Công nghệ thông tin."
+    },
+    {
+      "id": 15,
+      "code": "IT3060",
+      "name": "Cơ sở dữ liệu",
+      "credits": 5,
+      "prereqs": [
+        "IT3050",
+        "MA2010"
+      ],
+      "program": "Công nghệ thông tin",
+      "faculty": "Khoa Công nghệ thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Cơ sở dữ liệu (IT3060) do Khoa Công nghệ thông tin phụ trách, thuộc chương trình Công nghệ thông tin."
+    },
+    {
+      "id": 16,
+      "code": "IT4010",
+      "name": "Hệ thống phân tán",
+      "credits": 4,
+      "prereqs": [
+        "IT3060"
+      ],
+      "program": "Công nghệ thông tin",
+      "faculty": "Khoa Công nghệ thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Hệ thống phân tán (IT4010) do Khoa Công nghệ thông tin phụ trách, thuộc chương trình Công nghệ thông tin."
+    },
+    {
+      "id": 17,
+      "code": "IT4020",
+      "name": "Thiết kế phần mềm",
+      "credits": 4,
+      "prereqs": [
+        "IT4010",
+        "MA2010"
+      ],
+      "program": "Công nghệ thông tin",
+      "faculty": "Khoa Công nghệ thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Thiết kế phần mềm (IT4020) do Khoa Công nghệ thông tin phụ trách, thuộc chương trình Công nghệ thông tin."
+    },
+    {
+      "id": 18,
+      "code": "IT4030",
+      "name": "Quản lý dự án CNTT",
+      "credits": 3,
+      "prereqs": [
+        "IT4020",
+        "MA2010"
+      ],
+      "program": "Công nghệ thông tin",
+      "faculty": "Khoa Công nghệ thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Quản lý dự án CNTT (IT4030) do Khoa Công nghệ thông tin phụ trách, thuộc chương trình Công nghệ thông tin."
+    },
+    {
+      "id": 19,
+      "code": "IT4040",
+      "name": "Cấu trúc dữ liệu và giải thuật",
+      "credits": 3,
+      "prereqs": [
+        "IT4030",
+        "MA2010"
+      ],
+      "program": "Công nghệ thông tin",
+      "faculty": "Khoa Công nghệ thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Cấu trúc dữ liệu và giải thuật (IT4040) do Khoa Công nghệ thông tin phụ trách, thuộc chương trình Công nghệ thông tin."
+    },
+    {
+      "id": 20,
+      "code": "IT5010",
+      "name": "Điện toán đám mây",
+      "credits": 5,
+      "prereqs": [
+        "IT4040"
+      ],
+      "program": "Công nghệ thông tin",
+      "faculty": "Khoa Công nghệ thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Điện toán đám mây (IT5010) do Khoa Công nghệ thông tin phụ trách, thuộc chương trình Công nghệ thông tin."
+    },
+    {
+      "id": 21,
+      "code": "IT5020",
+      "name": "Internet vạn vật",
+      "credits": 4,
+      "prereqs": [
+        "IT5010",
+        "MA2010"
+      ],
+      "program": "Công nghệ thông tin",
+      "faculty": "Khoa Công nghệ thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Internet vạn vật (IT5020) do Khoa Công nghệ thông tin phụ trách, thuộc chương trình Công nghệ thông tin."
+    },
+    {
+      "id": 22,
+      "code": "IT5030",
+      "name": "Điện toán di động",
+      "credits": 4,
+      "prereqs": [
+        "IT5020",
+        "MA2010"
+      ],
+      "program": "Công nghệ thông tin",
+      "faculty": "Khoa Công nghệ thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Điện toán di động (IT5030) do Khoa Công nghệ thông tin phụ trách, thuộc chương trình Công nghệ thông tin."
+    },
+    {
+      "id": 23,
+      "code": "IT5040",
+      "name": "Bảo mật mạng",
+      "credits": 3,
+      "prereqs": [
+        "IT5030",
+        "MA2010"
+      ],
+      "program": "Công nghệ thông tin",
+      "faculty": "Khoa Công nghệ thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Bảo mật mạng (IT5040) do Khoa Công nghệ thông tin phụ trách, thuộc chương trình Công nghệ thông tin."
+    },
+    {
+      "id": 24,
+      "code": "IT5050",
+      "name": "Đồ án công nghệ thông tin",
+      "credits": 3,
+      "prereqs": [
+        "IT5040",
+        "MA2010"
+      ],
+      "program": "Công nghệ thông tin",
+      "faculty": "Khoa Công nghệ thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Đồ án công nghệ thông tin (IT5050) do Khoa Công nghệ thông tin phụ trách, thuộc chương trình Công nghệ thông tin."
+    },
+    {
+      "id": 25,
+      "code": "IT5060",
+      "name": "Mạng máy tính",
+      "credits": 5,
+      "prereqs": [
+        "IT5050",
+        "MA2010"
+      ],
+      "program": "Công nghệ thông tin",
+      "faculty": "Khoa Công nghệ thông tin",
+      "status": "Tạm ngưng",
+      "description": "Học phần Mạng máy tính (IT5060) do Khoa Công nghệ thông tin phụ trách, thuộc chương trình Công nghệ thông tin."
+    },
+    {
+      "id": 26,
+      "code": "MA1010",
+      "name": "Giải tích 1",
+      "credits": 4,
+      "prereqs": [],
+      "program": "Khoa học máy tính",
+      "faculty": "Khoa Toán — Tin",
+      "status": "Đang mở",
+      "description": "Học phần Giải tích 1 (MA1010) do Khoa Toán — Tin phụ trách, thuộc chương trình Khoa học máy tính."
+    },
+    {
+      "id": 27,
+      "code": "MA1020",
+      "name": "Giải tích 2",
+      "credits": 4,
+      "prereqs": [
+        "MA1010"
+      ],
+      "program": "Khoa học máy tính",
+      "faculty": "Khoa Toán — Tin",
+      "status": "Đang mở",
+      "description": "Học phần Giải tích 2 (MA1020) do Khoa Toán — Tin phụ trách, thuộc chương trình Khoa học máy tính."
+    },
+    {
+      "id": 28,
+      "code": "MA1030",
+      "name": "Đại số tuyến tính",
+      "credits": 3,
+      "prereqs": [
+        "MA1020"
+      ],
+      "program": "Khoa học máy tính",
+      "faculty": "Khoa Toán — Tin",
+      "status": "Đang mở",
+      "description": "Học phần Đại số tuyến tính (MA1030) do Khoa Toán — Tin phụ trách, thuộc chương trình Khoa học máy tính."
+    },
+    {
+      "id": 29,
+      "code": "MA1040",
+      "name": "Nhập môn khoa học máy tính",
+      "credits": 3,
+      "prereqs": [
+        "MA1030"
+      ],
+      "program": "Khoa học máy tính",
+      "faculty": "Khoa Toán — Tin",
+      "status": "Đang mở",
+      "description": "Học phần Nhập môn khoa học máy tính (MA1040) do Khoa Toán — Tin phụ trách, thuộc chương trình Khoa học máy tính."
+    },
+    {
+      "id": 30,
+      "code": "MA2010",
+      "name": "Toán rời rạc",
+      "credits": 5,
+      "prereqs": [
+        "MA1040"
+      ],
+      "program": "Khoa học máy tính",
+      "faculty": "Khoa Toán — Tin",
+      "status": "Đang mở",
+      "description": "Học phần Toán rời rạc (MA2010) do Khoa Toán — Tin phụ trách, thuộc chương trình Khoa học máy tính."
+    },
+    {
+      "id": 31,
+      "code": "MA2020",
+      "name": "Xác suất thống kê",
+      "credits": 4,
+      "prereqs": [
+        "MA2010"
+      ],
+      "program": "Khoa học máy tính",
+      "faculty": "Khoa Toán — Tin",
+      "status": "Đang mở",
+      "description": "Học phần Xác suất thống kê (MA2020) do Khoa Toán — Tin phụ trách, thuộc chương trình Khoa học máy tính."
+    },
+    {
+      "id": 32,
+      "code": "MA2030",
+      "name": "Lý thuyết đồ thị",
+      "credits": 4,
+      "prereqs": [
+        "MA2020"
+      ],
+      "program": "Khoa học máy tính",
+      "faculty": "Khoa Toán — Tin",
+      "status": "Đang mở",
+      "description": "Học phần Lý thuyết đồ thị (MA2030) do Khoa Toán — Tin phụ trách, thuộc chương trình Khoa học máy tính."
+    },
+    {
+      "id": 33,
+      "code": "MA2040",
+      "name": "Tối ưu hóa",
+      "credits": 3,
+      "prereqs": [
+        "MA2030"
+      ],
+      "program": "Khoa học máy tính",
+      "faculty": "Khoa Toán — Tin",
+      "status": "Đang mở",
+      "description": "Học phần Tối ưu hóa (MA2040) do Khoa Toán — Tin phụ trách, thuộc chương trình Khoa học máy tính."
+    },
+    {
+      "id": 34,
+      "code": "MA3010",
+      "name": "Trí tuệ nhân tạo",
+      "credits": 3,
+      "prereqs": [
+        "MA2040"
+      ],
+      "program": "Khoa học máy tính",
+      "faculty": "Khoa Toán — Tin",
+      "status": "Đang mở",
+      "description": "Học phần Trí tuệ nhân tạo (MA3010) do Khoa Toán — Tin phụ trách, thuộc chương trình Khoa học máy tính."
+    },
+    {
+      "id": 35,
+      "code": "MA3020",
+      "name": "Học máy",
+      "credits": 5,
+      "prereqs": [
+        "MA3010"
+      ],
+      "program": "Khoa học máy tính",
+      "faculty": "Khoa Toán — Tin",
+      "status": "Đang mở",
+      "description": "Học phần Học máy (MA3020) do Khoa Toán — Tin phụ trách, thuộc chương trình Khoa học máy tính."
+    },
+    {
+      "id": 36,
+      "code": "MA3030",
+      "name": "Logic tính toán",
+      "credits": 4,
+      "prereqs": [
+        "MA3020"
+      ],
+      "program": "Khoa học máy tính",
+      "faculty": "Khoa Toán — Tin",
+      "status": "Đang mở",
+      "description": "Học phần Logic tính toán (MA3030) do Khoa Toán — Tin phụ trách, thuộc chương trình Khoa học máy tính."
+    },
+    {
+      "id": 37,
+      "code": "MA3040",
+      "name": "Lý thuyết automata",
+      "credits": 4,
+      "prereqs": [
+        "MA3030"
+      ],
+      "program": "Khoa học máy tính",
+      "faculty": "Khoa Toán — Tin",
+      "status": "Đang mở",
+      "description": "Học phần Lý thuyết automata (MA3040) do Khoa Toán — Tin phụ trách, thuộc chương trình Khoa học máy tính."
+    },
+    {
+      "id": 38,
+      "code": "MA3050",
+      "name": "Độ phức tạp tính toán",
+      "credits": 3,
+      "prereqs": [
+        "MA3040"
+      ],
+      "program": "Khoa học máy tính",
+      "faculty": "Khoa Toán — Tin",
+      "status": "Đang mở",
+      "description": "Học phần Độ phức tạp tính toán (MA3050) do Khoa Toán — Tin phụ trách, thuộc chương trình Khoa học máy tính."
+    },
+    {
+      "id": 39,
+      "code": "MA4010",
+      "name": "Học sâu",
+      "credits": 3,
+      "prereqs": [
+        "MA3050"
+      ],
+      "program": "Khoa học máy tính",
+      "faculty": "Khoa Toán — Tin",
+      "status": "Tạm ngưng",
+      "description": "Học phần Học sâu (MA4010) do Khoa Toán — Tin phụ trách, thuộc chương trình Khoa học máy tính."
+    },
+    {
+      "id": 40,
+      "code": "MA4020",
+      "name": "Xử lý ngôn ngữ tự nhiên",
+      "credits": 5,
+      "prereqs": [
+        "MA4010"
+      ],
+      "program": "Khoa học máy tính",
+      "faculty": "Khoa Toán — Tin",
+      "status": "Đang mở",
+      "description": "Học phần Xử lý ngôn ngữ tự nhiên (MA4020) do Khoa Toán — Tin phụ trách, thuộc chương trình Khoa học máy tính."
+    },
+    {
+      "id": 41,
+      "code": "MA4030",
+      "name": "Thị giác máy tính",
+      "credits": 4,
+      "prereqs": [
+        "MA4020"
+      ],
+      "program": "Khoa học máy tính",
+      "faculty": "Khoa Toán — Tin",
+      "status": "Đang mở",
+      "description": "Học phần Thị giác máy tính (MA4030) do Khoa Toán — Tin phụ trách, thuộc chương trình Khoa học máy tính."
+    },
+    {
+      "id": 42,
+      "code": "MA4040",
+      "name": "Mạng nơ-ron",
+      "credits": 4,
+      "prereqs": [
+        "MA4030"
+      ],
+      "program": "Khoa học máy tính",
+      "faculty": "Khoa Toán — Tin",
+      "status": "Đang mở",
+      "description": "Học phần Mạng nơ-ron (MA4040) do Khoa Toán — Tin phụ trách, thuộc chương trình Khoa học máy tính."
+    },
+    {
+      "id": 43,
+      "code": "MA5010",
+      "name": "Đồ án khoa học máy tính",
+      "credits": 3,
+      "prereqs": [
+        "MA4040"
+      ],
+      "program": "Khoa học máy tính",
+      "faculty": "Khoa Toán — Tin",
+      "status": "Đang mở",
+      "description": "Học phần Đồ án khoa học máy tính (MA5010) do Khoa Toán — Tin phụ trách, thuộc chương trình Khoa học máy tính."
+    },
+    {
+      "id": 44,
+      "code": "MA5020",
+      "name": "Chuyên đề học máy",
+      "credits": 3,
+      "prereqs": [
+        "MA5010"
+      ],
+      "program": "Khoa học máy tính",
+      "faculty": "Khoa Toán — Tin",
+      "status": "Đang mở",
+      "description": "Học phần Chuyên đề học máy (MA5020) do Khoa Toán — Tin phụ trách, thuộc chương trình Khoa học máy tính."
+    },
+    {
+      "id": 45,
+      "code": "MA5030",
+      "name": "Hệ chuyên gia",
+      "credits": 5,
+      "prereqs": [
+        "MA5020"
+      ],
+      "program": "Khoa học máy tính",
+      "faculty": "Khoa Toán — Tin",
+      "status": "Đang mở",
+      "description": "Học phần Hệ chuyên gia (MA5030) do Khoa Toán — Tin phụ trách, thuộc chương trình Khoa học máy tính."
+    },
+    {
+      "id": 46,
+      "code": "MA5040",
+      "name": "Kho dữ liệu",
+      "credits": 4,
+      "prereqs": [
+        "MA5030"
+      ],
+      "program": "Khoa học máy tính",
+      "faculty": "Khoa Toán — Tin",
+      "status": "Đang mở",
+      "description": "Học phần Kho dữ liệu (MA5040) do Khoa Toán — Tin phụ trách, thuộc chương trình Khoa học máy tính."
+    },
+    {
+      "id": 47,
+      "code": "SE1010",
+      "name": "Nhập môn kỹ thuật phần mềm",
+      "credits": 4,
+      "prereqs": [],
+      "program": "Kỹ thuật phần mềm",
+      "faculty": "Khoa Công nghệ thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Nhập môn kỹ thuật phần mềm (SE1010) do Khoa Công nghệ thông tin phụ trách, thuộc chương trình Kỹ thuật phần mềm."
+    },
+    {
+      "id": 48,
+      "code": "SE1020",
+      "name": "Lập trình Python",
+      "credits": 4,
+      "prereqs": [
+        "SE1010",
+        "MA2010"
+      ],
+      "program": "Kỹ thuật phần mềm",
+      "faculty": "Khoa Công nghệ thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Lập trình Python (SE1020) do Khoa Công nghệ thông tin phụ trách, thuộc chương trình Kỹ thuật phần mềm."
+    },
+    {
+      "id": 49,
+      "code": "SE1030",
+      "name": "Phân tích yêu cầu",
+      "credits": 3,
+      "prereqs": [
+        "SE1020",
+        "MA2010"
+      ],
+      "program": "Kỹ thuật phần mềm",
+      "faculty": "Khoa Công nghệ thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Phân tích yêu cầu (SE1030) do Khoa Công nghệ thông tin phụ trách, thuộc chương trình Kỹ thuật phần mềm."
+    },
+    {
+      "id": 50,
+      "code": "SE1040",
+      "name": "Kỹ năng giao tiếp",
+      "credits": 3,
+      "prereqs": [
+        "SE1030",
+        "MA2010"
+      ],
+      "program": "Kỹ thuật phần mềm",
+      "faculty": "Khoa Công nghệ thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Kỹ năng giao tiếp (SE1040) do Khoa Công nghệ thông tin phụ trách, thuộc chương trình Kỹ thuật phần mềm."
+    },
+    {
+      "id": 51,
+      "code": "SE2010",
+      "name": "Lập trình Java",
+      "credits": 5,
+      "prereqs": [
+        "SE1040"
+      ],
+      "program": "Kỹ thuật phần mềm",
+      "faculty": "Khoa Công nghệ thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Lập trình Java (SE2010) do Khoa Công nghệ thông tin phụ trách, thuộc chương trình Kỹ thuật phần mềm."
+    },
+    {
+      "id": 52,
+      "code": "SE2020",
+      "name": "Thiết kế giao diện người dùng",
+      "credits": 4,
+      "prereqs": [
+        "SE2010",
+        "MA2010"
+      ],
+      "program": "Kỹ thuật phần mềm",
+      "faculty": "Khoa Công nghệ thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Thiết kế giao diện người dùng (SE2020) do Khoa Công nghệ thông tin phụ trách, thuộc chương trình Kỹ thuật phần mềm."
+    },
+    {
+      "id": 53,
+      "code": "SE2030",
+      "name": "Quản lý cấu hình",
+      "credits": 4,
+      "prereqs": [
+        "SE2020",
+        "MA2010"
+      ],
+      "program": "Kỹ thuật phần mềm",
+      "faculty": "Khoa Công nghệ thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Quản lý cấu hình (SE2030) do Khoa Công nghệ thông tin phụ trách, thuộc chương trình Kỹ thuật phần mềm."
+    },
+    {
+      "id": 54,
+      "code": "SE2040",
+      "name": "Kiểm thử phần mềm",
+      "credits": 3,
+      "prereqs": [
+        "SE2030",
+        "MA2010"
+      ],
+      "program": "Kỹ thuật phần mềm",
+      "faculty": "Khoa Công nghệ thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Kiểm thử phần mềm (SE2040) do Khoa Công nghệ thông tin phụ trách, thuộc chương trình Kỹ thuật phần mềm."
+    },
+    {
+      "id": 55,
+      "code": "SE3010",
+      "name": "Kiểu mẫu thiết kế",
+      "credits": 3,
+      "prereqs": [
+        "SE2040"
+      ],
+      "program": "Kỹ thuật phần mềm",
+      "faculty": "Khoa Công nghệ thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Kiểu mẫu thiết kế (SE3010) do Khoa Công nghệ thông tin phụ trách, thuộc chương trình Kỹ thuật phần mềm."
+    },
+    {
+      "id": 56,
+      "code": "SE3020",
+      "name": "Kiến trúc phần mềm",
+      "credits": 5,
+      "prereqs": [
+        "SE3010",
+        "MA2010"
+      ],
+      "program": "Kỹ thuật phần mềm",
+      "faculty": "Khoa Công nghệ thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Kiến trúc phần mềm (SE3020) do Khoa Công nghệ thông tin phụ trách, thuộc chương trình Kỹ thuật phần mềm."
+    },
+    {
+      "id": 57,
+      "code": "SE3030",
+      "name": "Tích hợp hệ thống",
+      "credits": 4,
+      "prereqs": [
+        "SE3020",
+        "MA2010"
+      ],
+      "program": "Kỹ thuật phần mềm",
+      "faculty": "Khoa Công nghệ thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Tích hợp hệ thống (SE3030) do Khoa Công nghệ thông tin phụ trách, thuộc chương trình Kỹ thuật phần mềm."
+    },
+    {
+      "id": 58,
+      "code": "SE3040",
+      "name": "Quản lý chất lượng",
+      "credits": 4,
+      "prereqs": [
+        "SE3030",
+        "MA2010"
+      ],
+      "program": "Kỹ thuật phần mềm",
+      "faculty": "Khoa Công nghệ thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Quản lý chất lượng (SE3040) do Khoa Công nghệ thông tin phụ trách, thuộc chương trình Kỹ thuật phần mềm."
+    },
+    {
+      "id": 59,
+      "code": "SE4010",
+      "name": "DevOps cơ bản",
+      "credits": 3,
+      "prereqs": [
+        "SE3040"
+      ],
+      "program": "Kỹ thuật phần mềm",
+      "faculty": "Khoa Công nghệ thông tin",
+      "status": "Đang mở",
+      "description": "Học phần DevOps cơ bản (SE4010) do Khoa Công nghệ thông tin phụ trách, thuộc chương trình Kỹ thuật phần mềm."
+    },
+    {
+      "id": 60,
+      "code": "SE4020",
+      "name": "Tự động hóa kiểm thử",
+      "credits": 3,
+      "prereqs": [
+        "SE4010",
+        "MA2010"
+      ],
+      "program": "Kỹ thuật phần mềm",
+      "faculty": "Khoa Công nghệ thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Tự động hóa kiểm thử (SE4020) do Khoa Công nghệ thông tin phụ trách, thuộc chương trình Kỹ thuật phần mềm."
+    },
+    {
+      "id": 61,
+      "code": "SE4030",
+      "name": "Quản trị mã nguồn",
+      "credits": 5,
+      "prereqs": [
+        "SE4020",
+        "MA2010"
+      ],
+      "program": "Kỹ thuật phần mềm",
+      "faculty": "Khoa Công nghệ thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Quản trị mã nguồn (SE4030) do Khoa Công nghệ thông tin phụ trách, thuộc chương trình Kỹ thuật phần mềm."
+    },
+    {
+      "id": 62,
+      "code": "SE4040",
+      "name": "Triển khai phần mềm",
+      "credits": 4,
+      "prereqs": [
+        "SE4030",
+        "MA2010"
+      ],
+      "program": "Kỹ thuật phần mềm",
+      "faculty": "Khoa Công nghệ thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Triển khai phần mềm (SE4040) do Khoa Công nghệ thông tin phụ trách, thuộc chương trình Kỹ thuật phần mềm."
+    },
+    {
+      "id": 63,
+      "code": "SE5010",
+      "name": "Đồ án kỹ thuật phần mềm",
+      "credits": 4,
+      "prereqs": [
+        "SE4040"
+      ],
+      "program": "Kỹ thuật phần mềm",
+      "faculty": "Khoa Công nghệ thông tin",
+      "status": "Tạm ngưng",
+      "description": "Học phần Đồ án kỹ thuật phần mềm (SE5010) do Khoa Công nghệ thông tin phụ trách, thuộc chương trình Kỹ thuật phần mềm."
+    },
+    {
+      "id": 64,
+      "code": "SE5020",
+      "name": "Thực tập doanh nghiệp",
+      "credits": 3,
+      "prereqs": [
+        "SE5010",
+        "MA2010"
+      ],
+      "program": "Kỹ thuật phần mềm",
+      "faculty": "Khoa Công nghệ thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Thực tập doanh nghiệp (SE5020) do Khoa Công nghệ thông tin phụ trách, thuộc chương trình Kỹ thuật phần mềm."
+    },
+    {
+      "id": 65,
+      "code": "SE5030",
+      "name": "Quản trị dự án phần mềm",
+      "credits": 3,
+      "prereqs": [
+        "SE5020",
+        "MA2010"
+      ],
+      "program": "Kỹ thuật phần mềm",
+      "faculty": "Khoa Công nghệ thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Quản trị dự án phần mềm (SE5030) do Khoa Công nghệ thông tin phụ trách, thuộc chương trình Kỹ thuật phần mềm."
+    },
+    {
+      "id": 66,
+      "code": "SE5040",
+      "name": "Chuyên đề Agile",
+      "credits": 5,
+      "prereqs": [
+        "SE5030",
+        "MA2010"
+      ],
+      "program": "Kỹ thuật phần mềm",
+      "faculty": "Khoa Công nghệ thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Chuyên đề Agile (SE5040) do Khoa Công nghệ thông tin phụ trách, thuộc chương trình Kỹ thuật phần mềm."
+    },
+    {
+      "id": 67,
+      "code": "SE5050",
+      "name": "Đồ án tốt nghiệp",
+      "credits": 4,
+      "prereqs": [
+        "SE5040",
+        "MA2010"
+      ],
+      "program": "Kỹ thuật phần mềm",
+      "faculty": "Khoa Công nghệ thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Đồ án tốt nghiệp (SE5050) do Khoa Công nghệ thông tin phụ trách, thuộc chương trình Kỹ thuật phần mềm."
+    },
+    {
+      "id": 68,
+      "code": "IS1010",
+      "name": "Nhập môn hệ thống thông tin",
+      "credits": 4,
+      "prereqs": [],
+      "program": "Hệ thống thông tin",
+      "faculty": "Khoa Hệ thống thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Nhập môn hệ thống thông tin (IS1010) do Khoa Hệ thống thông tin phụ trách, thuộc chương trình Hệ thống thông tin."
+    },
+    {
+      "id": 69,
+      "code": "IS1020",
+      "name": "Tin học văn phòng",
+      "credits": 4,
+      "prereqs": [
+        "IS1010",
+        "MA2010"
+      ],
+      "program": "Hệ thống thông tin",
+      "faculty": "Khoa Hệ thống thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Tin học văn phòng (IS1020) do Khoa Hệ thống thông tin phụ trách, thuộc chương trình Hệ thống thông tin."
+    },
+    {
+      "id": 70,
+      "code": "IS1030",
+      "name": "Kinh tế học vi mô",
+      "credits": 3,
+      "prereqs": [
+        "IS1020",
+        "MA2010"
+      ],
+      "program": "Hệ thống thông tin",
+      "faculty": "Khoa Hệ thống thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Kinh tế học vi mô (IS1030) do Khoa Hệ thống thông tin phụ trách, thuộc chương trình Hệ thống thông tin."
+    },
+    {
+      "id": 71,
+      "code": "IS1040",
+      "name": "Quản trị học",
+      "credits": 3,
+      "prereqs": [
+        "IS1030",
+        "MA2010"
+      ],
+      "program": "Hệ thống thông tin",
+      "faculty": "Khoa Hệ thống thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Quản trị học (IS1040) do Khoa Hệ thống thông tin phụ trách, thuộc chương trình Hệ thống thông tin."
+    },
+    {
+      "id": 72,
+      "code": "IS2010",
+      "name": "Cơ sở dữ liệu quản trị",
+      "credits": 5,
+      "prereqs": [
+        "IS1040"
+      ],
+      "program": "Hệ thống thông tin",
+      "faculty": "Khoa Hệ thống thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Cơ sở dữ liệu quản trị (IS2010) do Khoa Hệ thống thông tin phụ trách, thuộc chương trình Hệ thống thông tin."
+    },
+    {
+      "id": 73,
+      "code": "IS2020",
+      "name": "Hệ thống thông tin quản lý",
+      "credits": 4,
+      "prereqs": [
+        "IS2010",
+        "MA2010"
+      ],
+      "program": "Hệ thống thông tin",
+      "faculty": "Khoa Hệ thống thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Hệ thống thông tin quản lý (IS2020) do Khoa Hệ thống thông tin phụ trách, thuộc chương trình Hệ thống thông tin."
+    },
+    {
+      "id": 74,
+      "code": "IS2030",
+      "name": "Phân tích thiết kế HTTT",
+      "credits": 4,
+      "prereqs": [
+        "IS2020",
+        "MA2010"
+      ],
+      "program": "Hệ thống thông tin",
+      "faculty": "Khoa Hệ thống thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Phân tích thiết kế HTTT (IS2030) do Khoa Hệ thống thông tin phụ trách, thuộc chương trình Hệ thống thông tin."
+    },
+    {
+      "id": 75,
+      "code": "IS2040",
+      "name": "Kế toán quản trị",
+      "credits": 3,
+      "prereqs": [
+        "IS2030",
+        "MA2010"
+      ],
+      "program": "Hệ thống thông tin",
+      "faculty": "Khoa Hệ thống thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Kế toán quản trị (IS2040) do Khoa Hệ thống thông tin phụ trách, thuộc chương trình Hệ thống thông tin."
+    },
+    {
+      "id": 76,
+      "code": "IS3010",
+      "name": "Hệ quản trị cơ sở dữ liệu",
+      "credits": 3,
+      "prereqs": [
+        "IS2040"
+      ],
+      "program": "Hệ thống thông tin",
+      "faculty": "Khoa Hệ thống thông tin",
+      "status": "Tạm ngưng",
+      "description": "Học phần Hệ quản trị cơ sở dữ liệu (IS3010) do Khoa Hệ thống thông tin phụ trách, thuộc chương trình Hệ thống thông tin."
+    },
+    {
+      "id": 77,
+      "code": "IS3020",
+      "name": "Kho dữ liệu",
+      "credits": 5,
+      "prereqs": [
+        "IS3010",
+        "MA2010"
+      ],
+      "program": "Hệ thống thông tin",
+      "faculty": "Khoa Hệ thống thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Kho dữ liệu (IS3020) do Khoa Hệ thống thông tin phụ trách, thuộc chương trình Hệ thống thông tin."
+    },
+    {
+      "id": 78,
+      "code": "IS3030",
+      "name": "Trí tuệ kinh doanh",
+      "credits": 4,
+      "prereqs": [
+        "IS3020",
+        "MA2010"
+      ],
+      "program": "Hệ thống thông tin",
+      "faculty": "Khoa Hệ thống thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Trí tuệ kinh doanh (IS3030) do Khoa Hệ thống thông tin phụ trách, thuộc chương trình Hệ thống thông tin."
+    },
+    {
+      "id": 79,
+      "code": "IS3040",
+      "name": "Mạng doanh nghiệp",
+      "credits": 4,
+      "prereqs": [
+        "IS3030",
+        "MA2010"
+      ],
+      "program": "Hệ thống thông tin",
+      "faculty": "Khoa Hệ thống thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Mạng doanh nghiệp (IS3040) do Khoa Hệ thống thông tin phụ trách, thuộc chương trình Hệ thống thông tin."
+    },
+    {
+      "id": 80,
+      "code": "IS4010",
+      "name": "Hệ thống ERP",
+      "credits": 3,
+      "prereqs": [
+        "IS3040"
+      ],
+      "program": "Hệ thống thông tin",
+      "faculty": "Khoa Hệ thống thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Hệ thống ERP (IS4010) do Khoa Hệ thống thông tin phụ trách, thuộc chương trình Hệ thống thông tin."
+    },
+    {
+      "id": 81,
+      "code": "IS4020",
+      "name": "Quản trị quy trình nghiệp vụ",
+      "credits": 3,
+      "prereqs": [
+        "IS4010",
+        "MA2010"
+      ],
+      "program": "Hệ thống thông tin",
+      "faculty": "Khoa Hệ thống thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Quản trị quy trình nghiệp vụ (IS4020) do Khoa Hệ thống thông tin phụ trách, thuộc chương trình Hệ thống thông tin."
+    },
+    {
+      "id": 82,
+      "code": "IS4030",
+      "name": "An toàn hệ thống thông tin",
+      "credits": 5,
+      "prereqs": [
+        "IS4020",
+        "MA2010"
+      ],
+      "program": "Hệ thống thông tin",
+      "faculty": "Khoa Hệ thống thông tin",
+      "status": "Đang mở",
+      "description": "Học phần An toàn hệ thống thông tin (IS4030) do Khoa Hệ thống thông tin phụ trách, thuộc chương trình Hệ thống thông tin."
+    },
+    {
+      "id": 83,
+      "code": "IS4040",
+      "name": "Phân tích dữ liệu",
+      "credits": 4,
+      "prereqs": [
+        "IS4030",
+        "MA2010"
+      ],
+      "program": "Hệ thống thông tin",
+      "faculty": "Khoa Hệ thống thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Phân tích dữ liệu (IS4040) do Khoa Hệ thống thông tin phụ trách, thuộc chương trình Hệ thống thông tin."
+    },
+    {
+      "id": 84,
+      "code": "IS5010",
+      "name": "Đồ án hệ thống thông tin",
+      "credits": 4,
+      "prereqs": [
+        "IS4040"
+      ],
+      "program": "Hệ thống thông tin",
+      "faculty": "Khoa Hệ thống thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Đồ án hệ thống thông tin (IS5010) do Khoa Hệ thống thông tin phụ trách, thuộc chương trình Hệ thống thông tin."
+    },
+    {
+      "id": 85,
+      "code": "IS5020",
+      "name": "Chuyên đề chuyển đổi số",
+      "credits": 3,
+      "prereqs": [
+        "IS5010",
+        "MA2010"
+      ],
+      "program": "Hệ thống thông tin",
+      "faculty": "Khoa Hệ thống thông tin",
+      "status": "Tạm ngưng",
+      "description": "Học phần Chuyên đề chuyển đổi số (IS5020) do Khoa Hệ thống thông tin phụ trách, thuộc chương trình Hệ thống thông tin."
+    },
+    {
+      "id": 86,
+      "code": "IS5030",
+      "name": "Quản trị dự án CNTT",
+      "credits": 3,
+      "prereqs": [
+        "IS5020",
+        "MA2010"
+      ],
+      "program": "Hệ thống thông tin",
+      "faculty": "Khoa Hệ thống thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Quản trị dự án CNTT (IS5030) do Khoa Hệ thống thông tin phụ trách, thuộc chương trình Hệ thống thông tin."
+    },
+    {
+      "id": 87,
+      "code": "IS5040",
+      "name": "Kiến trúc doanh nghiệp",
+      "credits": 5,
+      "prereqs": [
+        "IS5030",
+        "MA2010"
+      ],
+      "program": "Hệ thống thông tin",
+      "faculty": "Khoa Hệ thống thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Kiến trúc doanh nghiệp (IS5040) do Khoa Hệ thống thông tin phụ trách, thuộc chương trình Hệ thống thông tin."
+    },
+    {
+      "id": 88,
+      "code": "IS5050",
+      "name": "Đồ án tốt nghiệp",
+      "credits": 4,
+      "prereqs": [
+        "IS5040",
+        "MA2010"
+      ],
+      "program": "Hệ thống thông tin",
+      "faculty": "Khoa Hệ thống thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Đồ án tốt nghiệp (IS5050) do Khoa Hệ thống thông tin phụ trách, thuộc chương trình Hệ thống thông tin."
+    },
+    {
+      "id": 89,
+      "code": "AT1010",
+      "name": "Nhập môn an toàn thông tin",
+      "credits": 4,
+      "prereqs": [],
+      "program": "An toàn thông tin",
+      "faculty": "Khoa An toàn thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Nhập môn an toàn thông tin (AT1010) do Khoa An toàn thông tin phụ trách, thuộc chương trình An toàn thông tin."
+    },
+    {
+      "id": 90,
+      "code": "AT1020",
+      "name": "Tin học pháp lý",
+      "credits": 4,
+      "prereqs": [
+        "AT1010",
+        "MA2010"
+      ],
+      "program": "An toàn thông tin",
+      "faculty": "Khoa An toàn thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Tin học pháp lý (AT1020) do Khoa An toàn thông tin phụ trách, thuộc chương trình An toàn thông tin."
+    },
+    {
+      "id": 91,
+      "code": "AT1030",
+      "name": "Mật mã sơ cấp",
+      "credits": 3,
+      "prereqs": [
+        "AT1020",
+        "MA2010"
+      ],
+      "program": "An toàn thông tin",
+      "faculty": "Khoa An toàn thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Mật mã sơ cấp (AT1030) do Khoa An toàn thông tin phụ trách, thuộc chương trình An toàn thông tin."
+    },
+    {
+      "id": 92,
+      "code": "AT1040",
+      "name": "Quản lý rủi ro",
+      "credits": 3,
+      "prereqs": [
+        "AT1030",
+        "MA2010"
+      ],
+      "program": "An toàn thông tin",
+      "faculty": "Khoa An toàn thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Quản lý rủi ro (AT1040) do Khoa An toàn thông tin phụ trách, thuộc chương trình An toàn thông tin."
+    },
+    {
+      "id": 93,
+      "code": "AT2010",
+      "name": "Mật mã học ứng dụng",
+      "credits": 5,
+      "prereqs": [
+        "AT1040"
+      ],
+      "program": "An toàn thông tin",
+      "faculty": "Khoa An toàn thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Mật mã học ứng dụng (AT2010) do Khoa An toàn thông tin phụ trách, thuộc chương trình An toàn thông tin."
+    },
+    {
+      "id": 94,
+      "code": "AT2020",
+      "name": "An toàn hệ điều hành",
+      "credits": 4,
+      "prereqs": [
+        "AT2010",
+        "MA2010"
+      ],
+      "program": "An toàn thông tin",
+      "faculty": "Khoa An toàn thông tin",
+      "status": "Đang mở",
+      "description": "Học phần An toàn hệ điều hành (AT2020) do Khoa An toàn thông tin phụ trách, thuộc chương trình An toàn thông tin."
+    },
+    {
+      "id": 95,
+      "code": "AT2030",
+      "name": "An toàn web",
+      "credits": 4,
+      "prereqs": [
+        "AT2020",
+        "MA2010"
+      ],
+      "program": "An toàn thông tin",
+      "faculty": "Khoa An toàn thông tin",
+      "status": "Đang mở",
+      "description": "Học phần An toàn web (AT2030) do Khoa An toàn thông tin phụ trách, thuộc chương trình An toàn thông tin."
+    },
+    {
+      "id": 96,
+      "code": "AT2040",
+      "name": "Điều tra số",
+      "credits": 3,
+      "prereqs": [
+        "AT2030",
+        "MA2010"
+      ],
+      "program": "An toàn thông tin",
+      "faculty": "Khoa An toàn thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Điều tra số (AT2040) do Khoa An toàn thông tin phụ trách, thuộc chương trình An toàn thông tin."
+    },
+    {
+      "id": 97,
+      "code": "AT3010",
+      "name": "An toàn mạng",
+      "credits": 3,
+      "prereqs": [
+        "AT2040"
+      ],
+      "program": "An toàn thông tin",
+      "faculty": "Khoa An toàn thông tin",
+      "status": "Tạm ngưng",
+      "description": "Học phần An toàn mạng (AT3010) do Khoa An toàn thông tin phụ trách, thuộc chương trình An toàn thông tin."
+    },
+    {
+      "id": 98,
+      "code": "AT3020",
+      "name": "Kỹ thuật kiểm tra xâm nhập",
+      "credits": 5,
+      "prereqs": [
+        "AT3010",
+        "MA2010"
+      ],
+      "program": "An toàn thông tin",
+      "faculty": "Khoa An toàn thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Kỹ thuật kiểm tra xâm nhập (AT3020) do Khoa An toàn thông tin phụ trách, thuộc chương trình An toàn thông tin."
+    },
+    {
+      "id": 99,
+      "code": "AT3030",
+      "name": "Phân tích mã độc",
+      "credits": 4,
+      "prereqs": [
+        "AT3020",
+        "MA2010"
+      ],
+      "program": "An toàn thông tin",
+      "faculty": "Khoa An toàn thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Phân tích mã độc (AT3030) do Khoa An toàn thông tin phụ trách, thuộc chương trình An toàn thông tin."
+    },
+    {
+      "id": 100,
+      "code": "AT3040",
+      "name": "Bảo mật đám mây",
+      "credits": 4,
+      "prereqs": [
+        "AT3030",
+        "MA2010"
+      ],
+      "program": "An toàn thông tin",
+      "faculty": "Khoa An toàn thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Bảo mật đám mây (AT3040) do Khoa An toàn thông tin phụ trách, thuộc chương trình An toàn thông tin."
+    },
+    {
+      "id": 101,
+      "code": "AT4010",
+      "name": "Giám sát an ninh",
+      "credits": 3,
+      "prereqs": [
+        "AT3040"
+      ],
+      "program": "An toàn thông tin",
+      "faculty": "Khoa An toàn thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Giám sát an ninh (AT4010) do Khoa An toàn thông tin phụ trách, thuộc chương trình An toàn thông tin."
+    },
+    {
+      "id": 102,
+      "code": "AT4020",
+      "name": "Khôi phục sự cố",
+      "credits": 3,
+      "prereqs": [
+        "AT4010",
+        "MA2010"
+      ],
+      "program": "An toàn thông tin",
+      "faculty": "Khoa An toàn thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Khôi phục sự cố (AT4020) do Khoa An toàn thông tin phụ trách, thuộc chương trình An toàn thông tin."
+    },
+    {
+      "id": 103,
+      "code": "AT4030",
+      "name": "An toàn ứng dụng di động",
+      "credits": 5,
+      "prereqs": [
+        "AT4020",
+        "MA2010"
+      ],
+      "program": "An toàn thông tin",
+      "faculty": "Khoa An toàn thông tin",
+      "status": "Đang mở",
+      "description": "Học phần An toàn ứng dụng di động (AT4030) do Khoa An toàn thông tin phụ trách, thuộc chương trình An toàn thông tin."
+    },
+    {
+      "id": 104,
+      "code": "AT4040",
+      "name": "Pháp chế an ninh mạng",
+      "credits": 4,
+      "prereqs": [
+        "AT4030",
+        "MA2010"
+      ],
+      "program": "An toàn thông tin",
+      "faculty": "Khoa An toàn thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Pháp chế an ninh mạng (AT4040) do Khoa An toàn thông tin phụ trách, thuộc chương trình An toàn thông tin."
+    },
+    {
+      "id": 105,
+      "code": "AT5010",
+      "name": "Đồ án an toàn thông tin",
+      "credits": 4,
+      "prereqs": [
+        "AT4040"
+      ],
+      "program": "An toàn thông tin",
+      "faculty": "Khoa An toàn thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Đồ án an toàn thông tin (AT5010) do Khoa An toàn thông tin phụ trách, thuộc chương trình An toàn thông tin."
+    },
+    {
+      "id": 106,
+      "code": "AT5020",
+      "name": "Chuyên đề phòng chống tấn công",
+      "credits": 3,
+      "prereqs": [
+        "AT5010",
+        "MA2010"
+      ],
+      "program": "An toàn thông tin",
+      "faculty": "Khoa An toàn thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Chuyên đề phòng chống tấn công (AT5020) do Khoa An toàn thông tin phụ trách, thuộc chương trình An toàn thông tin."
+    },
+    {
+      "id": 107,
+      "code": "AT5030",
+      "name": "Quản trị an toàn thông tin",
+      "credits": 3,
+      "prereqs": [
+        "AT5020",
+        "MA2010"
+      ],
+      "program": "An toàn thông tin",
+      "faculty": "Khoa An toàn thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Quản trị an toàn thông tin (AT5030) do Khoa An toàn thông tin phụ trách, thuộc chương trình An toàn thông tin."
+    },
+    {
+      "id": 108,
+      "code": "AT5040",
+      "name": "Thực tập an ninh mạng",
+      "credits": 5,
+      "prereqs": [
+        "AT5030",
+        "MA2010"
+      ],
+      "program": "An toàn thông tin",
+      "faculty": "Khoa An toàn thông tin",
+      "status": "Đang mở",
+      "description": "Học phần Thực tập an ninh mạng (AT5040) do Khoa An toàn thông tin phụ trách, thuộc chương trình An toàn thông tin."
+    },
+    {
+      "id": 109,
+      "code": "DA1010",
+      "name": "Nhập môn khoa học dữ liệu",
+      "credits": 4,
+      "prereqs": [],
+      "program": "Khoa học dữ liệu",
+      "faculty": "Khoa Khoa học dữ liệu & AI",
+      "status": "Đang mở",
+      "description": "Học phần Nhập môn khoa học dữ liệu (DA1010) do Khoa Khoa học dữ liệu & AI phụ trách, thuộc chương trình Khoa học dữ liệu."
+    },
+    {
+      "id": 110,
+      "code": "DA1020",
+      "name": "Lập trình R",
+      "credits": 4,
+      "prereqs": [
+        "DA1010",
+        "MA2010"
+      ],
+      "program": "Khoa học dữ liệu",
+      "faculty": "Khoa Khoa học dữ liệu & AI",
+      "status": "Đang mở",
+      "description": "Học phần Lập trình R (DA1020) do Khoa Khoa học dữ liệu & AI phụ trách, thuộc chương trình Khoa học dữ liệu."
+    },
+    {
+      "id": 111,
+      "code": "DA1030",
+      "name": "Thống kê mô tả",
+      "credits": 3,
+      "prereqs": [
+        "DA1020",
+        "MA2010"
+      ],
+      "program": "Khoa học dữ liệu",
+      "faculty": "Khoa Khoa học dữ liệu & AI",
+      "status": "Đang mở",
+      "description": "Học phần Thống kê mô tả (DA1030) do Khoa Khoa học dữ liệu & AI phụ trách, thuộc chương trình Khoa học dữ liệu."
+    },
+    {
+      "id": 112,
+      "code": "DA1040",
+      "name": "Thu thập dữ liệu",
+      "credits": 3,
+      "prereqs": [
+        "DA1030",
+        "MA2010"
+      ],
+      "program": "Khoa học dữ liệu",
+      "faculty": "Khoa Khoa học dữ liệu & AI",
+      "status": "Đang mở",
+      "description": "Học phần Thu thập dữ liệu (DA1040) do Khoa Khoa học dữ liệu & AI phụ trách, thuộc chương trình Khoa học dữ liệu."
+    },
+    {
+      "id": 113,
+      "code": "DA2010",
+      "name": "Làm sạch dữ liệu",
+      "credits": 5,
+      "prereqs": [
+        "DA1040"
+      ],
+      "program": "Khoa học dữ liệu",
+      "faculty": "Khoa Khoa học dữ liệu & AI",
+      "status": "Tạm ngưng",
+      "description": "Học phần Làm sạch dữ liệu (DA2010) do Khoa Khoa học dữ liệu & AI phụ trách, thuộc chương trình Khoa học dữ liệu."
+    },
+    {
+      "id": 114,
+      "code": "DA2020",
+      "name": "Trực quan hóa dữ liệu",
+      "credits": 4,
+      "prereqs": [
+        "DA2010",
+        "MA2010"
+      ],
+      "program": "Khoa học dữ liệu",
+      "faculty": "Khoa Khoa học dữ liệu & AI",
+      "status": "Đang mở",
+      "description": "Học phần Trực quan hóa dữ liệu (DA2020) do Khoa Khoa học dữ liệu & AI phụ trách, thuộc chương trình Khoa học dữ liệu."
+    },
+    {
+      "id": 115,
+      "code": "DA2030",
+      "name": "Học máy cơ sở",
+      "credits": 4,
+      "prereqs": [
+        "DA2020",
+        "MA2010"
+      ],
+      "program": "Khoa học dữ liệu",
+      "faculty": "Khoa Khoa học dữ liệu & AI",
+      "status": "Đang mở",
+      "description": "Học phần Học máy cơ sở (DA2030) do Khoa Khoa học dữ liệu & AI phụ trách, thuộc chương trình Khoa học dữ liệu."
+    },
+    {
+      "id": 116,
+      "code": "DA2040",
+      "name": "Xác suất cho dữ liệu",
+      "credits": 3,
+      "prereqs": [
+        "DA2030",
+        "MA2010"
+      ],
+      "program": "Khoa học dữ liệu",
+      "faculty": "Khoa Khoa học dữ liệu & AI",
+      "status": "Đang mở",
+      "description": "Học phần Xác suất cho dữ liệu (DA2040) do Khoa Khoa học dữ liệu & AI phụ trách, thuộc chương trình Khoa học dữ liệu."
+    },
+    {
+      "id": 117,
+      "code": "DA3010",
+      "name": "Khai phá dữ liệu",
+      "credits": 3,
+      "prereqs": [
+        "DA2040"
+      ],
+      "program": "Khoa học dữ liệu",
+      "faculty": "Khoa Khoa học dữ liệu & AI",
+      "status": "Đang mở",
+      "description": "Học phần Khai phá dữ liệu (DA3010) do Khoa Khoa học dữ liệu & AI phụ trách, thuộc chương trình Khoa học dữ liệu."
+    },
+    {
+      "id": 118,
+      "code": "DA3020",
+      "name": "Học sâu cơ sở",
+      "credits": 5,
+      "prereqs": [
+        "DA3010",
+        "MA2010"
+      ],
+      "program": "Khoa học dữ liệu",
+      "faculty": "Khoa Khoa học dữ liệu & AI",
+      "status": "Đang mở",
+      "description": "Học phần Học sâu cơ sở (DA3020) do Khoa Khoa học dữ liệu & AI phụ trách, thuộc chương trình Khoa học dữ liệu."
+    },
+    {
+      "id": 119,
+      "code": "DA3030",
+      "name": "Dữ liệu lớn",
+      "credits": 4,
+      "prereqs": [
+        "DA3020",
+        "MA2010"
+      ],
+      "program": "Khoa học dữ liệu",
+      "faculty": "Khoa Khoa học dữ liệu & AI",
+      "status": "Đang mở",
+      "description": "Học phần Dữ liệu lớn (DA3030) do Khoa Khoa học dữ liệu & AI phụ trách, thuộc chương trình Khoa học dữ liệu."
+    },
+    {
+      "id": 120,
+      "code": "DA3040",
+      "name": "Xử lý ngôn ngữ tự nhiên ứng dụng",
+      "credits": 4,
+      "prereqs": [
+        "DA3030",
+        "MA2010"
+      ],
+      "program": "Khoa học dữ liệu",
+      "faculty": "Khoa Khoa học dữ liệu & AI",
+      "status": "Đang mở",
+      "description": "Học phần Xử lý ngôn ngữ tự nhiên ứng dụng (DA3040) do Khoa Khoa học dữ liệu & AI phụ trách, thuộc chương trình Khoa học dữ liệu."
+    },
+    {
+      "id": 121,
+      "code": "DA4010",
+      "name": "Hệ thống khuyến nghị",
+      "credits": 3,
+      "prereqs": [
+        "DA3040"
+      ],
+      "program": "Khoa học dữ liệu",
+      "faculty": "Khoa Khoa học dữ liệu & AI",
+      "status": "Đang mở",
+      "description": "Học phần Hệ thống khuyến nghị (DA4010) do Khoa Khoa học dữ liệu & AI phụ trách, thuộc chương trình Khoa học dữ liệu."
+    },
+    {
+      "id": 122,
+      "code": "DA4020",
+      "name": "Dữ liệu chuỗi thời gian",
+      "credits": 3,
+      "prereqs": [
+        "DA4010",
+        "MA2010"
+      ],
+      "program": "Khoa học dữ liệu",
+      "faculty": "Khoa Khoa học dữ liệu & AI",
+      "status": "Đang mở",
+      "description": "Học phần Dữ liệu chuỗi thời gian (DA4020) do Khoa Khoa học dữ liệu & AI phụ trách, thuộc chương trình Khoa học dữ liệu."
+    },
+    {
+      "id": 123,
+      "code": "DA4030",
+      "name": "Thực nghiệm A/B",
+      "credits": 5,
+      "prereqs": [
+        "DA4020",
+        "MA2010"
+      ],
+      "program": "Khoa học dữ liệu",
+      "faculty": "Khoa Khoa học dữ liệu & AI",
+      "status": "Đang mở",
+      "description": "Học phần Thực nghiệm A/B (DA4030) do Khoa Khoa học dữ liệu & AI phụ trách, thuộc chương trình Khoa học dữ liệu."
+    },
+    {
+      "id": 124,
+      "code": "DA4040",
+      "name": "Kỹ thuật đặc trưng",
+      "credits": 4,
+      "prereqs": [
+        "DA4030",
+        "MA2010"
+      ],
+      "program": "Khoa học dữ liệu",
+      "faculty": "Khoa Khoa học dữ liệu & AI",
+      "status": "Đang mở",
+      "description": "Học phần Kỹ thuật đặc trưng (DA4040) do Khoa Khoa học dữ liệu & AI phụ trách, thuộc chương trình Khoa học dữ liệu."
+    },
+    {
+      "id": 125,
+      "code": "DA5010",
+      "name": "Đồ án khoa học dữ liệu",
+      "credits": 4,
+      "prereqs": [
+        "DA4040"
+      ],
+      "program": "Khoa học dữ liệu",
+      "faculty": "Khoa Khoa học dữ liệu & AI",
+      "status": "Đang mở",
+      "description": "Học phần Đồ án khoa học dữ liệu (DA5010) do Khoa Khoa học dữ liệu & AI phụ trách, thuộc chương trình Khoa học dữ liệu."
+    },
+    {
+      "id": 126,
+      "code": "DA5020",
+      "name": "Chuyên đề trí tuệ nhân tạo",
+      "credits": 3,
+      "prereqs": [
+        "DA5010",
+        "MA2010"
+      ],
+      "program": "Khoa học dữ liệu",
+      "faculty": "Khoa Khoa học dữ liệu & AI",
+      "status": "Đang mở",
+      "description": "Học phần Chuyên đề trí tuệ nhân tạo (DA5020) do Khoa Khoa học dữ liệu & AI phụ trách, thuộc chương trình Khoa học dữ liệu."
+    },
+    {
+      "id": 127,
+      "code": "DA5030",
+      "name": "Triển khai mô hình",
+      "credits": 3,
+      "prereqs": [
+        "DA5020",
+        "MA2010"
+      ],
+      "program": "Khoa học dữ liệu",
+      "faculty": "Khoa Khoa học dữ liệu & AI",
+      "status": "Đang mở",
+      "description": "Học phần Triển khai mô hình (DA5030) do Khoa Khoa học dữ liệu & AI phụ trách, thuộc chương trình Khoa học dữ liệu."
+    },
+    {
+      "id": 128,
+      "code": "DA5040",
+      "name": "Đạo đức dữ liệu",
+      "credits": 5,
+      "prereqs": [
+        "DA5030",
+        "MA2010"
+      ],
+      "program": "Khoa học dữ liệu",
+      "faculty": "Khoa Khoa học dữ liệu & AI",
+      "status": "Đang mở",
+      "description": "Học phần Đạo đức dữ liệu (DA5040) do Khoa Khoa học dữ liệu & AI phụ trách, thuộc chương trình Khoa học dữ liệu."
+    }
+  ]
+}
