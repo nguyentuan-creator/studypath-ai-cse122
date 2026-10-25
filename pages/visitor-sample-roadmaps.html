@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Khám phá các lộ trình học tập mẫu theo định hướng nghề nghiệp và xem khung học phần từng học kỳ.">
+  <title>Lộ trình mẫu – StudyPath AI</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/visitor-sample-roadmaps.css">
+</head>
+<body class="page-sample-roadmaps">
+  <div class="roadmap-page">
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="visitor-course-catalog.html" aria-label="StudyPath AI, về danh mục học phần">
+          <span class="brand-mark" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 10 12 5 2 10l10 5 10-5Z"></path>
+              <path d="M6 12v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"></path>
+            </svg>
+          </span>
+          <span class="brand-name">StudyPath <span>AI</span></span>
+        </a>
+
+        <nav class="main-nav" aria-label="Điều hướng chính">
+          <a class="nav-tab" href="visitor-course-catalog.html">Trang chủ</a>
+          <a class="nav-tab" href="visitor-course-catalog.html">Học phần</a>
+          <a class="nav-tab active" href="visitor-sample-roadmaps.html" aria-current="page">Lộ trình mẫu</a>
+        </nav>
+
+        <div class="header-actions">
+          <a class="btn btn-secondary btn-sm" href="login.html">Đăng nhập</a>
+          <a class="btn btn-primary btn-sm" href="register.html">Đăng ký</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="roadmap-content">
+      <section class="page-head">
+        <div>
+          <h1>Lộ trình mẫu</h1>
+          <p>Ba lộ trình tham khảo theo nghề nghiệp phổ biến</p>
+        </div>
+        <p class="page-note">Dành cho chương trình đào tạo</p>
+      </section>
+
+      <section class="roadmap-choices" id="roadmapChoices" aria-label="Chọn định hướng lộ trình" aria-live="polite"></section>
+
+      <section class="roadmap-workspace" aria-label="Chi tiết lộ trình được chọn">
+        <div class="semester-panel">
+          <div class="semester-panel-head">
+            <div>
+              <h2 id="selectedRoadmapTitle">Lộ trình đang tải</h2>
+              <p id="selectedRoadmapDescription" class="muted"></p>
+            </div>
+            <span class="semester-range">HK1 – HK4</span>
+          </div>
+          <div class="semester-grid" id="semesterGrid" aria-live="polite" aria-busy="true"></div>
+          <p class="semester-note" id="semesterNote"></p>
+        </div>
+
+        <aside class="roadmap-sidebar">
+          <section class="summary-card" aria-labelledby="summaryTitle">
+            <h2 id="summaryTitle">Tổng quan lộ trình</h2>
+            <dl class="summary-list">
+              <div class="summary-row">
+                <span class="summary-icon" aria-hidden="true">◉</span>
+                <div><dt>Tổng tín chỉ</dt><dd id="totalCredits">—</dd></div>
+              </div>
+              <div class="summary-row">
+                <span class="summary-icon" aria-hidden="true">▣</span>
+                <div><dt>Thời lượng</dt><dd id="totalSemesters">—</dd></div>
+              </div>
+              <div class="summary-row">
+                <span class="summary-icon" aria-hidden="true">✦</span>
+                <div><dt>Mục tiêu</dt><dd id="selectedProgram">—</dd></div>
+              </div>
+            </dl>
+            <button class="btn btn-primary use-roadmap-btn" id="useRoadmap" type="button" disabled>
+              <span aria-hidden="true">→</span> Đăng ký lộ trình này
+            </button>
+            <p class="summary-hint">Đăng nhập để áp dụng khung học phần vào tài khoản</p>
+          </section>
+
+          <section class="fit-card" aria-labelledby="fitTitle">
+            <h2 id="fitTitle">Phù hợp với bạn nếu</h2>
+            <ul id="suitList" class="suit-list"></ul>
+          </section>
+        </aside>
+      </section>
+
+      <section class="roadmap-state hidden" id="roadmapError" role="alert">
+        <h2>Không tải được lộ trình mẫu</h2>
+        <p>Kiểm tra kết nối rồi thử tải lại dữ liệu.</p>
+        <button class="btn btn-secondary btn-sm" id="retryRoadmaps" type="button">Thử lại</button>
+      </section>
+      <section class="roadmap-state hidden" id="roadmapEmpty">
+        <h2>Chưa có lộ trình mẫu</h2>
+        <p>Các lộ trình tham khảo sẽ được cập nhật tại đây.</p>
+      </section>
+    </main>
+
+    <footer class="page-footer">
+      <p class="copyright">© 2026 StudyPath AI · Hỗ trợ hoạch định học tập thông minh</p>
+      <p class="guest-badge"><span class="guest-dot" aria-hidden="true"></span>Bạn đang xem với tư cách khách</p>
+    </footer>
+  </div>
+
+  <dialog class="login-dialog" id="loginDialog" aria-labelledby="dialogTitle">
+    <form method="dialog" class="dialog-close-form">
+      <button class="icon-btn" aria-label="Đóng cửa sổ">×</button>
+    </form>
+    <div class="dialog-icon" aria-hidden="true">↗</div>
+    <h2 id="dialogTitle">Đăng nhập để lưu lộ trình</h2>
+    <p id="dialogMessage">Lộ trình đã chọn sẽ được dùng làm khung tham khảo trong kế hoạch học tập của bạn.</p>
+    <div class="dialog-actions">
+      <a class="btn btn-primary" href="login.html">Đăng nhập</a>
+      <a class="btn btn-secondary" href="register.html">Tạo tài khoản</a>
+    </div>
+  </dialog>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/modules/visitor-sample-roadmaps.js"></script>
+</body>
+</html>
