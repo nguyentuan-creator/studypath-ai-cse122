@@ -1,0 +1,68 @@
+/* StudyPath AI — style riêng của trang profile.html (nạp sau base.css) */
+
+/* Tiêu đề trang */
+.page-head h1 {
+  font-size: 1.75rem;
+}
+
+/* Lưới 2 cột cho các trường form */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: var(--space-3);
+}
+
+/* Trường bị khóa: input xám + nhãn "Khóa" nằm trong input */
+.input-locked {
+  position: relative;
+}
+
+.input-locked .form-input {
+  padding-right: 72px;
+}
+
+.input-locked .tag {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.form-input:disabled {
+  background-color: var(--color-bg);
+  color: var(--color-text-muted);
+  cursor: not-allowed;
+}
+
+/* Nút dưới cùng */
+.page-actions {
+  display: flex;
+  gap: var(--space-1);
+  margin-top: var(--space-2);
+}
+
+/* Thẻ tóm tắt hồ sơ bên phải */
+.profile-summary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: var(--space-3);
+  text-align: center;
+}
+
+.profile-summary h2 {
+  font-size: var(--font-size-lg);
+}
+
+/* Responsive riêng của trang */
+@media (max-width: 640px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar-user .user-name {
+    display: none;
+  }
+}

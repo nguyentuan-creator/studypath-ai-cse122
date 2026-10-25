@@ -1,15 +1,14 @@
 /* =========================================================
-   StudyPath AI — responsive trang Not Found (404)
-   Lưu ý: file này nạp TRƯỚC style.css nên selector phải có
-   độ ưu tiên cao hơn (prefix body.page-404) và chỉ đặt các
-   thuộc tính mà style.css không khai báo.
+   StudyPath AI — responsive dùng chung
+   Phần dưới chỉ áp dụng cho trang Đăng nhập.
    ========================================================= */
+
 @media (max-width: 640px) {
-  body.page-404 .not-found-actions {
-    flex-direction: column;
+  body.page-login .auth-page {
+    padding: var(--space-2);
   }
 
-  body.page-404 .not-found-actions .btn {
-    width: 100%;
+  body.page-login .auth-card {
+    padding: var(--space-3);
   }
 }

@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Nguyễn Gia Bảo",
+      "email": "sinhvien@studypath.edu.vn",
+      "password": "123456",
+      "role": "student",
+      "roleLabel": "Sinh viên"
+    },
+    {
+      "id": 2,
+      "name": "Phạm Thu Hà",
+      "email": "covan@studypath.edu.vn",
+      "password": "123456",
+      "role": "advisor",
+      "roleLabel": "Cố vấn học tập"
+    },
+    {
+      "id": 3,
+      "name": "Đỗ Minh Quân",
+      "email": "admin@studypath.edu.vn",
+      "password": "123456",
+      "role": "admin",
+      "roleLabel": "Quản trị viên"
+    }
+  ]
+}

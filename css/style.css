@@ -1,51 +1,166 @@
 /* =========================================================
-   StudyPath AI — style trang Not Found (404.html)
-   Scoped dưới body.page-404, không ảnh hưởng màn khác.
+   StudyPath AI — style dùng chung
+   Phần dưới chỉ áp dụng cho trang Đăng nhập.
+   Mọi selector được scope trong .page-login để không ảnh hưởng
+   các màn hình khác dùng chung file này.
    ========================================================= */
 
-body.page-404 .not-found-page {
+/* ===== Trang Đăng nhập ===== */
+
+/* Khung trang: card nằm giữa màn hình */
+.page-login .auth-page {
   min-height: 100vh;
   display: flex;
   padding: var(--space-3);
 }
 
-body.page-404 .not-found-card {
+/* Card đăng nhập */
+.page-login .auth-card {
+  width: 100%;
+  max-width: 400px;
   margin: auto;
-  text-align: center;
-  max-width: 420px;
+  padding: var(--space-4);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 18px 40px -24px rgba(15, 23, 42, 0.28);
 }
 
-body.page-404 .not-found-code {
-  font-size: 64px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: var(--color-primary);
-  line-height: 1.1;
-}
-
-body.page-404 .not-found-title {
-  font-size: 18px;
-  font-weight: 700;
-  margin-top: var(--space-2);
-}
-
-body.page-404 .not-found-desc {
-  font-size: 13.5px;
-  color: var(--color-text-muted);
-  line-height: 1.55;
-  margin-top: 8px;
-}
-
-body.page-404 .not-found-actions {
+/* Thương hiệu */
+.page-login .auth-brand {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  margin-top: var(--space-3);
-  flex-wrap: wrap;
+  gap: var(--space-1);
+  margin-bottom: var(--space-3);
 }
 
-body.page-404 .not-found-actions .btn {
-  height: 38px;
-  font-size: 13.5px;
+.page-login .auth-brand-mark {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-login .auth-brand-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+/* Tiêu đề */
+.page-login .auth-title {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+  line-height: 1.25;
+}
+
+.page-login .auth-subtitle {
+  margin-top: 6px;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+/* Thông báo lỗi xác thực */
+.page-login .auth-error {
+  margin-top: var(--space-2);
+}
+
+/* Biểu mẫu */
+.page-login .auth-form {
+  margin-top: 22px;
+}
+
+.page-login .auth-form .form-group {
+  margin-bottom: 14px;
+}
+
+.page-login .auth-form .form-label {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.page-login .auth-required {
+  color: var(--color-danger);
+}
+
+.page-login .auth-form .form-input {
+  height: 40px;
+  padding: 8px 12px;
+  font-size: var(--font-size-sm);
+  border-radius: var(--radius-sm);
+}
+
+.page-login .auth-form .form-input::placeholder {
+  color: #94a3b8;
+}
+
+.page-login .auth-label-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-1);
+}
+
+.page-login .auth-label-row .form-label {
+  margin: 0;
+}
+
+.page-login .auth-forgot {
+  font-size: 12.5px;
+  font-weight: 600;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+/* Nút đăng nhập + trạng thái đang xử lý */
+.page-login .auth-submit {
+  width: 100%;
+  height: 40px;
+  padding: 0 var(--space-2);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+}
+
+.page-login .auth-submit:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.page-login .auth-spinner {
+  display: none;
+  width: 15px;
+  height: 15px;
+  border: 2px solid rgba(255, 255, 255, 0.45);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: auth-spin 0.7s linear infinite;
+}
+
+.page-login .auth-submit.is-loading .auth-spinner {
+  display: inline-block;
+}
+
+@keyframes auth-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Liên kết chuyển sang đăng ký */
+.page-login .auth-switch {
+  margin-top: var(--space-2);
+  text-align: center;
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.page-login .auth-switch a {
+  font-weight: 600;
 }

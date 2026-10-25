@@ -1,0 +1,164 @@
+{
+  "plans": [
+    {
+      "id": "PL-2026-001",
+      "studentId": "2551060707",
+      "studentName": "Hứa Đình Kiên",
+      "title": "Kế hoạch HK1 năm 3 — chuyên ngành CNTT",
+      "semester": "HK1 2026-2027",
+      "status": "submitted",
+      "credits": 16,
+      "createdAt": "2026-10-20T08:15:00+07:00"
+    },
+    {
+      "id": "PL-2026-002",
+      "studentId": "2551060707",
+      "studentName": "Hứa Đình Kiên",
+      "title": "Dự thảo HK2 năm 3 — học cải thiện",
+      "semester": "HK2 2026-2027",
+      "status": "draft",
+      "credits": 13,
+      "createdAt": "2026-10-22T21:40:00+07:00"
+    },
+    {
+      "id": "PL-2026-003",
+      "studentId": "2551060712",
+      "studentName": "Hồ Trung Anh",
+      "title": "Kế hoạch học kỳ chính HK1",
+      "semester": "HK1 2026-2027",
+      "status": "submitted",
+      "credits": 16,
+      "createdAt": "2026-10-18T09:05:00+07:00"
+    },
+    {
+      "id": "PL-2026-004",
+      "studentId": "2551060712",
+      "studentName": "Hồ Trung Anh",
+      "title": "Kế hoạch bổ sung tín chỉ",
+      "semester": "HK2 2025-2026",
+      "status": "approved",
+      "credits": 14,
+      "createdAt": "2026-06-12T14:20:00+07:00"
+    },
+    {
+      "id": "PL-2026-005",
+      "studentId": "2551060725",
+      "studentName": "Nguyễn Bá Hoàng Tuân",
+      "title": "Kế hoạch tốt nghiệp — HK1",
+      "semester": "HK1 2026-2027",
+      "status": "submitted",
+      "credits": 16,
+      "createdAt": "2026-10-19T10:30:00+07:00"
+    },
+    {
+      "id": "PL-2026-006",
+      "studentId": "2551060725",
+      "studentName": "Nguyễn Bá Hoàng Tuân",
+      "title": "Kế hoạch dự phòng học kỳ hè",
+      "semester": "HK2 2025-2026",
+      "status": "rejected",
+      "credits": 15,
+      "createdAt": "2026-05-30T08:45:00+07:00"
+    },
+    {
+      "id": "PL-2026-007",
+      "studentId": "2551060731",
+      "studentName": "Nguyễn Gia Bảo",
+      "title": "Lộ trình 4 học kỳ còn lại",
+      "semester": "HK1 2026-2027",
+      "status": "approved",
+      "credits": 15,
+      "createdAt": "2026-09-28T16:10:00+07:00"
+    },
+    {
+      "id": "PL-2026-008",
+      "studentId": "2551060756",
+      "studentName": "Trần Minh Khang",
+      "title": "Kế hoạch HK1 — song bằng",
+      "semester": "HK1 2026-2027",
+      "status": "pending",
+      "credits": 15,
+      "createdAt": "2026-10-21T19:25:00+07:00"
+    },
+    {
+      "id": "PL-2026-009",
+      "studentId": "2551060763",
+      "studentName": "Lê Thu Trang",
+      "title": "Kế hoạch HK1 — chuyên ngành KHDL",
+      "semester": "HK1 2026-2027",
+      "status": "submitted",
+      "credits": 17,
+      "createdAt": "2026-10-17T11:00:00+07:00"
+    },
+    {
+      "id": "PL-2026-010",
+      "studentId": "2551060763",
+      "studentName": "Lê Thu Trang",
+      "title": "Kế hoạch học kỳ hè 2026",
+      "semester": "HK2 2025-2026",
+      "status": "archived",
+      "credits": 14,
+      "createdAt": "2026-04-15T09:50:00+07:00"
+    },
+    {
+      "id": "PL-2026-011",
+      "studentId": "2551060778",
+      "studentName": "Võ Hoàng Nam",
+      "title": "Kế hoạch cải thiện điểm HK1",
+      "semester": "HK1 2026-2027",
+      "status": "submitted",
+      "credits": 15,
+      "createdAt": "2026-10-16T20:35:00+07:00"
+    },
+    {
+      "id": "PL-2026-012",
+      "studentId": "2551060784",
+      "studentName": "Đặng Ngọc Mai",
+      "title": "Kế hoạch HK1 — An toàn thông tin",
+      "semester": "HK1 2026-2027",
+      "status": "draft",
+      "credits": 15,
+      "createdAt": "2026-10-23T07:55:00+07:00"
+    },
+    {
+      "id": "PL-2026-013",
+      "studentId": "2551060790",
+      "studentName": "Bùi Anh Thư",
+      "title": "Kế hoạch HK1 năm 4",
+      "semester": "HK1 2026-2027",
+      "status": "approved",
+      "credits": 16,
+      "createdAt": "2026-09-30T13:15:00+07:00"
+    },
+    {
+      "id": "PL-2026-014",
+      "studentId": "2551060790",
+      "studentName": "Bùi Anh Thư",
+      "title": "Kế hoạch học vượt HK2 năm 3",
+      "semester": "HK2 2025-2026",
+      "status": "approved",
+      "credits": 14,
+      "createdAt": "2026-05-20T15:40:00+07:00"
+    },
+    {
+      "id": "PL-2026-015",
+      "studentId": "2551060731",
+      "studentName": "Nguyễn Gia Bảo",
+      "title": "Kế hoạch HK1 — tối ưu lịch học",
+      "semester": "HK1 2026-2027",
+      "status": "submitted",
+      "credits": 14,
+      "createdAt": "2026-10-22T18:05:00+07:00"
+    },
+    {
+      "id": "PL-2026-016",
+      "studentId": "2551060756",
+      "studentName": "Trần Minh Khang",
+      "title": "Kế hoạch học kỳ hè — thực tập",
+      "semester": "HK2 2025-2026",
+      "status": "archived",
+      "credits": 17,
+      "createdAt": "2026-04-10T10:20:00+07:00"
+    }
+  ]
+}
