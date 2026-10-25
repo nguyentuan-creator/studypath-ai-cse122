@@ -1,7 +1,6 @@
 (function () {
   "use strict";
 
-  const PLANS_ENDPOINT = "../assets/data/plans.json";
   const REVIEW_PAGE = "advisor-student-plan-review.html";
 
   const nodes = {
@@ -25,16 +24,6 @@
     VIEW_KEYS.forEach(function (key) {
       nodes[key].classList.toggle("hidden", key !== activeKey);
     });
-  }
-
-  function getPlanArray(payload) {
-    if (Array.isArray(payload)) {
-      return payload;
-    }
-    if (payload && Array.isArray(payload.plans)) {
-      return payload.plans;
-    }
-    throw new Error("plans.json không đúng định dạng");
   }
 
   function countStudents(plans) {
@@ -162,14 +151,9 @@
     showView("loading");
 
     try {
-      const response = await fetch(PLANS_ENDPOINT, { cache: "no-store" });
-      if (!response.ok) {
-        throw new Error("Không tải được plans.json (HTTP " + response.status + ")");
-      }
-
-      const plans = getPlanArray(await response.json());
+      const plans = await window.StudyPathAPI.getPlans();
       const pendingPlans = plans.filter(function (plan) {
-        return plan && plan.status === "submitted";
+        return plan && (plan.status === "submitted" || plan.status === "pending");
       });
 
       renderSummary(plans, pendingPlans);
@@ -190,6 +174,10 @@
       nodes.emptyRetry.disabled = false;
       nodes.loading.setAttribute("aria-busy", "false");
     }
+  }
+
+  if (window.StudyPathAPI && StudyPathAPI.onStoreChange) {
+    StudyPathAPI.onStoreChange("plans", loadPlans);
   }
 
   nodes.retry.addEventListener("click", loadPlans);
