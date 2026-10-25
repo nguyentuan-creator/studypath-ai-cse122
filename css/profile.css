@@ -61,8 +61,4 @@
   .form-grid {
     grid-template-columns: 1fr;
   }
-
-  .topbar-user .user-name {
-    display: none;
-  }
 }

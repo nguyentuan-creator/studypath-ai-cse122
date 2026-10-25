@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kế hoạch học kỳ | StudyPath AI</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/student-semester-plan.css">
+</head>
+<body data-page="plan">
+  <header class="app-header">
+    <button type="button" class="icon-btn menu-btn" data-shell="menu" aria-label="Mở menu" aria-controls="app-sidebar" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    </button>
+
+    <a class="brand" href="student-dashboard.html" data-shell="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2 2 8l10 6 10-6-10-6z"></path>
+          <path d="M6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5"></path>
+        </svg>
+      </span>
+      <span>StudyPath AI</span>
+    </a>
+
+    <div class="header-actions">
+      <a class="icon-btn" href="notifications.html" aria-label="Thông báo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+        <span class="bell-dot" aria-hidden="true"></span>
+      </a>
+      <div class="header-user">
+        <div class="user-name">
+          <span data-shell-user="name"></span>
+          <span class="user-role" data-shell-user="meta"></span>
+        </div>
+        <span class="avatar avatar-sm" data-shell-user="avatar" aria-hidden="true"></span>
+      </div>
+    </div>
+  </header>
+
+  <div class="app-body">
+    <aside class="sidebar" id="app-sidebar">
+      <nav class="sidebar-nav" aria-label="Điều hướng chính" data-shell="nav"></nav>
+    </aside>
+
+    <main class="main-content">
+        <div class="page-head">
+          <div>
+            <h1>Kế hoạch học kỳ — HK1 2026–2027</h1>
+            <p class="text-muted">Bản nháp · Cập nhật lần cuối 01/10/2026</p>
+          </div>
+          <div class="page-actions">
+            <button type="button" class="btn btn-secondary" id="btn-save-draft">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
+              Lưu bản nháp
+            </button>
+            <button type="button" class="btn btn-primary" id="btn-submit-plan">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              Gửi cố vấn duyệt
+            </button>
+          </div>
+        </div>
+
+        <!-- Stepper trạng thái kế hoạch -->
+        <ol class="stepper" aria-label="Trạng thái kế hoạch">
+          <li class="step active">
+            <span class="step-icon" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.83 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>
+            </span>
+            <span class="step-text"><strong>Bản nháp</strong><small>Đang chỉnh sửa</small></span>
+          </li>
+          <li class="step">
+            <span class="step-icon" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            </span>
+            <span class="step-text"><strong>Chờ duyệt</strong><small>Chờ cố vấn</small></span>
+          </li>
+          <li class="step">
+            <span class="step-icon" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </span>
+            <span class="step-text"><strong>Đã duyệt</strong><small>Hoàn tất</small></span>
+          </li>
+          <li class="step">
+            <span class="step-icon" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </span>
+            <span class="step-text"><strong>Bị từ chối</strong><small>Cần điều chỉnh</small></span>
+          </li>
+        </ol>
+
+        <!-- AI-2: cảnh báo quá tải (JS render theo tổng tín chỉ) -->
+        <div id="risk-banner" aria-live="polite"></div>
+
+        <div class="grid-sidebar plan-grid">
+          <div class="plan-main">
+            <!-- Bảng học phần -->
+            <div class="card table-card">
+              <div class="table-wrapper">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Học phần</th>
+                      <th>Tín chỉ</th>
+                      <th>Loại</th>
+                      <th>Ghi chú</th>
+                      <th>Thao tác</th>
+                    </tr>
+                  </thead>
+                  <tbody id="plan-body"></tbody>
+                </table>
+              </div>
+              <div class="table-foot">
+                <span id="plan-count">Tổng cộng · 6 học phần</span>
+                <strong class="plan-total" id="plan-total">21 tín chỉ</strong>
+              </div>
+            </div>
+
+            <!-- Gợi ý chọn học phần -->
+            <div class="card suggest-card" id="suggest-card">
+              <div class="card-head suggest-head">
+                <div>
+                  <h2>Chọn học phần</h2>
+                  <p class="text-sm text-muted">Gợi ý theo lộ trình và điều kiện tiên quyết</p>
+                </div>
+                <button type="button" class="btn btn-secondary btn-sm" id="btn-find-course">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+                  Tìm học phần khác
+                </button>
+              </div>
+              <div class="suggest-list" id="suggest-list"></div>
+            </div>
+          </div>
+
+          <aside class="plan-aside">
+            <!-- Góp ý cố vấn -->
+            <div class="card advisor-card">
+              <div class="card-head">
+                <h2>Góp ý cố vấn</h2>
+                <span class="tag tag-blue">1 mới</span>
+              </div>
+              <div class="advisor-info">
+                <span class="avatar avatar-sm" aria-hidden="true">PH</span>
+                <div>
+                  <strong>Phạm Thu Hà</strong>
+                  <p class="text-sm text-muted">Cố vấn học tập · 02/10/2026</p>
+                </div>
+              </div>
+              <blockquote class="advisor-quote">&ldquo;Em nên cân nhắc giảm một học phần 4 tín chỉ. IT4040 có khối lượng bài tập lớn khi học cùng IT1020.&rdquo;</blockquote>
+              <button type="button" class="btn btn-secondary btn-block" id="btn-reply-advisor">Phản hồi cố vấn</button>
+            </div>
+
+            <!-- Lịch sử phiên bản -->
+            <div class="card version-card">
+              <div class="card-head">
+                <h2>Lịch sử phiên bản</h2>
+              </div>
+              <ol class="version-list">
+                <li class="version-item current">
+                  <span class="version-dot" aria-hidden="true"></span>
+                  <div class="version-body">
+                    <div class="version-title"><strong>v3 · Bản nháp hiện tại</strong><time>01/10/2026</time></div>
+                    <p class="text-sm text-muted">Đang chỉnh sửa</p>
+                  </div>
+                </li>
+                <li class="version-item">
+                  <span class="version-dot" aria-hidden="true"></span>
+                  <div class="version-body">
+                    <div class="version-title"><strong>v2 · Cập nhật theo góp ý</strong><time>28/09/2026</time></div>
+                    <p class="text-sm text-muted">Đã lưu</p>
+                  </div>
+                </li>
+                <li class="version-item">
+                  <span class="version-dot" aria-hidden="true"></span>
+                  <div class="version-body">
+                    <div class="version-title"><strong>v1 · Khởi tạo kế hoạch</strong><time>25/09/2026</time></div>
+                    <p class="text-sm text-muted">Phiên bản đầu tiên</p>
+                  </div>
+                </li>
+              </ol>
+            </div>
+          </aside>
+        </div>
+      </main>
+  </div>
+
+  <div class="sidebar-overlay" data-shell="overlay" hidden></div>
+
+  <!-- Modal chỉnh sửa học phần -->
+  <div class="modal-overlay hidden" id="edit-modal">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="edit-modal-title">
+      <div class="modal-head">
+        <h2 id="edit-modal-title">Chỉnh sửa học phần</h2>
+        <button type="button" class="icon-btn" id="btn-close-modal" aria-label="Đóng">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      <form id="edit-form" novalidate>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="edit-name" class="form-label">Tên học phần <span class="required" aria-hidden="true">*</span></label>
+            <input type="text" id="edit-name" class="form-input" required>
+            <p class="form-error" aria-live="polite"></p>
+          </div>
+          <div class="form-group">
+            <label for="edit-code" class="form-label">Mã học phần <span class="required" aria-hidden="true">*</span></label>
+            <input type="text" id="edit-code" class="form-input" required>
+            <p class="form-error" aria-live="polite"></p>
+          </div>
+          <div class="form-group">
+            <label for="edit-credits" class="form-label">Tín chỉ</label>
+            <select id="edit-credits" class="form-select">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4" selected>4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="edit-type" class="form-label">Loại</label>
+            <select id="edit-type" class="form-select">
+              <option value="Bắt buộc" selected>Bắt buộc</option>
+              <option value="Tự chọn">Tự chọn</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="edit-note" class="form-label">Ghi chú</label>
+            <input type="text" id="edit-note" class="form-input">
+          </div>
+        </div>
+        <div class="modal-foot">
+          <button type="button" class="btn btn-secondary" id="btn-cancel-edit">Huỷ</button>
+          <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/shell.js"></script>
+  <script src="../js/student-semester-plan.js"></script>
+</body>
+</html>

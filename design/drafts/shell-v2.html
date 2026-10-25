@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mockup shell v2 — StudyPath AI</title>
+<link rel="stylesheet" href="../../css/base.css">
+<style>
+  :root { --header-height: 64px; }
+
+  body {
+    margin: 0;
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-family);
+  }
+
+  /* ===== HEADER FULL-WIDTH ===== */
+  .app-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: 0 var(--space-3);
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .app-header .brand {
+    padding: 0;
+    flex-shrink: 0;
+  }
+
+  .header-actions {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  .header-user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-left: var(--space-2);
+    border-left: 1px solid var(--color-border);
+  }
+
+  .header-user .user-name {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    line-height: 1.3;
+    text-align: right;
+  }
+
+  .header-user .user-role {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: var(--color-text-muted);
+  }
+
+  .menu-btn { display: none; }
+
+  /* ===== BODY: ASIDE + MAIN ===== */
+  .app-body {
+    display: flex;
+    min-height: calc(100vh - var(--header-height));
+  }
+
+  .app-body .sidebar {
+    position: sticky;
+    top: var(--header-height);
+    bottom: auto;
+    height: calc(100vh - var(--header-height));
+    flex-shrink: 0;
+  }
+
+  .app-body .sidebar-nav {
+    padding-top: var(--space-2);
+  }
+
+  .app-body .main-content {
+    flex: 1;
+    min-width: 0;
+    padding: var(--space-3);
+    max-width: 1240px;
+  }
+
+  .content-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.55fr) minmax(280px, 0.9fr);
+    gap: var(--space-3);
+    align-items: start;
+  }
+
+  .summary-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--space-1);
+    padding: var(--space-3);
+  }
+
+  .summary-card h2 { margin: 4px 0 0; }
+
+  .summary-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-top: 4px;
+  }
+
+  .summary-divider {
+    width: 100%;
+    height: 1px;
+    background: var(--color-border);
+    margin: var(--space-2) 0;
+  }
+
+  .summary-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: var(--font-size-sm);
+  }
+
+  .summary-row span:first-child { color: var(--color-text-muted); }
+
+  @media (max-width: 1024px) {
+    .app-body .sidebar { width: 68px; }
+    .app-body .sidebar .nav-item span,
+    .app-body .sidebar .brand span { display: none; }
+    .content-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 760px) {
+    .app-header { gap: var(--space-2); padding: 0 var(--space-2); }
+    .menu-btn { display: inline-flex; }
+    .header-user .user-name { display: none; }
+    .header-user { border-left: 0; padding-left: 0; }
+    .app-body .sidebar { display: none; }
+    .app-body .main-content { padding: var(--space-2); }
+  }
+</style>
+</head>
+<body>
+
+<header class="app-header">
+  <button type="button" class="icon-btn menu-btn" aria-label="Mở menu">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+
+  <a class="brand" href="#">
+    <span class="brand-mark" aria-hidden="true">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2 2 8l10 6 10-6-10-6z"></path>
+        <path d="M6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5"></path>
+      </svg>
+    </span>
+    <span>StudyPath AI</span>
+  </a>
+
+  <div class="header-actions">
+    <button type="button" class="icon-btn" aria-label="Thông báo">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+      <span class="bell-dot" aria-hidden="true"></span>
+    </button>
+    <div class="header-user">
+      <div class="user-name">Hứa Đình Kiên<span class="user-role">Sinh viên · 2551060707</span></div>
+      <span class="avatar avatar-sm">K</span>
+    </div>
+  </div>
+</header>
+
+<div class="app-body">
+  <aside class="sidebar">
+    <nav class="sidebar-nav" aria-label="Điều hướng chính">
+      <a class="nav-item" href="#">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"></rect><rect x="14" y="3" width="7" height="7" rx="1.5"></rect><rect x="3" y="14" width="7" height="7" rx="1.5"></rect><rect x="14" y="14" width="7" height="7" rx="1.5"></rect></svg>
+        <span>Tổng quan</span>
+      </a>
+      <a class="nav-item" href="#">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+        <span>Kế hoạch học kỳ</span>
+      </a>
+      <a class="nav-item" href="#">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+        <span>Lộ trình AI</span>
+      </a>
+      <a class="nav-item" href="#">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+        <span>Thông báo</span>
+      </a>
+      <a class="nav-item active" href="#" aria-current="page">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        <span>Hồ sơ</span>
+      </a>
+      <a class="nav-item" href="#">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+        <span>Cài đặt</span>
+      </a>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <div class="page-head">
+      <div>
+        <h1>Hồ sơ cá nhân</h1>
+        <p class="text-muted">Thông tin tài khoản của bạn</p>
+      </div>
+    </div>
+
+    <div class="content-grid">
+      <form>
+        <section class="card mb-2">
+          <div class="card-head">
+            <h2>Thông tin cá nhân</h2>
+            <p class="text-sm text-muted">Trường có nhãn "Khóa" chỉ quản trị viên được sửa</p>
+          </div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label" for="full-name">Họ và tên <span class="required" aria-hidden="true">*</span></label>
+              <input type="text" id="full-name" class="form-input" value="Hứa Đình Kiên">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="email">Email</label>
+              <div class="input-locked">
+                <input type="email" id="email" class="form-input" value="kien.hua@studypath.edu.vn" disabled>
+                <span class="tag tag-gray">Khóa</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="student-id">MSSV</label>
+              <div class="input-locked">
+                <input type="text" id="student-id" class="form-input" value="2551060707" disabled>
+                <span class="tag tag-gray">Khóa</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="program">Chương trình</label>
+              <input type="text" id="program" class="form-input" value="Công nghệ thông tin (K17)" disabled>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="year">Năm học</label>
+              <input type="text" id="year" class="form-input" value="Năm 3">
+            </div>
+          </div>
+        </section>
+
+        <div class="page-actions">
+          <button type="button" class="btn btn-primary">Lưu thay đổi</button>
+          <button type="button" class="btn btn-secondary">Hoàn tác</button>
+        </div>
+      </form>
+
+      <aside class="card summary-card" aria-label="Tóm tắt hồ sơ">
+        <span class="avatar avatar-lg">K</span>
+        <h2>Hứa Đình Kiên</h2>
+        <span class="tag tag-blue">Sinh viên</span>
+        <div class="summary-meta">
+          <span class="text-sm text-muted">MSSV 2551060707 · CNTT (K17)</span>
+        </div>
+        <div class="summary-divider"></div>
+        <div class="summary-row"><span>Kế hoạch đang hoạt động</span><strong>2</strong></div>
+        <div class="summary-row"><span>Tín chỉ tích lũy</span><strong>84/130</strong></div>
+        <div class="summary-row"><span>GPA tích lũy</span><strong>3.20</strong></div>
+      </aside>
+    </div>
+  </main>
+</div>
+
+</body>
+</html>

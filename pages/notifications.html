@@ -8,45 +8,40 @@
 <link rel="stylesheet" href="../css/base.css">
 <link rel="stylesheet" href="../css/notifications.css">
 </head>
-<body class="page-notifications">
-<div class="app-shell">
+<body class="page-notifications" data-page="notifications">
+<header class="app-header">
+  <button type="button" class="icon-btn menu-btn" data-shell="menu" aria-label="Mở menu" aria-controls="app-sidebar" aria-expanded="false">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
 
-  <aside class="sidebar">
-    <a class="brand" href="notifications.html">
-      <span class="brand-mark" aria-hidden="true">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg>
-      </span>
-      <span>StudyPath AI</span>
+  <a class="brand" href="student-dashboard.html" data-shell="brand">
+    <span class="brand-mark" aria-hidden="true">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg>
+    </span>
+    <span>StudyPath AI</span>
+  </a>
+
+  <div class="header-actions">
+    <a class="icon-btn" href="notifications.html" aria-label="Thông báo">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 8-3 8h18s-3-1-3-8"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
+      <span class="bell-dot" id="bellDot" aria-hidden="true"></span>
     </a>
-    <nav class="sidebar-nav" aria-label="Điều hướng chính">
-      <a class="nav-item active" href="notifications.html" aria-current="page">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 8-3 8h18s-3-1-3-8"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
-        <span>Thông báo</span>
-      </a>
-    </nav>
+    <div class="header-user">
+      <div class="user-name">
+        <span data-shell-user="name"></span>
+        <span class="user-role" data-shell-user="meta"></span>
+      </div>
+      <span class="avatar avatar-sm" data-shell-user="avatar" aria-hidden="true"></span>
+    </div>
+  </div>
+</header>
+
+<div class="app-body">
+  <aside class="sidebar" id="app-sidebar">
+    <nav class="sidebar-nav" aria-label="Điều hướng chính" data-shell="nav"></nav>
   </aside>
 
-  <div class="main-area">
-    <header class="topbar">
-      <div class="topbar-search">
-        <input type="search" class="form-input" placeholder="Tìm sinh viên, kế hoạch, học phần…" aria-label="Tìm kiếm nhanh">
-      </div>
-      <div class="topbar-actions">
-        <a class="icon-btn notif-bell" href="notifications.html" aria-label="Thông báo">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 8-3 8h18s-3-1-3-8"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
-          <span class="notif-dot" id="bellDot" aria-hidden="true"></span>
-        </a>
-        <div class="topbar-user">
-          <span class="avatar avatar-sm" id="topbarAvatar" aria-hidden="true">K</span>
-          <span class="topbar-user-info">
-            <span class="topbar-user-name" id="topbarName">Khách</span>
-            <span class="topbar-user-role" id="topbarRole"></span>
-          </span>
-        </div>
-      </div>
-    </header>
-
-    <main class="main-content">
+  <main class="main-content">
       <div class="page-head">
         <div>
           <h1>Thông báo</h1>
@@ -93,11 +88,12 @@
         <ul class="notif-list" id="notifList"></ul>
       </section>
     </main>
-  </div>
 </div>
 
-<script src="../js/main.js"></script>
+<div class="sidebar-overlay" data-shell="overlay" hidden></div>
+
 <script src="../js/api.js"></script>
+<script src="../js/shell.js"></script>
 <script src="../js/modules/notifications.js"></script>
 </body>
 </html>

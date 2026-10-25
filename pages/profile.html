@@ -8,60 +8,43 @@
   <link rel="stylesheet" href="../css/responsive.css">
   <link rel="stylesheet" href="../css/profile.css">
 </head>
-<body>
-  <div class="app-shell">
-    <aside class="sidebar">
-      <a class="brand" href="student-dashboard.html">
-        <span class="brand-mark" aria-hidden="true">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2 2 8l10 6 10-6-10-6z"></path>
-            <path d="M6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5"></path>
-          </svg>
-        </span>
-        <span>StudyPath AI</span>
+<body data-page="profile">
+  <header class="app-header">
+    <button type="button" class="icon-btn menu-btn" data-shell="menu" aria-label="Mở menu" aria-controls="app-sidebar" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    </button>
+
+    <a class="brand" href="student-dashboard.html" data-shell="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2 2 8l10 6 10-6-10-6z"></path>
+          <path d="M6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5"></path>
+        </svg>
+      </span>
+      <span>StudyPath AI</span>
+    </a>
+
+    <div class="header-actions">
+      <a class="icon-btn" href="notifications.html" aria-label="Thông báo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+        <span class="bell-dot" aria-hidden="true"></span>
       </a>
-      <nav class="sidebar-nav" aria-label="Điều hướng chính">
-        <a class="nav-item" href="student-dashboard.html">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"></rect><rect x="14" y="3" width="7" height="7" rx="1.5"></rect><rect x="3" y="14" width="7" height="7" rx="1.5"></rect><rect x="14" y="14" width="7" height="7" rx="1.5"></rect></svg>
-          <span>Tổng quan</span>
-        </a>
-        <a class="nav-item" href="student-semester-plan.html">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-          <span>Kế hoạch học kỳ</span>
-        </a>
-        <a class="nav-item" href="student-ai-roadmap.html">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
-          <span>Lộ trình AI</span>
-        </a>
-        <a class="nav-item" href="notifications.html">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
-          <span>Thông báo</span>
-        </a>
-        <a class="nav-item" href="settings.html">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
-          <span>Cài đặt</span>
-        </a>
-      </nav>
+      <div class="header-user">
+        <div class="user-name">
+          <span data-shell-user="name"></span>
+          <span class="user-role" data-shell-user="meta"></span>
+        </div>
+        <span class="avatar avatar-sm" data-shell-user="avatar" aria-hidden="true"></span>
+      </div>
+    </div>
+  </header>
+
+  <div class="app-body">
+    <aside class="sidebar" id="app-sidebar">
+      <nav class="sidebar-nav" aria-label="Điều hướng chính" data-shell="nav"></nav>
     </aside>
 
-    <div class="main-area">
-      <header class="topbar">
-        <div class="topbar-search">
-          <input type="search" class="form-input" placeholder="Tìm sinh viên, kế hoạch, học phần..." aria-label="Tìm kiếm">
-        </div>
-        <div class="topbar-actions">
-          <button type="button" class="icon-btn" aria-label="Thông báo">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
-            <span class="bell-dot" aria-hidden="true"></span>
-          </button>
-          <div class="topbar-user">
-            <div class="user-name">Hứa Đình Kiên<span class="user-role">2551060707</span></div>
-            <span class="avatar avatar-sm">K</span>
-          </div>
-        </div>
-      </header>
-
-      <main class="main-content">
+    <main class="main-content">
         <div class="page-head">
           <div>
             <h1>Hồ sơ cá nhân</h1>
@@ -85,7 +68,7 @@
                 <div class="form-group">
                   <label class="form-label" for="email">Email</label>
                   <div class="input-locked">
-                    <input type="email" id="email" class="form-input" value="kien.hua@truong.edu.vn" disabled>
+                    <input type="email" id="email" class="form-input" value="kien.hua@studypath.edu.vn" disabled>
                     <span class="tag tag-gray">Khóa</span>
                   </div>
                 </div>
@@ -136,16 +119,19 @@
           </form>
 
           <aside class="card profile-summary" aria-label="Tóm tắt hồ sơ">
-            <span class="avatar avatar-lg">K</span>
-            <h2>Hứa Đình Kiên</h2>
-            <span class="tag tag-blue">Sinh viên</span>
-            <p class="text-sm text-muted">MSSV 2551060707 · CNTT (K17)</p>
+            <span class="avatar avatar-lg" data-profile-summary="avatar">K</span>
+            <h2 data-profile-summary="name">Hứa Đình Kiên</h2>
+            <span class="tag tag-blue" data-profile-summary="role">Sinh viên</span>
+            <p class="text-sm text-muted" data-profile-summary="meta">MSSV 2551060707 · CNTT (K17)</p>
           </aside>
         </div>
       </main>
-    </div>
   </div>
 
+  <div class="sidebar-overlay" data-shell="overlay" hidden></div>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/shell.js"></script>
   <script src="../js/profile.js"></script>
 </body>
 </html>

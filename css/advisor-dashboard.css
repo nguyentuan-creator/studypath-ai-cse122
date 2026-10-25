@@ -3,11 +3,6 @@
    Nạp sau base.css và responsive.css.
    ========================================================= */
 
-.page-advisor-dashboard .main-area,
-.page-advisor-dashboard .main-content {
-  min-width: 0;
-}
-
 .page-advisor-dashboard .stat-card {
   gap: 2px;
 }
@@ -136,19 +131,6 @@
 }
 
 @media (max-width: 640px) {
-  .page-advisor-dashboard .topbar {
-    gap: var(--space-1);
-    padding: 0 var(--space-2);
-  }
-
-  .page-advisor-dashboard .topbar-user .user-name {
-    display: none;
-  }
-
-  .page-advisor-dashboard .main-content {
-    padding: var(--space-2);
-  }
-
   .page-advisor-dashboard .data-table {
     min-width: 720px;
   }
