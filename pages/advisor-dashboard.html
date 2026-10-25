@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tổng quan Cố vấn | StudyPath AI</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/advisor-dashboard.css">
+</head>
+<body class="page-advisor-dashboard">
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="advisor-dashboard.html">
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2 2 8l10 6 10-6-10-6z"></path>
+            <path d="M6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5"></path>
+          </svg>
+        </span>
+        <span>StudyPath AI</span>
+      </a>
+      <nav class="sidebar-nav" aria-label="Điều hướng Cố vấn học tập">
+        <a class="nav-item active" href="advisor-dashboard.html">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"></rect><rect x="14" y="3" width="7" height="7" rx="1.5"></rect><rect x="3" y="14" width="7" height="7" rx="1.5"></rect><rect x="14" y="14" width="7" height="7" rx="1.5"></rect></svg>
+          <span>Tổng quan</span>
+        </a>
+        <a class="nav-item" href="advisor-student-plan-review.html">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><path d="m9 14 2 2 4-4"></path></svg>
+          <span>Xem xét kế hoạch</span>
+        </a>
+        <span class="nav-item nav-item--disabled" aria-disabled="true" title="Màn hình tạm hoãn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+          <span>Quản lý góp ý</span>
+        </span>
+        <span class="nav-item nav-item--disabled" aria-disabled="true" title="Màn hình tạm hoãn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+          <span>Hồ sơ sinh viên</span>
+        </span>
+        <span class="nav-item nav-item--disabled" aria-disabled="true" title="Màn hình tạm hoãn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+          <span>Cài đặt</span>
+        </span>
+      </nav>
+    </aside>
+
+    <div class="main-area">
+      <header class="topbar">
+        <div class="topbar-search">
+          <input type="search" class="form-input" placeholder="Tìm sinh viên, kế hoạch, học phần..." aria-label="Tìm kiếm">
+        </div>
+        <div class="topbar-actions">
+          <button type="button" class="icon-btn" aria-label="Thông báo">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+            <span class="bell-dot" aria-hidden="true"></span>
+          </button>
+          <div class="topbar-user">
+            <div class="user-name">Phạm Thu Hà<span class="user-role">Cố vấn học tập</span></div>
+            <span class="avatar avatar-sm">PH</span>
+          </div>
+        </div>
+      </header>
+
+      <main class="main-content">
+        <div class="page-head">
+          <div>
+            <h1>Tổng quan</h1>
+            <p class="text-muted">Theo dõi sinh viên và các kế hoạch cần xử lý</p>
+          </div>
+        </div>
+
+        <section class="stat-grid" aria-label="Chỉ số tổng quan">
+          <article class="card stat-card">
+            <span class="stat-label">Sinh viên phụ trách</span>
+            <span class="stat-value" id="kpi-students">—</span>
+            <span class="stat-note">Tổng hợp từ danh sách kế hoạch</span>
+          </article>
+          <article class="card stat-card">
+            <span class="stat-label">Kế hoạch chờ duyệt</span>
+            <span class="stat-value" id="kpi-pending">—</span>
+            <span class="stat-note">Kế hoạch ở trạng thái “submitted”</span>
+          </article>
+          <article class="card stat-card">
+            <span class="stat-label">Cảnh báo AI-2</span>
+            <span class="stat-value" id="kpi-ai">—</span>
+            <span class="stat-note">Chưa có dữ liệu AI-2</span>
+          </article>
+          <article class="card stat-card">
+            <span class="stat-label">Phản hồi đã gửi</span>
+            <span class="stat-value" id="kpi-feedback">—</span>
+            <span class="stat-note">Chưa có dữ liệu phản hồi</span>
+          </article>
+        </section>
+
+        <section class="card table-card" aria-labelledby="pending-heading">
+          <div class="card-head">
+            <h2 id="pending-heading">Kế hoạch chờ duyệt</h2>
+            <span class="text-sm text-muted" id="pending-count" aria-live="polite">Đang tải…</span>
+          </div>
+
+          <div id="plans-loading" class="plans-loading" role="status" aria-label="Đang tải danh sách kế hoạch" aria-busy="true">
+            <div class="skeleton-row" aria-hidden="true">
+              <span class="skeleton"></span>
+              <span class="skeleton"></span>
+              <span class="skeleton"></span>
+              <span class="skeleton"></span>
+              <span class="skeleton"></span>
+            </div>
+            <div class="skeleton-row" aria-hidden="true">
+              <span class="skeleton"></span>
+              <span class="skeleton"></span>
+              <span class="skeleton"></span>
+              <span class="skeleton"></span>
+              <span class="skeleton"></span>
+            </div>
+            <div class="skeleton-row" aria-hidden="true">
+              <span class="skeleton"></span>
+              <span class="skeleton"></span>
+              <span class="skeleton"></span>
+              <span class="skeleton"></span>
+              <span class="skeleton"></span>
+            </div>
+            <div class="skeleton-row" aria-hidden="true">
+              <span class="skeleton"></span>
+              <span class="skeleton"></span>
+              <span class="skeleton"></span>
+              <span class="skeleton"></span>
+              <span class="skeleton"></span>
+            </div>
+          </div>
+
+          <div id="plans-error" class="empty-state plans-state hidden" role="alert">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+            <h3>Không tải được danh sách kế hoạch</h3>
+            <p>Kiểm tra kết nối mạng và thử lại.</p>
+            <button type="button" class="btn btn-secondary" id="btn-retry">Thử lại</button>
+          </div>
+
+          <div id="plans-empty" class="empty-state plans-state hidden">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"></polyline><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path></svg>
+            <h3>Chưa có kế hoạch nào chờ duyệt</h3>
+            <p>Kế hoạch mới do sinh viên gửi sẽ xuất hiện tại đây.</p>
+            <button type="button" class="btn btn-secondary" id="btn-empty-retry">Tải lại danh sách</button>
+          </div>
+
+          <div id="plans-content" class="hidden">
+            <div class="table-wrapper">
+              <table class="data-table">
+                <caption class="sr-only">Danh sách kế hoạch đang chờ duyệt</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Sinh viên</th>
+                    <th scope="col">Học kỳ</th>
+                    <th scope="col">Tín chỉ</th>
+                    <th scope="col">Trạng thái</th>
+                    <th scope="col" class="cell-actions">Hành động</th>
+                  </tr>
+                </thead>
+                <tbody id="plans-body"></tbody>
+              </table>
+            </div>
+            <div class="table-foot">
+              <span class="text-sm text-muted" id="plans-foot"></span>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="../js/modules/advisor-dashboard.js"></script>
+</body>
+</html>
