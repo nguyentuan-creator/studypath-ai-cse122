@@ -1,0 +1,60 @@
+.page-admin-console .page-head h1{font-size:1.45rem;font-weight:700}
+.page-admin-console .page-head p{margin-top:3px}
+.page-admin-console .card{box-shadow:none}
+.page-admin-console .card-head h2{font-size:.92rem}
+.page-admin-console .form-group{margin-bottom:8px;gap:4px}
+.page-admin-console .form-label{font-size:.72rem}
+.page-admin-console .form-input,.page-admin-console .form-select{padding:8px 10px;font-size:.75rem}
+/* Dashboard */
+.page-admin-dashboard .admin-kpis{display:flex;flex-wrap:wrap;gap:14px}
+.page-admin-dashboard .admin-kpi{flex:1 1 200px;min-width:min(100%,180px)}
+.page-admin-dashboard .admin-kpi{position:relative;display:flex;flex-direction:column;gap:5px;min-height:94px;padding:14px;text-decoration:none;color:inherit}
+.page-admin-dashboard .admin-kpi:hover{border-color:#bfdbfe;text-decoration:none}
+.page-admin-dashboard .kpi-caption{font-size:.7rem;color:var(--color-text-muted)}
+.page-admin-dashboard .kpi-value{font-size:1.45rem;font-weight:700;line-height:1.2}
+.page-admin-dashboard .kpi-foot{font-size:.67rem;color:var(--color-text-muted)}
+.page-admin-dashboard .warning-text{color:#d97706}
+.page-admin-dashboard .kpi-icon{position:absolute;right:12px;top:12px;display:grid;place-items:center;width:23px;height:23px;border-radius:6px;font-size:.75rem}
+.page-admin-dashboard .kpi-icon.blue{background:#eff6ff;color:#2563eb}
+.page-admin-dashboard .kpi-icon.green{background:#dcfce7;color:#16a34a}
+.page-admin-dashboard .kpi-icon.purple{background:#f3e8ff;color:#9333ea}
+.page-admin-dashboard .kpi-icon.amber{background:#fef3c7;color:#d97706}
+.page-admin-dashboard .dashboard-columns{display:flex;flex-wrap:wrap;gap:16px;margin-top:16px;align-items:stretch}
+.page-admin-dashboard .dashboard-panel{flex:1 1 320px;min-width:min(100%,280px);padding:0;overflow:hidden}
+.page-admin-dashboard .dashboard-columns>.dashboard-panel:nth-child(1){flex:1.25 1 400px}
+.page-admin-dashboard .dashboard-columns>.dashboard-panel:nth-child(2){flex:.75 1 280px}
+.page-admin-dashboard .dashboard-panel .card-head{padding:12px 14px;margin:0;border-bottom:1px solid var(--color-border)}
+.page-admin-dashboard .dashboard-panel .card-head h2{font-size:.8rem}
+.page-admin-dashboard .dashboard-panel .card-head .text-sm{font-size:.65rem}
+.page-admin-dashboard .bar-chart{display:grid;gap:11px;padding:14px}
+.page-admin-dashboard .bar-row{display:grid;grid-template-columns:52px 1fr 35px;align-items:center;gap:8px;font-size:.67rem;color:var(--color-text-muted)}
+.page-admin-dashboard .bar-track{height:8px;border-radius:99px;background:#f1f5f9;overflow:hidden}
+.page-admin-dashboard .bar-fill{height:100%;border-radius:inherit;background:linear-gradient(90deg,#60a5fa,#2563eb)}
+.page-admin-dashboard .bar-value{text-align:right;color:var(--color-text);font-weight:600}
+.page-admin-dashboard .service-row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 13px;border-bottom:1px solid var(--color-border)}
+.page-admin-dashboard .service-row:last-child{border-bottom:0}
+.page-admin-dashboard .service-row div{display:grid;gap:2px}
+.page-admin-dashboard .service-row strong{font-size:.7rem}
+.page-admin-dashboard .service-row span:not(.tag){font-size:.64rem;color:var(--color-text-muted)}
+.page-admin-dashboard .service-row .tag{font-size:.62rem;padding:2px 7px}
+.page-admin-dashboard .recent-activity{flex:1.25 1 400px}
+.page-admin-dashboard .activity-row{display:grid;grid-template-columns:42px 1fr 1.4fr;align-items:center;gap:8px;padding:10px 13px;border-bottom:1px solid var(--color-border);font-size:.66rem}
+.page-admin-dashboard .activity-row time,.page-admin-dashboard .activity-row span,.page-admin-dashboard .activity-row small{color:var(--color-text-muted);font-weight:400}
+.page-admin-dashboard .activity-row strong{font-size:.66rem}
+.page-admin-dashboard .dashboard-note{padding:9px 13px;color:var(--color-text-muted);font-size:.64rem}
+.page-admin-dashboard .quick-links{flex:.75 1 280px;display:grid;align-content:start;gap:7px;padding:0 12px 12px}
+.page-admin-dashboard .quick-links .card-head{margin:0 -12px 1px}
+.page-admin-dashboard .quick-links .btn{width:100%;padding:6px;font-size:.68rem}
+.page-admin-console .toast{position:fixed;right:18px;bottom:18px;z-index:40;padding:10px 14px;border-radius:9px;background:#0f172a;color:#fff;box-shadow:var(--shadow-md);font-size:.82rem}
+@media(max-width:900px){.page-admin-dashboard .admin-kpis{gap:10px}
+.page-admin-dashboard .dashboard-columns{gap:12px}}
+@media(max-width:640px){
+.page-admin-console .page-head{align-items:flex-start}
+.page-admin-console .page-head>.btn{padding:7px}
+.page-admin-dashboard .admin-kpis{gap:8px}
+.page-admin-dashboard .admin-kpi{min-height:88px;padding:10px}
+.page-admin-dashboard .admin-kpi{flex:1 1 145px;min-width:135px}
+.page-admin-dashboard .dashboard-columns>.dashboard-panel{flex:1 1 100%;min-width:100%}
+.page-admin-dashboard .kpi-value{font-size:1.2rem}
+.page-admin-dashboard .activity-row{grid-template-columns:38px 1fr;}
+.page-admin-dashboard .activity-row span{grid-column:2}}

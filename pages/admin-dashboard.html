@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tổng quan hoạt động quản trị StudyPath AI.">
+  <title>Tổng quan hệ thống – StudyPath AI</title>
+  <link rel="stylesheet" href="../css/base.css"><link rel="stylesheet" href="../css/responsive.css"><link rel="stylesheet" href="../css/admin-shell.css"><link rel="stylesheet" href="../css/admin-dashboard.css">
+</head>
+<body class="page-admin-console page-admin-dashboard" data-page="admin-dashboard">
+  <header class="app-header">
+    <button type="button" class="icon-btn menu-btn" data-shell="menu" aria-label="Mở menu" aria-controls="app-sidebar" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    </button>
+    <a class="brand" href="admin-dashboard.html" data-shell="brand">
+      <span class="brand-mark"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 2 8l10 6 10-6-10-6z"></path><path d="M6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5"></path></svg></span>
+      <span>StudyPath AI</span>
+    </a>
+    <div class="header-actions">
+      <div class="header-user">
+        <div class="user-name">
+          <span id="adminName" data-shell-user="name"></span>
+          <span class="user-role" data-shell-user="meta"></span>
+        </div>
+        <span class="avatar avatar-sm admin-avatar" id="adminInitials" data-shell-user="avatar" aria-hidden="true"></span>
+      </div>
+      <button type="button" class="btn btn-secondary btn-sm" id="logoutBtn">Đăng xuất</button>
+    </div>
+  </header>
+
+  <div class="app-body">
+    <aside class="sidebar" id="app-sidebar">
+      <nav class="sidebar-nav" aria-label="Điều hướng Quản trị viên" data-shell="nav"></nav>
+    </aside>
+    <main class="main-content">
+<div class="page-head"><div><h1>Tổng quan hệ thống</h1><p class="text-muted text-sm">Dữ liệu mẫu local · cập nhật hôm nay</p></div></div>
+        <section class="admin-kpis" aria-label="Chỉ số hệ thống">
+          <a class="card admin-kpi" href="admin-course-management.html"><span class="kpi-caption">Tổng học phần</span><span class="kpi-value" id="courseCount">—</span><span class="kpi-foot" id="inactiveCourseCount">Đang tải dữ liệu</span><span class="kpi-icon blue">▤</span></a>
+          <a class="card admin-kpi" href="admin-program-settings.html"><span class="kpi-caption">Chương trình đào tạo</span><span class="kpi-value" id="programCount">—</span><span class="kpi-foot" id="programFoot">Cấu hình các ngành học</span><span class="kpi-icon green">▣</span></a>
+          <a class="card admin-kpi" href="admin-user-management.html"><span class="kpi-caption">Người dùng hoạt động</span><span class="kpi-value" id="activeUsers">—</span><span class="kpi-foot" id="userFoot">Tài khoản trong dữ liệu mẫu</span><span class="kpi-icon purple">♙</span></a>
+          <a class="card admin-kpi" href="admin-user-management.html?status=pending"><span class="kpi-caption">Kế hoạch chờ duyệt</span><span class="kpi-value warning-text" id="pendingPlans">—</span><span class="kpi-foot">Theo dữ liệu kế hoạch mẫu</span><span class="kpi-icon amber">✓</span></a>
+        </section>
+        <div class="dashboard-columns">
+          <section class="card dashboard-panel"><div class="card-head"><h2>Đăng ký kế hoạch theo tháng</h2><span class="text-muted text-sm">Số lượt đăng ký</span></div><div class="bar-chart" id="planChart"></div></section>
+          <section class="card dashboard-panel"><div class="card-head"><h2>Trạng thái dịch vụ AI</h2><span class="tag tag-purple">AI-1 · AI-2 · AI-3</span></div><div class="service-row"><div><strong>AI-1 Roadmap Recommender</strong><span>Đề xuất lộ trình học tập</span></div><span class="tag tag-green">Mock hoạt động</span></div><div class="service-row"><div><strong>AI-2 Workload Risk</strong><span>Ước tính tải học tập</span></div><span class="tag tag-green">Mock hoạt động</span></div><div class="service-row"><div><strong>AI-3 Advisor Copilot</strong><span>Tóm tắt hỗ trợ cố vấn</span></div><span class="tag tag-amber">Mock hoạt động</span></div></section>
+          <section class="card dashboard-panel recent-activity"><div class="card-head"><h2>Hoạt động gần đây</h2><span class="text-muted text-sm">Dữ liệu demo</span></div><div class="activity-row"><time>09:12</time><strong id="activityAdmin">Quản trị viên</strong><span>Cập nhật cấu hình hệ thống</span></div><div class="activity-row"><time>08:40</time><strong>Phạm Thu Hà <small>(Cố vấn)</small></strong><span>Duyệt kế hoạch học kỳ của sinh viên</span></div><div class="activity-row"><time>08:05</time><strong>Nguyễn Gia Bảo <small>(Sinh viên)</small></strong><span>Gửi kế hoạch học kỳ chờ duyệt</span></div><div class="activity-row"><time>07:30</time><strong>Hệ thống</strong><span>Sao lưu dữ liệu định kỳ thành công</span></div><p class="dashboard-note">Nhật ký trên là dữ liệu minh họa cho nguyên mẫu frontend.</p></section>
+          <section class="card dashboard-panel quick-links"><div class="card-head"><h2>Nghiệp vụ quản trị</h2></div><a class="btn btn-secondary" href="admin-course-management.html">Quản lý học phần</a><a class="btn btn-secondary" href="admin-program-settings.html">Cấu hình chương trình</a><a class="btn btn-secondary" href="admin-user-management.html">Quản lý người dùng</a></section>
+        </div>
+    </main>
+  </div>
+  <div class="sidebar-overlay" data-shell="overlay" hidden></div>
+  <script src="../js/api.js"></script>
+  <script src="../js/shell.js"></script>
+  <script src="../js/auth-guard.js"></script>
+  <script src="../js/modules/admin-dashboard.js"></script>
+</body>
+</html>
