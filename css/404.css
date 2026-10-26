@@ -1,0 +1,66 @@
+/* =========================================================
+   StudyPath AI — responsive trang Not Found (404)
+   Lưu ý: file này nạp TRƯỚC style.css nên selector phải có
+   độ ưu tiên cao hơn (prefix body.page-404) và chỉ đặt các
+   thuộc tính mà style.css không khai báo.
+   ========================================================= */
+@media (max-width: 640px) {
+  body.page-404 .not-found-actions {
+    flex-direction: column;
+  }
+
+  body.page-404 .not-found-actions .btn {
+    width: 100%;
+  }
+}
+/* =========================================================
+   StudyPath AI — style trang Not Found (404.html)
+   Scoped dưới body.page-404, không ảnh hưởng màn khác.
+   ========================================================= */
+
+body.page-404 .not-found-page {
+  min-height: 100vh;
+  display: flex;
+  padding: var(--space-3);
+}
+
+body.page-404 .not-found-card {
+  margin: auto;
+  text-align: center;
+  max-width: 420px;
+}
+
+body.page-404 .not-found-code {
+  font-size: 64px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--color-primary);
+  line-height: 1.1;
+}
+
+body.page-404 .not-found-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: var(--space-2);
+}
+
+body.page-404 .not-found-desc {
+  font-size: 13.5px;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+  margin-top: 8px;
+}
+
+body.page-404 .not-found-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: var(--space-3);
+  flex-wrap: wrap;
+}
+
+body.page-404 .not-found-actions .btn {
+  height: 38px;
+  font-size: 13.5px;
+}
