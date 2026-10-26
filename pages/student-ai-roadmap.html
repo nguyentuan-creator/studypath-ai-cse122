@@ -57,7 +57,7 @@
           <p class="text-sm text-muted" id="updated-date">Cập nhật 04/10/2026</p>
         </div>
 
-        <div class="roadmap-layout">
+        <div class="roadmap-layout is-intro" id="roadmap-layout">
           <!-- Hồ sơ mục tiêu -->
           <section class="card profile-card" id="profile-card" aria-labelledby="profile-heading">
             <div class="card-head">
@@ -125,7 +125,7 @@
           </section>
 
           <!-- Kết quả -->
-          <div class="roadmap-results">
+          <div class="roadmap-results hidden" id="roadmap-results">
             <section class="card" id="result-card" aria-labelledby="result-heading">
               <div class="card-head result-head">
                 <div class="result-head-left">
@@ -143,6 +143,20 @@
                 Bạn đã từ chối đề xuất này. Nhấn "Tạo lại" để AI sinh lộ trình khác.
               </div>
 
+              <div id="accept-note" class="alert alert-success hidden" role="status">
+                Đã tạo kế hoạch nháp <strong id="accept-plan-id"></strong> từ lộ trình này.
+                <a href="student-semester-plan.html">Xem kế hoạch</a>
+              </div>
+
+              <div id="ai-failure" class="hidden" role="alert">
+                <div class="alert alert-warning" id="ai-failure-message"></div>
+                <div class="failure-actions">
+                  <button type="button" id="btn-failure-fix" class="btn btn-primary btn-sm"></button>
+                  <a href="student-semester-plan.html" class="btn btn-secondary btn-sm">Nhập thủ công</a>
+                  <button type="button" id="btn-failure-dismiss" class="btn btn-soft btn-sm">Bỏ qua</button>
+                </div>
+              </div>
+
               <div class="sem-grid" id="sem-grid"></div>
               <div class="sem-grid hidden" id="sem-grid-more"></div>
 
@@ -151,7 +165,7 @@
               </button>
             </section>
 
-            <section class="card mt-2" aria-labelledby="why-heading">
+            <section class="card mt-2" id="why-card" aria-labelledby="why-heading">
               <div class="card-head">
                 <h2 id="why-heading">Vì sao có kết quả này?</h2>
                 <span class="tag tag-purple">Có thể giải thích</span>
@@ -183,7 +197,7 @@
                   </span>
                   <div>
                     <p class="reason-label">Môn mạnh</p>
-                    <p class="reason-value">Lập trình · Giải thuật</p>
+                    <p class="reason-value" id="interest-reason">Lập trình · Giải thuật</p>
                   </div>
                 </div>
                 <div class="reason-tile">
@@ -192,7 +206,7 @@
                   </span>
                   <div>
                     <p class="reason-label">Tiên quyết</p>
-                    <p class="reason-value">Đã kiểm tra</p>
+                    <p class="reason-value" id="prereq-reason">Đã kiểm tra</p>
                   </div>
                 </div>
                 <div class="reason-tile">
@@ -205,6 +219,8 @@
                   </div>
                 </div>
               </div>
+
+              <ul class="ai-reasons" id="ai-reasons"></ul>
 
               <div class="result-actions">
                 <button type="button" id="btn-accept" class="btn btn-primary">
@@ -236,6 +252,7 @@
 
   <script src="../js/api.js?v=20261026g"></script>
   <script src="../js/shell.js?v=20261026g"></script>
+  <script src="../js/modules/ai-engine.js?v=20261026g"></script>
   <script src="../js/student-ai-roadmap.js?v=20261026g"></script>
 </body>
 </html>
