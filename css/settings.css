@@ -1,0 +1,166 @@
+/* =============================================
+   Settings page — extends base.css
+   ============================================= */
+
+.page-head h1 {
+  font-size: 1.75rem;
+}
+
+/* ----- Layout ----- */
+.settings-card {
+  max-width: 720px;
+}
+
+.setting-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.settings-card .setting-row:last-of-type {
+  border-bottom: none;
+}
+
+.setting-title {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0 0 2px;
+}
+
+/* ----- Toggle switch ----- */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.switch-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch-slider {
+  position: absolute;
+  inset: 0;
+  background: #CBD5E1;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.switch-slider::before {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  width: 18px;
+  height: 18px;
+  background: #FFFFFF;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.2);
+}
+
+.switch-input:checked + .switch-slider {
+  background: #2563EB;
+}
+
+.switch-input:checked + .switch-slider::before {
+  transform: translateX(20px);
+}
+
+.switch-input:focus-visible + .switch-slider {
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25);
+}
+
+/* ----- Select ngôn ngữ ----- */
+.settings-select {
+  width: 180px;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+/* ----- Segmented control (Sáng / Tối) ----- */
+.segmented {
+  display: inline-flex;
+  padding: 4px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.segmented-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.segmented-label {
+  padding: 6px 20px;
+  border-radius: 8px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+  user-select: none;
+}
+
+.segmented-input:checked + .segmented-label {
+  background: var(--color-surface);
+  color: var(--color-primary-dark);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.12);
+}
+
+.segmented-input:focus-visible + .segmented-label {
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25);
+}
+
+/* ----- Footer actions ----- */
+.settings-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 18px;
+  border-top: 1px solid var(--color-border);
+  flex-wrap: wrap;
+}
+
+.settings-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* ----- Chế độ tối ----- */
+:root[data-theme="dark"] .switch-slider {
+  background: #475569;
+}
+
+:root[data-theme="dark"] .segmented-input:checked + .segmented-label {
+  color: #93c5fd;
+}
+
+/* ----- Responsive ----- */
+@media (max-width: 640px) {
+  .setting-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .settings-select {
+    width: 100%;
+  }
+}

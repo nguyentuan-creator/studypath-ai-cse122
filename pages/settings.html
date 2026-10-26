@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cài đặt | StudyPath AI</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/advisor-shell.css">
+  <link rel="stylesheet" href="../css/advisor-pages.css">
+  <link rel="stylesheet" href="../css/settings.css">
+</head>
+<body class="page-advisor-console" data-screen="settings">
+  <header class="app-header">
+    <button type="button" class="icon-btn menu-btn" data-shell="menu" aria-label="Mở menu" aria-controls="app-sidebar" aria-expanded="false"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+    <a class="brand" href="advisor-dashboard.html" data-shell="brand" aria-label="StudyPath AI, về tổng quan cố vấn"><span class="brand-mark" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 8l10 6 10-6-10-6z"></path><path d="M6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5"></path></svg></span><span>StudyPath AI</span></a>
+    <div class="advisor-header-search"><input class="form-input" type="search" placeholder="Tìm sinh viên, kế hoạch, học phần…" aria-label="Tìm kiếm"></div>
+    <div class="header-actions">
+      <a class="icon-btn" href="notifications.html" aria-label="Thông báo"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 0 3.46 0"></path></svg><span class="bell-dot" aria-hidden="true"></span></a>
+      <div class="header-user"><div class="user-name"><span data-user-name>Phạm Thu Hà</span><span class="user-role" data-user-role>Cố vấn học tập</span></div><span class="avatar avatar-sm advisor-avatar" data-avatar aria-hidden="true">H</span></div>
+    </div>
+  </header>
+  <div class="app-body">
+    <aside class="sidebar" id="app-sidebar"><nav class="sidebar-nav" aria-label="Điều hướng cố vấn" data-shell="nav"></nav></aside>
+    <main class="main-content advisor-main">
+      <div class="page-head"><div><h1>Cài đặt</h1><p class="text-muted">Tùy chỉnh thông báo và hiển thị</p></div></div>
+      <div id="save-success" class="alert alert-success hidden" role="alert">Đã lưu cài đặt thành công.</div>
+      <form id="settings-form" novalidate>
+        <section class="card settings-card" aria-labelledby="app-settings-heading">
+          <div class="card-head"><h2 id="app-settings-heading">Ứng dụng</h2></div>
+          <div class="setting-row"><div><p class="setting-title">Thông báo email</p><p class="text-sm text-muted">Nhận email khi có phản hồi kế hoạch</p></div><label class="switch"><input type="checkbox" name="emailNoti" class="switch-input" checked><span class="switch-slider" aria-hidden="true"></span></label></div>
+          <div class="setting-row"><div><p class="setting-title">Nhắc hạn gửi kế hoạch</p><p class="text-sm text-muted">Nhắc trước hạn duyệt 3 ngày</p></div><label class="switch"><input type="checkbox" name="deadlineRemind" class="switch-input" checked><span class="switch-slider" aria-hidden="true"></span></label></div>
+          <div class="setting-row"><div><p class="setting-title">Ngôn ngữ</p><p class="text-sm text-muted">Ngôn ngữ giao diện</p></div><select name="language" class="form-select settings-select" aria-label="Ngôn ngữ"><option value="vi" selected>Tiếng Việt</option><option value="en">English</option></select></div>
+          <div class="setting-row"><div><p class="setting-title">Chế độ hiển thị</p><p class="text-sm text-muted">Giao diện sáng hoặc tối</p></div><div class="segmented" role="radiogroup" aria-label="Chế độ hiển thị"><input type="radio" name="theme" id="theme-light" value="light" class="segmented-input" checked><label for="theme-light" class="segmented-label">Sáng</label><input type="radio" name="theme" id="theme-dark" value="dark" class="segmented-input"><label for="theme-dark" class="segmented-label">Tối</label></div></div>
+          <div class="settings-foot"><p class="text-sm text-muted">Thay đổi được áp dụng sau khi lưu</p><div class="settings-actions"><button type="button" id="btn-reset" class="btn btn-secondary">Hoàn tác</button><button type="submit" class="btn btn-primary">Lưu cài đặt</button></div></div>
+        </section>
+      </form>
+    </main>
+  </div>
+  <div class="sidebar-overlay" data-shell="overlay" hidden></div>
+  <script src="../js/api.js"></script>
+  <script src="../js/modules/advisor-shell.js"></script>
+  <script src="../js/settings.js"></script>
+</body>
+</html>
