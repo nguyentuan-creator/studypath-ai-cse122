@@ -1,0 +1,310 @@
+/* Shared visual shell for the public StudyPath pages. Load after page CSS. */
+:is(body.page-landing, body.page-catalog, body.page-sample-roadmaps) {
+  min-height: 100vh;
+  min-height: 100svh;
+  background: #f3f6fb;
+  color: #13213a;
+  font-family: var(--font-family, "Inter", "Segoe UI", Arial, sans-serif);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+:is(.page-landing .landing-header, .page-catalog .site-header, .page-sample-roadmaps .site-header) {
+  position: sticky;
+  z-index: 20;
+  top: 0;
+  flex: 0 0 auto;
+  border-bottom: 1px solid #e3eaf3;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+}
+
+:is(.page-landing .landing-header-inner, .page-catalog .header-inner, .page-sample-roadmaps .header-inner) {
+  width: min(100%, 1240px);
+  max-width: 1240px;
+  min-height: 58px;
+  height: 58px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+:is(.page-landing .landing-brand, .page-catalog .brand, .page-sample-roadmaps .brand) {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 9px;
+  padding: 0;
+  color: #13213a;
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+:is(.page-landing .landing-brand, .page-catalog .brand, .page-sample-roadmaps .brand):hover {
+  text-decoration: none;
+}
+
+:is(.page-landing .landing-brand-mark, .page-catalog .brand-mark, .page-sample-roadmaps .brand-mark) {
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+  flex: 0 0 30px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #fff;
+}
+
+:is(.page-landing .landing-brand-mark, .page-catalog .brand-mark, .page-sample-roadmaps .brand-mark) svg {
+  width: 17px;
+  height: 17px;
+}
+
+.page-sample-roadmaps .brand-name span,
+.page-landing .landing-brand-accent {
+  color: #2563eb;
+}
+
+:is(.page-landing .landing-nav, .page-catalog .main-nav, .page-sample-roadmaps .main-nav) {
+  display: flex;
+  align-self: stretch;
+  align-items: stretch;
+  justify-content: center;
+  gap: clamp(16px, 3vw, 36px);
+  margin: 0 auto;
+}
+
+:is(.page-landing .landing-nav a, .page-catalog .nav-tab, .page-sample-roadmaps .nav-tab) {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 4px;
+  border-radius: 0;
+  background: transparent;
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+:is(.page-landing .landing-nav a, .page-catalog .nav-tab, .page-sample-roadmaps .nav-tab):hover {
+  background: transparent;
+  color: #2563eb;
+  text-decoration: none;
+}
+
+:is(.page-landing .landing-nav a.active, .page-catalog .nav-tab.active, .page-sample-roadmaps .nav-tab.active) {
+  background: transparent;
+  color: #2563eb;
+  font-weight: 650;
+}
+
+:is(.page-landing .landing-nav a.active, .page-catalog .nav-tab.active, .page-sample-roadmaps .nav-tab.active)::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  border-radius: 2px 2px 0 0;
+  background: #2563eb;
+  content: "";
+}
+
+:is(.page-landing .landing-auth, .page-catalog .header-actions, .page-sample-roadmaps .header-actions) {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 8px;
+}
+
+:is(.page-landing .landing-button, .page-catalog .header-actions .btn, .page-sample-roadmaps .header-actions .btn) {
+  min-height: 32px;
+  padding: 6px 11px;
+  border-radius: 7px;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+:is(.page-landing .landing-button-primary, .page-catalog .header-actions .btn-primary, .page-sample-roadmaps .header-actions .btn-primary) {
+  border-color: #2563eb;
+  background: #2563eb;
+  color: #fff;
+}
+
+:is(.page-landing .landing-button-outline, .page-catalog .header-actions .btn-secondary, .page-sample-roadmaps .header-actions .btn-secondary) {
+  border: 1px solid #dbe3ef;
+  background: #fff;
+  color: #34425a;
+}
+
+.page-landing .landing-main,
+.page-catalog .page-content,
+.page-sample-roadmaps .roadmap-content {
+  width: min(100%, 1240px);
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 26px 24px 24px;
+}
+
+.page-landing .landing-main,
+.page-catalog .page-content,
+.page-sample-roadmaps .roadmap-content {
+  flex: 1 0 auto;
+}
+
+:is(.page-catalog, .page-sample-roadmaps) .page-head {
+  align-items: flex-end;
+  gap: 12px 20px;
+  margin-bottom: 20px;
+}
+
+:is(.page-catalog, .page-sample-roadmaps) .page-head h1 {
+  color: #14213a;
+  font-size: 24px;
+  font-weight: 650;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+:is(.page-catalog, .page-sample-roadmaps) .page-head p {
+  margin-top: 4px;
+  color: #71809a;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+:is(.page-catalog, .page-sample-roadmaps) .page-note {
+  color: #7a8aa2;
+  font-size: 11px;
+}
+
+:is(.page-catalog .card, .page-catalog .course-card, .page-sample-roadmaps .roadmap-choice, .page-sample-roadmaps .semester-panel, .page-sample-roadmaps .summary-card, .page-sample-roadmaps .fit-card) {
+  border-color: #e1e8f1;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(31, 52, 86, 0.045);
+}
+
+.page-landing .landing-footer,
+.page-catalog .page-footer,
+.page-sample-roadmaps .page-footer {
+  min-height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 24px;
+  border: 0;
+  background: #0f172a;
+  color: #dce5f2;
+  font-size: 10px;
+}
+
+:is(.page-catalog .guest-badge, .page-sample-roadmaps .guest-badge) {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: inherit;
+  font-size: 10px;
+}
+
+:is(.page-catalog .guest-dot, .page-sample-roadmaps .guest-dot) {
+  width: 6px;
+  height: 6px;
+  flex: 0 0 6px;
+  border-radius: 50%;
+  background: #22c55e;
+}
+
+/* Restore readable scale on the roadmap page while retaining its dense grid. */
+.page-sample-roadmaps .roadmap-content { gap: 0; }
+.page-sample-roadmaps .page-head { margin-bottom: 18px; }
+.page-sample-roadmaps .roadmap-choices { gap: 12px; margin-bottom: 12px; }
+.page-sample-roadmaps .roadmap-choice { min-height: 84px; gap: 12px; padding: 14px; }
+.page-sample-roadmaps .roadmap-choice-icon { width: 28px; height: 28px; flex-basis: 28px; font-size: 13px; }
+.page-sample-roadmaps .roadmap-choice-title { margin: 2px 0 5px; font-size: 13px; }
+.page-sample-roadmaps .roadmap-choice-description { font-size: 10px; }
+.page-sample-roadmaps .roadmap-choice-meta { gap: 8px; margin-top: 6px; font-size: 9px; }
+.page-sample-roadmaps .roadmap-choice-selected { padding: 4px 8px; font-size: 9px; }
+.page-sample-roadmaps .roadmap-workspace { grid-template-columns: minmax(0, 3.35fr) minmax(220px, 1fr); gap: 12px; }
+.page-sample-roadmaps .semester-panel { padding: 14px; }
+.page-sample-roadmaps .semester-panel-head { margin-bottom: 12px; }
+.page-sample-roadmaps .semester-panel-head h2 { font-size: 15px; }
+.page-sample-roadmaps .semester-panel-head p { font-size: 10px; }
+.page-sample-roadmaps .semester-range { padding: 5px 9px; font-size: 9px; }
+.page-sample-roadmaps .semester-grid { gap: 8px; }
+.page-sample-roadmaps .semester-card { border-radius: 8px; }
+.page-sample-roadmaps .semester-card-head { padding: 8px; font-size: 10px; }
+.page-sample-roadmaps .semester-course-list { padding: 0 8px; }
+.page-sample-roadmaps .semester-course { padding: 7px 0; }
+.page-sample-roadmaps .semester-course-top { font-size: 9px; }
+.page-sample-roadmaps .semester-course-name { margin-top: 3px; font-size: 10px; }
+.page-sample-roadmaps .semester-note { margin-top: 10px; font-size: 9px; }
+.page-sample-roadmaps .roadmap-sidebar { gap: 10px; }
+.page-sample-roadmaps .summary-card,
+.page-sample-roadmaps .fit-card { padding: 14px; }
+.page-sample-roadmaps .summary-card h2,
+.page-sample-roadmaps .fit-card h2 { font-size: 13px; }
+.page-sample-roadmaps .summary-list { gap: 9px; margin: 10px 0; }
+.page-sample-roadmaps .summary-row { gap: 9px; }
+.page-sample-roadmaps .summary-icon { width: 24px; height: 24px; flex-basis: 24px; font-size: 11px; }
+.page-sample-roadmaps .summary-row dt { font-size: 10px; }
+.page-sample-roadmaps .summary-row dd { font-size: 12px; }
+.page-sample-roadmaps .use-roadmap-btn { min-height: 36px; padding: 8px 10px; font-size: 11px; }
+.page-sample-roadmaps .summary-hint { margin-top: 8px; font-size: 9px; }
+.page-sample-roadmaps .fit-card { background: #fff; }
+.page-sample-roadmaps .suit-list { gap: 7px; margin-top: 9px; }
+.page-sample-roadmaps .suit-list li { gap: 6px; font-size: 10px; }
+.page-sample-roadmaps .page-footer .copyright { color: inherit; font-size: 10px; }
+
+@media (max-width: 760px) {
+  :is(.page-landing .landing-header-inner, .page-catalog .header-inner, .page-sample-roadmaps .header-inner) {
+    gap: 12px;
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .page-sample-roadmaps .roadmap-workspace { grid-template-columns: minmax(0, 1fr) 220px; }
+  .page-sample-roadmaps .semester-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 640px) {
+  :is(.page-landing .landing-header-inner, .page-catalog .header-inner, .page-sample-roadmaps .header-inner) {
+    height: auto;
+    min-height: 58px;
+    flex-wrap: wrap;
+    padding: 8px 16px 0;
+    row-gap: 4px;
+  }
+
+  :is(.page-landing .landing-auth, .page-catalog .header-actions, .page-sample-roadmaps .header-actions) { margin-left: auto; }
+  :is(.page-landing .landing-nav, .page-catalog .main-nav, .page-sample-roadmaps .main-nav) {
+    order: 3;
+    width: 100%;
+    min-height: 38px;
+    gap: clamp(18px, 8vw, 36px);
+  }
+
+  :is(.page-landing .landing-nav a, .page-catalog .nav-tab, .page-sample-roadmaps .nav-tab) { font-size: 11px; }
+  .page-landing .landing-main,
+  .page-catalog .page-content,
+  .page-sample-roadmaps .roadmap-content { padding: 20px 16px; }
+  :is(.page-catalog, .page-sample-roadmaps) .page-head { align-items: flex-start; flex-direction: column; margin-bottom: 16px; }
+  :is(.page-catalog, .page-sample-roadmaps) .page-head h1 { font-size: 21px; }
+  .page-sample-roadmaps .page-note { display: block; }
+  .page-sample-roadmaps .roadmap-workspace { grid-template-columns: 1fr; }
+  .page-sample-roadmaps .roadmap-sidebar { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  :is(.page-landing .landing-footer, .page-catalog .page-footer, .page-sample-roadmaps .page-footer) { padding-right: 16px; padding-left: 16px; }
+}
+
+@media (max-width: 480px) {
+  :is(.page-landing .landing-footer, .page-catalog .page-footer, .page-sample-roadmaps .page-footer) { align-items: flex-start; flex-direction: column; }
+  .page-sample-roadmaps .roadmap-sidebar { grid-template-columns: 1fr; }
+  .page-sample-roadmaps .semester-grid { grid-template-columns: 1fr; }
+}
