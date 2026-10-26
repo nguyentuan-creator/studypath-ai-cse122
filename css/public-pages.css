@@ -184,7 +184,7 @@
   font-size: 11px;
 }
 
-:is(.page-catalog .card, .page-catalog .course-card, .page-sample-roadmaps .roadmap-choice, .page-sample-roadmaps .semester-panel, .page-sample-roadmaps .summary-card, .page-sample-roadmaps .fit-card) {
+:is(.page-landing .landing-feature-card, .page-landing .landing-how, .page-catalog .card, .page-catalog .course-card, .page-sample-roadmaps .roadmap-choice, .page-sample-roadmaps .semester-panel, .page-sample-roadmaps .summary-card, .page-sample-roadmaps .fit-card) {
   border-color: #e1e8f1;
   border-radius: 10px;
   background: #fff;
@@ -226,12 +226,12 @@
 .page-sample-roadmaps .roadmap-content { gap: 0; }
 .page-sample-roadmaps .page-head { margin-bottom: 18px; }
 .page-sample-roadmaps .roadmap-choices { gap: 12px; margin-bottom: 12px; }
-.page-sample-roadmaps .roadmap-choice { min-height: 84px; gap: 12px; padding: 14px; }
+.page-sample-roadmaps .roadmap-choice { position: relative; min-height: 84px; gap: 12px; padding: 14px; }
 .page-sample-roadmaps .roadmap-choice-icon { width: 28px; height: 28px; flex-basis: 28px; font-size: 13px; }
 .page-sample-roadmaps .roadmap-choice-title { margin: 2px 0 5px; font-size: 13px; }
 .page-sample-roadmaps .roadmap-choice-description { font-size: 10px; }
 .page-sample-roadmaps .roadmap-choice-meta { gap: 8px; margin-top: 6px; font-size: 9px; }
-.page-sample-roadmaps .roadmap-choice-selected { padding: 4px 8px; font-size: 9px; }
+.page-sample-roadmaps .roadmap-choice-selected { position: absolute; top: 12px; right: 12px; padding: 4px 8px; font-size: 9px; }
 .page-sample-roadmaps .roadmap-workspace { grid-template-columns: minmax(0, 3.35fr) minmax(220px, 1fr); gap: 12px; }
 .page-sample-roadmaps .semester-panel { padding: 14px; }
 .page-sample-roadmaps .semester-panel-head { margin-bottom: 12px; }
@@ -274,7 +274,62 @@
   .page-sample-roadmaps .semester-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
+/* The catalog stylesheet used to wrap only its header at 768px. Keep all
+   public headers on one row until the shared mobile breakpoint below. */
+@media (max-width: 768px) and (min-width: 641px) {
+  body.page-catalog .header-inner {
+    height: 58px;
+    min-height: 58px;
+    flex-wrap: nowrap;
+    gap: 10px;
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  :is(.page-landing .landing-header-inner, .page-catalog .header-inner, .page-sample-roadmaps .header-inner) {
+    height: 58px;
+    min-height: 58px;
+    flex-wrap: nowrap;
+    gap: 10px;
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  body.page-catalog .main-nav {
+    order: 0;
+    width: auto;
+    min-height: 0;
+    flex: 0 1 auto;
+    gap: 14px;
+    margin: 0 auto;
+  }
+
+  body.page-catalog .header-actions { margin-left: 0; }
+
+  :is(.page-landing .landing-nav, .page-catalog .main-nav, .page-sample-roadmaps .main-nav) {
+    order: 0;
+    width: auto;
+    min-height: 0;
+    flex: 0 1 auto;
+    gap: 14px;
+    margin: 0 auto;
+  }
+
+  :is(.page-landing .landing-nav a, .page-catalog .nav-tab, .page-sample-roadmaps .nav-tab) { font-size: 11px; }
+  :is(.page-landing .landing-brand, .page-catalog .brand, .page-sample-roadmaps .brand) { font-size: 13px; }
+  :is(.page-landing .landing-brand-mark, .page-catalog .brand-mark, .page-sample-roadmaps .brand-mark) { width: 28px; height: 28px; flex-basis: 28px; }
+  :is(.page-landing .landing-button, .page-catalog .header-actions .btn, .page-sample-roadmaps .header-actions .btn) { padding-right: 8px; padding-left: 8px; font-size: 10px; }
+}
+
 @media (max-width: 640px) {
+  body.page-catalog .header-inner {
+    height: auto;
+    min-height: 58px;
+    flex-wrap: wrap;
+    padding: 8px 16px 0;
+    row-gap: 4px;
+  }
+
   :is(.page-landing .landing-header-inner, .page-catalog .header-inner, .page-sample-roadmaps .header-inner) {
     height: auto;
     min-height: 58px;
@@ -282,6 +337,16 @@
     padding: 8px 16px 0;
     row-gap: 4px;
   }
+
+  body.page-catalog .main-nav {
+    order: 3;
+    width: 100%;
+    min-height: 38px;
+    gap: clamp(18px, 8vw, 36px);
+    margin: 0 auto;
+  }
+
+  body.page-catalog .header-actions { margin-left: auto; }
 
   :is(.page-landing .landing-auth, .page-catalog .header-actions, .page-sample-roadmaps .header-actions) { margin-left: auto; }
   :is(.page-landing .landing-nav, .page-catalog .main-nav, .page-sample-roadmaps .main-nav) {
