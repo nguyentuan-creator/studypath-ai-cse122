@@ -50,7 +50,7 @@
 .switch-slider {
   position: absolute;
   inset: 0;
-  background: #CBD5E1;
+  background: var(--color-border-strong);
   border-radius: 999px;
   cursor: pointer;
   transition: background 0.2s ease;
@@ -70,7 +70,7 @@
 }
 
 .switch-input:checked + .switch-slider {
-  background: #2563EB;
+  background: var(--color-primary-solid);
 }
 
 .switch-input:checked + .switch-slider::before {
@@ -141,15 +141,6 @@
 .settings-actions {
   display: flex;
   gap: 8px;
-}
-
-/* ----- Chế độ tối ----- */
-:root[data-theme="dark"] .switch-slider {
-  background: #475569;
-}
-
-:root[data-theme="dark"] .segmented-input:checked + .segmented-label {
-  color: #93c5fd;
 }
 
 /* ----- Responsive ----- */

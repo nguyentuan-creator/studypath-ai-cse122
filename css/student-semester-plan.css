@@ -74,8 +74,8 @@
 }
 
 .step.active .step-icon {
-  background-color: var(--color-primary);
-  border-color: var(--color-primary);
+  background-color: var(--color-primary-solid);
+  border-color: var(--color-primary-solid);
   color: #ffffff;
 }
 

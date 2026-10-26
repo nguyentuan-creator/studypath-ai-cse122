@@ -35,10 +35,6 @@
   flex-shrink: 0;
 }
 
-:root[data-theme="dark"] .ai-badge {
-  color: #c4b5fd;
-}
-
 .select-with-icon {
   position: relative;
 }
@@ -87,10 +83,6 @@
   color: var(--color-primary-dark);
 }
 
-:root[data-theme="dark"] .pref-chip.active {
-  color: #93c5fd;
-}
-
 /* Quỹ thời gian */
 .time-seg {
   display: grid;
@@ -125,8 +117,8 @@
 }
 
 .time-seg-input:checked + .time-seg-label {
-  background-color: var(--color-primary);
-  border-color: var(--color-primary);
+  background-color: var(--color-primary-solid);
+  border-color: var(--color-primary-solid);
   color: #ffffff;
 }
 
@@ -152,7 +144,7 @@
 .prior-check {
   width: 16px;
   height: 16px;
-  accent-color: var(--color-primary);
+  accent-color: var(--color-primary-solid);
   cursor: pointer;
 }
 
@@ -190,10 +182,6 @@
   font-size: 1.75rem;
   font-weight: 700;
   color: var(--color-success);
-}
-
-:root[data-theme="dark"] .fit-value {
-  color: #86efac;
 }
 
 .result-meta {
@@ -255,10 +243,6 @@
   color: var(--color-success);
 }
 
-:root[data-theme="dark"] .sem-status {
-  color: #86efac;
-}
-
 .sem-credits {
   font-size: var(--font-size-sm);
   font-weight: 600;
@@ -272,7 +256,7 @@
 
 .sem-card--risk {
   background-color: var(--color-warning-light);
-  border-color: #f59e0b;
+  border-color: color-mix(in srgb, var(--color-warning) 60%, transparent);
 }
 
 .sem-ai2 {
@@ -288,15 +272,6 @@
   font-size: 0.75rem;
   font-weight: 500;
   color: var(--color-warning);
-}
-
-:root[data-theme="dark"] .sem-card--risk {
-  border-color: #b45309;
-}
-
-:root[data-theme="dark"] .sem-ai2,
-:root[data-theme="dark"] .sem-risk-note {
-  color: #fcd34d;
 }
 
 .link-more {
@@ -362,7 +337,7 @@
 }
 
 .btn-danger-soft:hover:not(:disabled) {
-  background-color: #fecaca;
+  background-color: color-mix(in srgb, var(--color-danger) 32%, transparent);
 }
 
 .btn-soft {
@@ -371,15 +346,7 @@
 }
 
 .btn-soft:hover:not(:disabled) {
-  background-color: #bfdbfe;
-}
-
-:root[data-theme="dark"] .btn-danger-soft {
-  color: #fca5a5;
-}
-
-:root[data-theme="dark"] .btn-soft {
-  color: #93c5fd;
+  background-color: color-mix(in srgb, var(--color-primary) 32%, transparent);
 }
 
 /* Nhấn mạnh thẻ hồ sơ khi bấm "Sửa" */
