@@ -18,6 +18,7 @@
 - Bản mô phỏng (Figma/Canva): xem `design/figma-link.txt`
 - Video OBS:
   - [SV1 — Course Catalog](https://youtu.be/LsYfoWZs8-U)
+  - [SV3 — Admin Dashboard (HT-08)](https://youtu.be/a5UKGdPfA1k) — nhánh `feature/admin-dashboard`, commit `0645850`.
 
 ## Cấu trúc thư mục
 
