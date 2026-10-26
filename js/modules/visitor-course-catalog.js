@@ -41,6 +41,7 @@
   const modalDesc = document.getElementById("modalDesc");
   const modalClose = document.getElementById("modalClose");
   const modalCancel = document.getElementById("modalCancel");
+  const modalDetailLink = document.getElementById("modalDetailLink");
 
   /* ===== LỌC + SẮP XẾP ===== */
   const SORTERS = {
@@ -202,6 +203,7 @@
     modalPrereqs.textContent = course.prereqs.length > 0 ? course.prereqs.join(", ") : "Không";
     modalStatus.textContent = course.status;
     modalDesc.textContent = course.description;
+    modalDetailLink.href = "visitor-course-detail.html?code=" + encodeURIComponent(course.code);
 
     courseModal.classList.remove("hidden");
   }

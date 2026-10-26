@@ -421,6 +421,49 @@
     return writeStore("aiSuggestions", suggestions);
   }
 
+  async function getCourseDetail(code) {
+    const normalized = String(code || "").trim().toUpperCase();
+    if (normalized === "") {
+      return null;
+    }
+
+    const detailData = await loadData("course-detail").catch(function () {
+      return null;
+    });
+    const catalogData = await loadData("courses");
+    const detailList = detailData === null ? [] : unwrap(detailData, "courses");
+    const catalogList = unwrap(catalogData, "courses");
+    const detail = detailList.find(function (course) {
+      return course.code === normalized;
+    });
+    const catalog = catalogList.find(function (course) {
+      return course.code === normalized;
+    });
+
+    if (detail === undefined && catalog === undefined) {
+      return null;
+    }
+
+    const course = Object.assign({}, detail || {});
+    if (catalog !== undefined) {
+      course.code = catalog.code;
+      course.name = catalog.name;
+      course.credits = catalog.credits;
+      course.status = catalog.status;
+      course.program = catalog.program;
+      course.faculty = catalog.faculty;
+      course.prerequisite = (catalog.prereqs || []).join(", ");
+    }
+
+    course.hasDetail = detail !== undefined;
+    course.description = course.description || (catalog !== undefined ? catalog.description : "");
+    course.type = course.type || "—";
+    course.objectives = Array.isArray(course.objectives) ? course.objectives : [];
+    course.mainContents = Array.isArray(course.mainContents) ? course.mainContents : [];
+    course.relatedCourses = Array.isArray(course.relatedCourses) ? course.relatedCourses : [];
+    return course;
+  }
+
   window.StudyPathAPI = {
     login: login,
     setCurrentUser: setCurrentUser,
@@ -435,6 +478,7 @@
     getPlans: getPlans,
     getPlanItems: getPlanItems,
     getAiSuggestions: getAiSuggestions,
+    getCourseDetail: getCourseDetail,
     savePlans: savePlans,
     savePlanItems: savePlanItems,
     saveAiSuggestions: saveAiSuggestions
