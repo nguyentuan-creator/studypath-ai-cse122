@@ -18,6 +18,7 @@
 - Bản mô phỏng (Figma/Canva): xem `design/figma-link.txt`
 - Video OBS:
   - [SV1 — Course Catalog](https://youtu.be/LsYfoWZs8-U)
+  - [SV3-07 — Admin Program Settings](https://youtu.be/FJpuMNkpM3M) — nhánh `feature/admin-program-settings`.
 
 ## Cấu trúc thư mục
 
