@@ -1,0 +1,166 @@
+{
+  "roadmaps": [
+    {
+      "id": "ky-su-phan-mem",
+      "title": "Kỹ sư phần mềm",
+      "program": "CNTT K17",
+      "totalCredits": 130,
+      "totalSemesters": 8,
+      "internshipSemester": "Kỳ 7",
+      "capstoneSemester": "Kỳ 8",
+      "description": "Khung 4 học kỳ đầu nền tảng lập trình và khoa học phần mềm",
+      "suits": [
+        "Thích xây dựng ứng dụng web và mobile",
+        "Yêu thích lập trình và giải quyết vấn đề",
+        "Hướng tới doanh nghiệp phần mềm"
+      ],
+      "semesters": [
+        {
+          "label": "HK1",
+          "courses": [
+            { "code": "IT1010", "name": "Nhập môn lập trình", "credits": 4 },
+            { "code": "MA1010", "name": "Giải tích 1", "credits": 4 },
+            { "code": "MA1030", "name": "Đại số tuyến tính", "credits": 3 },
+            { "code": "SE1040", "name": "Kỹ năng giao tiếp", "credits": 3 }
+          ]
+        },
+        {
+          "label": "HK2",
+          "courses": [
+            { "code": "IT1020", "name": "Kỹ thuật lập trình", "credits": 4 },
+            { "code": "MA2010", "name": "Toán rời rạc", "credits": 5 },
+            { "code": "MA1020", "name": "Giải tích 2", "credits": 4 },
+            { "code": "SE1010", "name": "Nhập môn kỹ thuật phần mềm", "credits": 4 }
+          ]
+        },
+        {
+          "label": "HK3",
+          "courses": [
+            { "code": "IT2010", "name": "Lập trình hướng đối tượng", "credits": 4 },
+            { "code": "IT2020", "name": "Lập trình web cơ bản", "credits": 4 },
+            { "code": "SE1030", "name": "Phân tích yêu cầu", "credits": 3 },
+            { "code": "MA2030", "name": "Lý thuyết đồ thị", "credits": 4 }
+          ]
+        },
+        {
+          "label": "HK4",
+          "courses": [
+            { "code": "IT3060", "name": "Cơ sở dữ liệu", "credits": 5 },
+            { "code": "IT4040", "name": "Cấu trúc dữ liệu và giải thuật", "credits": 3 },
+            { "code": "SE2010", "name": "Lập trình Java", "credits": 5 },
+            { "code": "IT2030", "name": "Lập trình thiết bị di động", "credits": 3 }
+          ]
+        }
+      ],
+      "note": "Còn thêm kỳ 5–8 gồm chuyên ngành, thực tập và đồ án tốt nghiệp"
+    },
+    {
+      "id": "khoa-hoc-du-lieu",
+      "title": "Khoa học dữ liệu",
+      "program": "KHDL & AI K17",
+      "totalCredits": 132,
+      "totalSemesters": 8,
+      "internshipSemester": "Kỳ 7",
+      "capstoneSemester": "Kỳ 8",
+      "description": "Nền tảng toán — thống kê và lập trình cho phân tích dữ liệu",
+      "suits": [
+        "Thích làm việc với dữ liệu và mô hình dự đoán",
+        "Hứng thú với thống kê và trực quan hóa",
+        "Theo đuổi vị trí kỹ sư hoặc nhà khoa học dữ liệu"
+      ],
+      "semesters": [
+        {
+          "label": "HK1",
+          "courses": [
+            { "code": "IT1010", "name": "Nhập môn lập trình", "credits": 4 },
+            { "code": "MA1010", "name": "Giải tích 1", "credits": 4 },
+            { "code": "DA1030", "name": "Thống kê mô tả", "credits": 3 },
+            { "code": "MA1030", "name": "Đại số tuyến tính", "credits": 3 }
+          ]
+        },
+        {
+          "label": "HK2",
+          "courses": [
+            { "code": "SE1020", "name": "Lập trình Python", "credits": 4 },
+            { "code": "MA2020", "name": "Xác suất thống kê", "credits": 4 },
+            { "code": "DA1040", "name": "Thu thập dữ liệu", "credits": 3 },
+            { "code": "MA1040", "name": "Nhập môn khoa học máy tính", "credits": 3 }
+          ]
+        },
+        {
+          "label": "HK3",
+          "courses": [
+            { "code": "DA2030", "name": "Học máy cơ sở", "credits": 4 },
+            { "code": "MA3020", "name": "Học máy", "credits": 5 },
+            { "code": "DA2040", "name": "Xác suất cho dữ liệu", "credits": 3 },
+            { "code": "MA2010", "name": "Toán rời rạc", "credits": 5 }
+          ]
+        },
+        {
+          "label": "HK4",
+          "courses": [
+            { "code": "DA2010", "name": "Làm sạch dữ liệu", "credits": 5 },
+            { "code": "DA2020", "name": "Trực quan hóa dữ liệu", "credits": 4 },
+            { "code": "MA3010", "name": "Trí tuệ nhân tạo", "credits": 3 },
+            { "code": "IT4040", "name": "Cấu trúc dữ liệu và giải thuật", "credits": 3 }
+          ]
+        }
+      ],
+      "note": "Còn thêm kỳ 5–8 gồm chuyên ngành, thực tập và đồ án tốt nghiệp"
+    },
+    {
+      "id": "he-thong-thong-tin",
+      "title": "Hệ thống thông tin",
+      "program": "CNTT K17",
+      "totalCredits": 128,
+      "totalSemesters": 8,
+      "internshipSemester": "Kỳ 7",
+      "capstoneSemester": "Kỳ 8",
+      "description": "Nền tảng công nghệ và quản trị cho hệ thống thông tin doanh nghiệp",
+      "suits": [
+        "Thích phân tích quy trình nghiệp vụ",
+        "Quan tâm tới hệ thống quản trị doanh nghiệp",
+        "Hướng tới vị trí phân tích — thiết kế hệ thống"
+      ],
+      "semesters": [
+        {
+          "label": "HK1",
+          "courses": [
+            { "code": "IT1010", "name": "Nhập môn lập trình", "credits": 4 },
+            { "code": "IS1020", "name": "Tin học văn phòng", "credits": 4 },
+            { "code": "IS1030", "name": "Kinh tế học vi mô", "credits": 3 },
+            { "code": "MA1010", "name": "Giải tích 1", "credits": 4 }
+          ]
+        },
+        {
+          "label": "HK2",
+          "courses": [
+            { "code": "IT1020", "name": "Kỹ thuật lập trình", "credits": 4 },
+            { "code": "IS1010", "name": "Nhập môn hệ thống thông tin", "credits": 4 },
+            { "code": "MA2010", "name": "Toán rời rạc", "credits": 5 },
+            { "code": "IS1040", "name": "Quản trị học", "credits": 3 }
+          ]
+        },
+        {
+          "label": "HK3",
+          "courses": [
+            { "code": "IS2010", "name": "Cơ sở dữ liệu quản trị", "credits": 5 },
+            { "code": "IS2020", "name": "Hệ thống thông tin quản lý", "credits": 4 },
+            { "code": "IT3060", "name": "Cơ sở dữ liệu", "credits": 5 },
+            { "code": "MA2020", "name": "Xác suất thống kê", "credits": 4 }
+          ]
+        },
+        {
+          "label": "HK4",
+          "courses": [
+            { "code": "IT5060", "name": "Mạng máy tính", "credits": 5 },
+            { "code": "SE1030", "name": "Phân tích yêu cầu", "credits": 3 },
+            { "code": "IT1040", "name": "Hệ điều hành", "credits": 3 },
+            { "code": "MA2030", "name": "Lý thuyết đồ thị", "credits": 4 }
+          ]
+        }
+      ],
+      "note": "Còn thêm kỳ 5–8 gồm chuyên ngành, thực tập và đồ án tốt nghiệp"
+    }
+  ]
+}
