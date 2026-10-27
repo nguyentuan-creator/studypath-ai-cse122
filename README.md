@@ -20,6 +20,7 @@
   - [SV1 — Course Catalog](https://youtu.be/LsYfoWZs8-U)
   - [SV3 — Admin Dashboard (HT-08)](https://youtu.be/a5UKGdPfA1k) — nhánh `feature/admin-dashboard`, commit `0645850`.
   - [SV3-03 — Admin Course Management](https://youtu.be/H-qBsz9fExc) — nhánh `feature/admin-course-management`.
+  - [SV3-07 — Admin Program Settings](https://youtu.be/FJpuMNkpM3M) — nhánh `feature/admin-program-settings`.
 
 ## Cấu trúc thư mục
 

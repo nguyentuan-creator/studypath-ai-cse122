@@ -1,0 +1,58 @@
+.page-admin-console .page-head h1{font-size:1.45rem;font-weight:700}
+.page-admin-console .page-head p{margin-top:3px}
+.page-admin-console .card{box-shadow:none}
+.page-admin-console .card-head h2{font-size:.92rem}
+.page-admin-console .form-group{margin-bottom:8px;gap:4px}
+.page-admin-console .form-label{font-size:.72rem}
+.page-admin-console .form-input,.page-admin-console .form-select{padding:8px 10px;font-size:.75rem}
+/* Program settings */
+.page-admin-programs .program-layout{display:grid;grid-template-columns:minmax(230px,.85fr) minmax(0,1.4fr);gap:10px;align-items:start}
+.page-admin-programs .program-list-card{padding:0;overflow:hidden}
+.page-admin-programs .program-list-card h2{padding:12px;font-size:.82rem;border-bottom:1px solid var(--color-border)}
+.page-admin-programs .program-choice{display:block;width:100%;padding:10px 12px;text-align:left;border:0;border-bottom:1px solid var(--color-border);background:#fff;font:inherit;cursor:pointer}
+.page-admin-programs .program-choice:last-child{border-bottom:0}
+.page-admin-programs .program-choice:hover,.page-admin-programs .program-choice.active{background:#eff6ff}
+.page-admin-programs .program-choice strong{display:block;font-size:.7rem}
+.page-admin-programs .program-choice span{display:block;color:var(--color-text-muted);font-size:.63rem}
+.page-admin-programs .program-editor{display:grid;gap:10px}
+.page-admin-programs .program-details{padding:12px}
+.page-admin-programs .program-details .card-head{margin-bottom:10px}
+.page-admin-programs .program-details .card-head h2{font-size:.8rem}
+.page-admin-programs .program-details .tag{font-size:.62rem;padding:2px 8px}
+.page-admin-programs .program-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 10px}
+.page-admin-programs .groups-card{padding:0;overflow:hidden}
+.page-admin-programs .groups-card>.card-head{padding:11px 12px;margin:0;border-bottom:1px solid var(--color-border)}
+.page-admin-programs .groups-card>.card-head h2{font-size:.8rem}
+.page-admin-programs .group-tabs{display:flex;gap:4px;padding:0 12px;border-bottom:1px solid var(--color-border)}
+.page-admin-programs .group-tab{padding:9px 8px;border:0;border-bottom:2px solid transparent;background:white;color:#64748b;font:inherit;font-size:.65rem;cursor:pointer}
+.page-admin-programs .group-tab.active{border-color:var(--color-primary);color:var(--color-primary)}
+.page-admin-programs .group-card{margin:8px 12px;padding:9px;border:1px dashed #b8c7dc;border-radius:7px;background:#f8fafc}
+.page-admin-programs .group-card-head{display:flex;justify-content:space-between;gap:8px;margin-bottom:5px}
+.page-admin-programs .group-card-head strong{font-size:.62rem;text-transform:uppercase;letter-spacing:.04em;color:#64748b}
+.page-admin-programs .group-card-head span{font-size:.62rem;color:#64748b}
+.page-admin-programs .group-courses{display:flex;flex-wrap:wrap;gap:5px}
+.page-admin-programs .group-course{display:inline-flex;align-items:center;gap:4px;padding:2px 5px;color:#2563eb;font-size:.62rem}
+.page-admin-programs .remove-course{border:0;background:transparent;color:#94a3b8;cursor:pointer}
+.page-admin-programs .group-actions{display:flex;gap:5px;margin-top:6px}
+.page-admin-programs .group-actions button{padding:4px 6px;border:1px solid var(--color-border);border-radius:6px;background:#fff;font:inherit;font-size:.6rem;cursor:pointer}
+.page-admin-programs .group-actions .delete-group{color:#dc2626;border-color:#fecaca}
+.page-admin-programs .program-footer{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 12px;border-top:1px solid var(--color-border)}
+.page-admin-programs .program-footer>div{display:flex;gap:6px}
+.page-admin-programs .program-footer .text-sm{font-size:.63rem}
+.page-admin-console .toast{position:fixed;right:18px;bottom:18px;z-index:40;padding:10px 14px;border-radius:9px;background:#0f172a;color:#fff;box-shadow:var(--shadow-md);font-size:.82rem}
+@media(max-width:900px){.page-admin-programs .program-layout{grid-template-columns:1fr}
+.page-admin-programs .program-list-card>div{display:grid;grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){
+.page-admin-console .page-head{align-items:flex-start}
+.page-admin-console .page-head>.btn{padding:7px}
+.page-admin-courses .course-form-grid,.page-admin-programs .program-detail-grid{grid-template-columns:1fr}
+.page-admin-programs .program-list-card>div{grid-template-columns:1fr}
+.page-admin-programs .program-footer{align-items:flex-start;flex-direction:column}}
+.page-admin-programs .group-add-picker{display:flex;align-items:center;gap:5px;margin-top:7px}
+.page-admin-programs .group-add-picker select{flex:1;min-width:0;padding:5px;font-size:.63rem}
+.page-admin-programs .group-add-picker button{padding:5px 7px;border:1px solid var(--color-border);border-radius:6px;background:#fff;font:inherit;font-size:.62rem;cursor:pointer}
+.page-admin-programs .group-add-picker button[data-confirm-add]{border-color:var(--color-primary);background:var(--color-primary);color:white}
+.page-admin-programs .inline-program-form{margin-bottom:10px;padding:12px}
+.page-admin-programs .inline-program-form h2{margin-bottom:8px;font-size:.82rem}
+.page-admin-programs .inline-program-form .program-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 10px}
+.page-admin-programs .inline-program-form .form-group{font-size:.68rem}

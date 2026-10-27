@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Cấu hình chương trình và nhóm học phần StudyPath AI."><title>Cấu hình chương trình – StudyPath AI</title><link rel="stylesheet" href="../css/base.css"><link rel="stylesheet" href="../css/responsive.css"><link rel="stylesheet" href="../css/admin-shell.css"><link rel="stylesheet" href="../css/admin-program-settings.css"></head>
+<body class="page-admin-console page-admin-programs" data-page="admin-programs">
+  <header class="app-header">
+    <button type="button" class="icon-btn menu-btn" data-shell="menu" aria-label="Mở menu" aria-controls="app-sidebar" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    </button>
+    <a class="brand" href="admin-dashboard.html" data-shell="brand">
+      <span class="brand-mark"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 2 8l10 6 10-6-10-6z"></path><path d="M6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5"></path></svg></span>
+      <span>StudyPath AI</span>
+    </a>
+    <div class="header-actions">
+      <div class="header-user">
+        <div class="user-name">
+          <span id="adminName" data-shell-user="name"></span>
+          <span class="user-role" data-shell-user="meta"></span>
+        </div>
+        <span class="avatar avatar-sm admin-avatar" id="adminInitials" data-shell-user="avatar" aria-hidden="true"></span>
+      </div>
+      <button type="button" class="btn btn-secondary btn-sm" id="logoutBtn">Đăng xuất</button>
+    </div>
+  </header>
+
+  <div class="app-body">
+    <aside class="sidebar" id="app-sidebar">
+      <nav class="sidebar-nav" aria-label="Điều hướng Quản trị viên" data-shell="nav"></nav>
+    </aside>
+    <main class="main-content">
+<div class="page-head"><div><h1>Cấu hình chương trình đào tạo</h1><p class="text-muted text-sm">Nhóm môn bắt buộc / tự chọn và tổng tín chỉ yêu cầu</p></div><button class="btn btn-primary btn-sm" id="newProgramBtn" type="button">＋ Thêm chương trình</button></div>
+      <div class="program-layout"><section class="card program-list-card"><h2>Chương trình (<span id="programTotal">0</span>)</h2><div id="programList"></div></section><div class="program-editor"><section class="card program-details"><div class="card-head"><div><h2 id="selectedProgramTitle">Chọn chương trình</h2><span class="text-muted text-sm" id="selectedProgramCode"></span></div><span class="tag tag-green" id="programStatus">Đang áp dụng</span></div><form id="programForm"><input type="hidden" id="programEditingId"><div class="program-detail-grid"><div class="form-group"><label class="form-label" for="programName">Tên chương trình *</label><input class="form-input" id="programName" required></div><div class="form-group"><label class="form-label" for="programCode">Mã *</label><input class="form-input" id="programCode" required></div><div class="form-group"><label class="form-label" for="requiredCredits">Tổng tín chỉ yêu cầu *</label><input class="form-input" id="requiredCredits" type="number" min="1" required></div><div class="form-group"><label class="form-label" for="programCohort">Khóa áp dụng</label><input class="form-input" id="programCohort" placeholder="K17 trở đi"></div></div></form></section>
+        <section class="card groups-card"><div class="card-head"><h2>Nhóm học phần</h2><button class="btn btn-secondary btn-sm" id="addGroupBtn" type="button">＋ Thêm nhóm</button></div><div class="group-tabs" role="tablist"><button class="group-tab active" type="button" data-group-tab="required">Nhóm bắt buộc (<span id="requiredCreditsTotal">0</span> TC)</button><button class="group-tab" type="button" data-group-tab="elective">Nhóm tự chọn (<span id="electiveCreditsTotal">0</span> TC)</button></div><div id="groupsContainer"></div><div class="program-footer"><span class="text-muted text-sm">Tổng các nhóm: <strong id="allocatedCredits">0</strong>/<span id="requiredCreditsLabel">0</span> tín chỉ đã xếp</span><div><button class="btn btn-secondary btn-sm" id="resetProgram" type="button">Hoàn tác</button><button class="btn btn-primary btn-sm" id="saveProgram" type="button">Lưu cấu hình</button></div></div></section>
+      </div></div><div class="toast hidden" id="adminToast" role="status" aria-live="polite"></div>
+    </main>
+  </div>
+  <div class="sidebar-overlay" data-shell="overlay" hidden></div>
+  <script src="../js/api.js"></script>
+  <script src="../js/shell.js"></script>
+  <script src="../js/auth-guard.js"></script>
+  <script src="../js/modules/admin-program-settings.js"></script>
+</body>
+</html>
