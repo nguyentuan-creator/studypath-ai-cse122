@@ -18,7 +18,9 @@
 - Bản mô phỏng (Figma/Canva): xem `design/figma-link.txt`
 - Video OBS:
   - [Playlist minh chứng SV2 (3 video)](https://www.youtube.com/playlist?list=PLdm_M2EEcUyQ)
-  - [SV1 — Course Catalog](https://youtu.be/LsYfoWZs8-U)
+  - [SV1-01 — Course Catalog](https://youtu.be/LsYfoWZs8-U)
+  - [SV1-02 — Course Detail](https://youtu.be/8adManF1A6k) — nhánh `feature/visitor-course-detail`.
+  - [SV1-03 — Sample Roadmaps](https://youtu.be/SzbGsUC9nog) — nhánh `feature/visitor-sample-roadmaps-screen`.
   - [SV2-01 — Student Dashboard](https://youtu.be/tAmpdnyheAw)
   - [SV2-02 — Semester Plan](https://youtu.be/gOnKtp3Fhes)
   - [SV2-03 — AI Roadmap](https://youtu.be/u4zZnQK54z4)
