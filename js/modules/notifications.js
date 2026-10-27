@@ -17,9 +17,6 @@
   const markAllBtn = document.getElementById("markAllRead");
   const bellDot = document.getElementById("bellDot");
   const retryBtn = document.getElementById("retryLoad");
-  const topbarAvatar = document.getElementById("topbarAvatar");
-  const topbarName = document.getElementById("topbarName");
-  const topbarRole = document.getElementById("topbarRole");
 
   const ICONS = {
     plan:
@@ -57,24 +54,6 @@
 
   function isRead(item) {
     return item.read === true || readIds.has(item.id);
-  }
-
-  function renderTopbar() {
-    const user = StudyPathAPI.getCurrentUser();
-    if (!user) {
-      topbarName.textContent = "Khách";
-      topbarRole.textContent = "";
-      topbarRole.classList.add("hidden");
-      topbarAvatar.classList.add("hidden");
-      return;
-    }
-
-    const name = String(user.name || "").trim();
-    topbarName.textContent = name;
-    topbarRole.textContent = user.roleLabel || "";
-    topbarAvatar.textContent = name.charAt(0).toUpperCase();
-    topbarRole.classList.remove("hidden");
-    topbarAvatar.classList.remove("hidden");
   }
 
   function showSkeleton() {
@@ -213,6 +192,5 @@
 
   retryBtn.addEventListener("click", load);
 
-  renderTopbar();
   load();
 })();

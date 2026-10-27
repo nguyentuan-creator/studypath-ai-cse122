@@ -10,14 +10,18 @@
 
 /* ============ 1. DESIGN TOKENS ============ */
 :root {
-  /* Màu chủ đạo */
+  /* Màu chủ đạo: tách bản text và bản solid để chế độ tối vẫn đủ tương phản */
   --color-primary: #2563eb;
   --color-primary-dark: #1d4ed8;
   --color-primary-light: #dbeafe;
+  --color-primary-solid: #2563eb;
+  --color-primary-solid-hover: #1d4ed8;
 
   /* Màu AI (tính năng AI-1, AI-2, AI-3) */
   --color-ai: #7c3aed;
   --color-ai-light: #ede9fe;
+  --color-ai-solid: #7c3aed;
+  --color-ai-solid-hover: #6d28d9;
 
   /* Màu chữ */
   --color-text: #0f172a;
@@ -27,14 +31,18 @@
   --color-bg: #f8fafc;
   --color-surface: #ffffff;
   --color-border: #e2e8f0;
+  --color-border-strong: #cbd5e1;
 
   /* Màu trạng thái (thành công / cảnh báo / lỗi) */
   --color-success: #16a34a;
   --color-success-light: #dcfce7;
   --color-warning: #d97706;
+  --color-warning-strong: #92400e;
   --color-warning-light: #fef3c7;
   --color-danger: #dc2626;
   --color-danger-light: #fee2e2;
+  --color-danger-solid: #dc2626;
+  --color-danger-solid-hover: #b91c1c;
 
   /* Font chữ */
   --font-family: "Inter", "Segoe UI", Arial, sans-serif;
@@ -65,17 +73,35 @@
   /* Bố cục chung */
   --sidebar-width: 240px;
   --header-height: 64px;
+
+  color-scheme: light;
 }
 
 /* ============ 1b. CHẾ ĐỘ TỐI ============ */
 /* Bật bằng cách đặt data-theme="dark" trên thẻ <html>;
-   js/settings.js tự đặt theo cài đặt đã lưu của người dùng. */
+   js/theme.js tự đặt theo cài đặt đã lưu của người dùng. */
 :root[data-theme="dark"] {
   --color-text: #e2e8f0;
   --color-text-muted: #94a3b8;
   --color-bg: #020617;
   --color-surface: #0f172a;
   --color-border: #334155;
+  --color-border-strong: #475569;
+
+  /* Màu dùng cho chữ/link sáng hơn; bản solid giữ nguyên để nền nút vẫn đủ tương phản với chữ trắng */
+  --color-primary: #60a5fa;
+  --color-primary-dark: #93c5fd;
+  --color-primary-solid: #2563eb;
+  --color-primary-solid-hover: #1d4ed8;
+  --color-ai: #c4b5fd;
+  --color-ai-solid: #7c3aed;
+  --color-ai-solid-hover: #6d28d9;
+  --color-success: #4ade80;
+  --color-warning: #fbbf24;
+  --color-warning-strong: #fbbf24;
+  --color-danger: #fca5a5;
+  --color-danger-solid: #dc2626;
+  --color-danger-solid-hover: #b91c1c;
 
   /* Nền tint của tag/trạng thái: dùng màu đậm phủ trong suốt thay vì pastel */
   --color-primary-light: rgba(37, 99, 235, 0.25);
@@ -86,21 +112,9 @@
 
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.45);
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.55);
-}
 
-/* Chữ nằm trên nền tint trong chế độ tối cần tông sáng hơn */
-:root[data-theme="dark"] .nav-item.active { color: #93c5fd; }
-:root[data-theme="dark"] .tag-blue,
-:root[data-theme="dark"] .alert-info { color: #93c5fd; }
-:root[data-theme="dark"] .tag-green,
-:root[data-theme="dark"] .alert-success { color: #86efac; }
-:root[data-theme="dark"] .tag-amber,
-:root[data-theme="dark"] .alert-warning { color: #fcd34d; }
-:root[data-theme="dark"] .tag-red,
-:root[data-theme="dark"] .alert-danger { color: #fca5a5; }
-:root[data-theme="dark"] .tag-purple,
-:root[data-theme="dark"] .chip-ai,
-:root[data-theme="dark"] .alert-ai { color: #c4b5fd; }
+  color-scheme: dark;
+}
 
 /* ============ 2. RESET & NỀN TẢNG ============ */
 * {
@@ -212,7 +226,7 @@ h3 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--color-primary);
+  background-color: var(--color-primary-solid);
   color: #ffffff;
   border-radius: var(--radius-md);
   flex-shrink: 0;
@@ -379,12 +393,12 @@ h3 {
 }
 
 .btn-primary {
-  background-color: var(--color-primary);
+  background-color: var(--color-primary-solid);
   color: #ffffff;
 }
 
 .btn-primary:hover:not(:disabled) {
-  background-color: var(--color-primary-dark);
+  background-color: var(--color-primary-solid-hover);
 }
 
 .btn-secondary {
@@ -409,21 +423,21 @@ h3 {
 }
 
 .btn-danger {
-  background-color: var(--color-danger);
+  background-color: var(--color-danger-solid);
   color: #ffffff;
 }
 
 .btn-danger:hover:not(:disabled) {
-  background-color: #b91c1c;
+  background-color: var(--color-danger-solid-hover);
 }
 
 .btn-ai {
-  background-color: var(--color-ai);
+  background-color: var(--color-ai-solid);
   color: #ffffff;
 }
 
 .btn-ai:hover:not(:disabled) {
-  background-color: #6d28d9;
+  background-color: var(--color-ai-solid-hover);
 }
 
 .btn-sm {
@@ -610,8 +624,8 @@ h3 {
 }
 
 .filter-chip.active {
-  background-color: var(--color-primary);
-  border-color: var(--color-primary);
+  background-color: var(--color-primary-solid);
+  border-color: var(--color-primary-solid);
   color: #ffffff;
 }
 

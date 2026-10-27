@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="../js/theme.js?v=20261026g"></script>
   <title>Kế hoạch học kỳ | StudyPath AI</title>
-  <link rel="stylesheet" href="../css/base.css">
-  <link rel="stylesheet" href="../css/responsive.css">
-  <link rel="stylesheet" href="../css/student-semester-plan.css">
+  <link rel="stylesheet" href="../css/base.css?v=20261026g">
+  <link rel="stylesheet" href="../css/responsive.css?v=20261026g">
+  <link rel="stylesheet" href="../css/student-semester-plan.css?v=20261026g">
 </head>
 <body data-page="plan">
   <header class="app-header">
@@ -47,15 +48,22 @@
     <main class="main-content">
         <div class="page-head">
           <div>
-            <h1>Kế hoạch học kỳ — HK1 2026–2027</h1>
-            <p class="text-muted">Bản nháp · Cập nhật lần cuối 01/10/2026</p>
+            <h1 id="plan-title">Kế hoạch học kỳ</h1>
+            <p class="text-muted" id="plan-subtitle">Đang tải kế hoạch…</p>
+            <div class="plan-switch">
+              <label for="plan-select">Kế hoạch</label>
+              <select id="plan-select" class="form-select" disabled>
+                <option>Đang tải…</option>
+              </select>
+              <span id="plan-status-tag" class="tag tag-gray">Đang tải</span>
+            </div>
           </div>
           <div class="page-actions">
-            <button type="button" class="btn btn-secondary" id="btn-save-draft">
+            <button type="button" class="btn btn-secondary" id="btn-save-draft" disabled>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
               Lưu bản nháp
             </button>
-            <button type="button" class="btn btn-primary" id="btn-submit-plan">
+            <button type="button" class="btn btn-primary" id="btn-submit-plan" disabled>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
               Gửi cố vấn duyệt
             </button>
@@ -90,30 +98,64 @@
           </li>
         </ol>
 
-        <!-- AI-2: cảnh báo quá tải (JS render theo tổng tín chỉ) -->
-        <div id="risk-banner" aria-live="polite"></div>
+        <!-- AI-2: kiểm tra quá tải (rule engine + lưu aiSuggestions) -->
+        <section class="card ai2-card" id="ai2-card" aria-live="polite">
+          <div class="ai2-head">
+            <div class="ai2-heading">
+              <span class="tag tag-purple">AI-2</span>
+              <div>
+                <h2>Kiểm tra quá tải</h2>
+                <p class="text-sm text-muted" id="ai2-subtitle">
+                  Đánh giá tín chỉ, môn nặng và điều kiện tiên quyết của kế hoạch đang chọn.
+                </p>
+              </div>
+            </div>
+            <div class="ai2-head-actions">
+              <span class="tag tag-gray" id="ai2-status">Chưa kiểm tra</span>
+              <button type="button" class="btn btn-ai" id="btn-ai2-check" disabled>
+                Kiểm tra quá tải
+              </button>
+            </div>
+          </div>
+          <div id="ai2-body">
+            <div class="empty-state ai2-empty">
+              <strong>Đang tải dữ liệu kế hoạch…</strong>
+              <p class="text-sm text-muted">AI-2 sẽ đánh giá quá tải ngay sau khi kế hoạch được tải.</p>
+            </div>
+          </div>
+        </section>
 
         <div class="grid-sidebar plan-grid">
           <div class="plan-main">
+            <div id="plan-lock-notice" class="alert alert-info hidden"></div>
+            <div id="plan-validation" class="plan-validation"></div>
+
             <!-- Bảng học phần -->
             <div class="card table-card">
-              <div class="table-wrapper">
+              <div class="table-wrapper" id="plan-table-wrapper">
                 <table class="data-table">
                   <thead>
                     <tr>
                       <th>Học phần</th>
                       <th>Tín chỉ</th>
-                      <th>Loại</th>
+                      <th title="Đối chiếu với kế hoạch hiện tại và các kế hoạch đã duyệt/lưu trữ">Tiên quyết</th>
                       <th>Ghi chú</th>
                       <th>Thao tác</th>
                     </tr>
                   </thead>
-                  <tbody id="plan-body"></tbody>
+                  <tbody id="plan-body">
+                    <tr><td colspan="5" class="plan-loading">Đang tải kế hoạch…</td></tr>
+                  </tbody>
                 </table>
               </div>
+              <div class="empty-state plan-empty hidden" id="plan-empty">
+                <strong>Kế hoạch trống</strong>
+                <p class="text-sm text-muted">Thêm học phần đầu tiên để AI-2 có dữ liệu kiểm tra quá tải.</p>
+                <button type="button" class="btn btn-primary" id="btn-empty-add">Thêm học phần đầu tiên</button>
+              </div>
               <div class="table-foot">
-                <span id="plan-count">Tổng cộng · 6 học phần</span>
-                <strong class="plan-total" id="plan-total">21 tín chỉ</strong>
+                <span id="plan-count">Đang tải…</span>
+                <strong class="plan-total" id="plan-total">—</strong>
               </div>
             </div>
 
@@ -204,8 +246,9 @@
             <p class="form-error" aria-live="polite"></p>
           </div>
           <div class="form-group">
-            <label for="edit-code" class="form-label">Mã học phần <span class="required" aria-hidden="true">*</span></label>
-            <input type="text" id="edit-code" class="form-input" required>
+            <label for="edit-code" class="form-label">Mã học phần</label>
+            <input type="text" id="edit-code" class="form-input" readonly>
+            <p class="form-hint">Mã học phần lấy từ danh mục, không sửa trong kế hoạch.</p>
             <p class="form-error" aria-live="polite"></p>
           </div>
           <div class="form-group">
@@ -216,13 +259,6 @@
               <option value="3">3</option>
               <option value="4" selected>4</option>
               <option value="5">5</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="edit-type" class="form-label">Loại</label>
-            <select id="edit-type" class="form-select">
-              <option value="Bắt buộc" selected>Bắt buộc</option>
-              <option value="Tự chọn">Tự chọn</option>
             </select>
           </div>
           <div class="form-group">
@@ -238,10 +274,33 @@
     </div>
   </div>
 
+  <!-- Modal thêm học phần từ danh mục -->
+  <div class="modal-overlay hidden" id="course-modal">
+    <div class="modal modal--wide" role="dialog" aria-modal="true" aria-labelledby="course-modal-title">
+      <div class="modal-head">
+        <div>
+          <h2 id="course-modal-title">Thêm học phần</h2>
+          <p class="text-sm text-muted" id="course-modal-meta">Đang tải danh mục…</p>
+        </div>
+        <button type="button" class="icon-btn" id="btn-close-course-modal" aria-label="Đóng">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="course-search" class="form-label">Tìm theo mã hoặc tên học phần</label>
+          <input type="search" id="course-search" class="form-input" placeholder="VD: IT1010 hoặc lập trình">
+        </div>
+        <div class="course-pick-list" id="course-pick-list"></div>
+      </div>
+    </div>
+  </div>
+
   <div class="toast" id="toast" role="status"></div>
 
-  <script src="../js/api.js"></script>
-  <script src="../js/shell.js"></script>
-  <script src="../js/modules/student-semester-plan.js"></script>
+  <script src="../js/api.js?v=20261026g"></script>
+  <script src="../js/shell.js?v=20261026g"></script>
+  <script src="../js/modules/workload-engine.js?v=20261026g"></script>
+  <script src="../js/student-semester-plan.js?v=20261026g"></script>
 </body>
 </html>

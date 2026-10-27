@@ -4,15 +4,6 @@
    độ ưu tiên cao hơn (prefix body.page-notifications).
    ========================================================= */
 @media (max-width: 640px) {
-  body.page-notifications .topbar {
-    gap: var(--space-1);
-    padding: 0 var(--space-2);
-  }
-
-  body.page-notifications .topbar-user-info {
-    display: none;
-  }
-
   body.page-notifications .page-head {
     align-items: flex-start;
   }
@@ -30,77 +21,6 @@
    StudyPath AI — style trang Thông báo (notifications.html)
    Scoped dưới body.page-notifications, không ảnh hưởng màn khác.
    ========================================================= */
-
-/* ---------- Topbar ---------- */
-body.page-notifications .brand-mark {
-  width: 34px;
-  height: 34px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-  color: #ffffff;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex: none;
-}
-
-body.page-notifications .topbar-search .form-input {
-  height: 38px;
-  padding-top: 0;
-  padding-bottom: 0;
-  background-color: var(--color-bg);
-}
-
-body.page-notifications .notif-bell {
-  background-color: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  color: var(--color-text-muted);
-}
-
-body.page-notifications .notif-bell:hover {
-  color: var(--color-text);
-  border-color: var(--color-primary);
-  text-decoration: none;
-}
-
-body.page-notifications .notif-dot {
-  position: absolute;
-  top: 8px;
-  right: 9px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: var(--color-danger);
-  box-shadow: 0 0 0 2px var(--color-surface);
-}
-
-body.page-notifications .topbar-user {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding-left: var(--space-2);
-  border-left: 1px solid var(--color-border);
-}
-
-body.page-notifications .topbar-user-info {
-  line-height: 1.3;
-}
-
-body.page-notifications .topbar-user-name,
-body.page-notifications .topbar-user-role {
-  display: block;
-}
-
-body.page-notifications .topbar-user-name {
-  font-size: 13.5px;
-  font-weight: 600;
-}
-
-body.page-notifications .topbar-user-role {
-  font-size: 11.5px;
-  color: var(--color-text-muted);
-}
 
 /* ---------- Tiêu đề trang ---------- */
 body.page-notifications .notif-summary {
@@ -142,7 +62,7 @@ body.page-notifications .notif-item {
   padding: 13px var(--space-2);
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid #f1f5f9;
+  border-bottom: 1px solid var(--color-border);
   font-family: inherit;
   font-size: inherit;
   text-align: left;

@@ -17,7 +17,11 @@
 - Bảng công việc (Trello): https://trello.com/b/A2ziMN34/lịch-trình-phân-công-và-làm-bài-tập-ltw
 - Bản mô phỏng (Figma/Canva): xem `design/figma-link.txt`
 - Video OBS:
+  - [Playlist minh chứng SV2 (3 video)](https://www.youtube.com/playlist?list=PLdm_M2EEcUyQ)
   - [SV1 — Course Catalog](https://youtu.be/LsYfoWZs8-U)
+  - [SV2-01 — Student Dashboard](https://youtu.be/tAmpdnyheAw)
+  - [SV2-02 — Semester Plan](https://youtu.be/gOnKtp3Fhes)
+  - [SV2-03 — AI Roadmap](https://youtu.be/u4zZnQK54z4)
   - [SV3 — Admin Dashboard (HT-08)](https://youtu.be/a5UKGdPfA1k) — nhánh `feature/admin-dashboard`, commit `0645850`.
   - [SV3-03 — Admin Course Management](https://youtu.be/H-qBsz9fExc) — nhánh `feature/admin-course-management`.
   - [SV3-07 — Admin Program Settings](https://youtu.be/FJpuMNkpM3M) — nhánh `feature/admin-program-settings`.

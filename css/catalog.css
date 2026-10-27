@@ -141,7 +141,7 @@
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  background: linear-gradient(135deg, var(--color-primary-solid), var(--color-primary-solid-hover));
   color: #ffffff;
   display: inline-flex;
   align-items: center;
@@ -228,7 +228,7 @@
 .page-catalog .checkbox-label input[type="checkbox"] {
   width: 16px;
   height: 16px;
-  accent-color: var(--color-primary);
+  accent-color: var(--color-primary-solid);
   cursor: pointer;
 }
 
@@ -375,8 +375,8 @@
 }
 
 .page-catalog .page-btn.active {
-  background-color: var(--color-primary);
-  border-color: var(--color-primary);
+  background-color: var(--color-primary-solid);
+  border-color: var(--color-primary-solid);
   color: #ffffff;
 }
 

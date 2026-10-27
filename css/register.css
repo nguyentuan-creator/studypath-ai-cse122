@@ -18,7 +18,7 @@ body.page-register .auth-card {
   background-color: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  box-shadow: 0 18px 40px -24px rgba(15, 23, 42, 0.28);
+  box-shadow: var(--shadow-md);
 }
 
 body.page-register .auth-brand {
@@ -32,7 +32,7 @@ body.page-register .auth-brand-mark {
   width: 32px;
   height: 32px;
   border-radius: 9px;
-  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  background: linear-gradient(135deg, var(--color-primary-solid), var(--color-primary-solid-hover));
   color: #ffffff;
   display: inline-flex;
   align-items: center;
@@ -124,7 +124,7 @@ body.page-register .reg-terms input[type="checkbox"] {
   width: 16px;
   height: 16px;
   margin-top: 1px;
-  accent-color: var(--color-primary);
+  accent-color: var(--color-primary-solid);
   flex: none;
   cursor: pointer;
 }
