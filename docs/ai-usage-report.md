@@ -1,13 +1,13 @@
 # Khai báo sử dụng AI
 
-> Nhóm StudyPath AI — CSE122 · Cập nhật 26/10/2026
+> Nhóm StudyPath AI — CSE122 · Cập nhật 27/10/2026
 > Phạm vi: toàn bộ sản phẩm (HTML/CSS/JavaScript thuần + dữ liệu JSON/LocalStorage).
 
 ## Công cụ AI đã dùng
 
 - **Qoder (AI coding agent)** — SV2 Hứa Đình Kiên dùng để dựng app shell, `base.css`, hai rule engine AI-1/AI-2, dark mode, script kiểm thử và soạn tài liệu.
 - **Codex (AI coding agent)** — SV1 Hồ Trung Anh dùng cho các màn Khách/auth; thể hiện qua các nhánh `codex/login-auth-layout`, `codex/register-auth-layout`, `codex/visitor-*` và commit tương ứng. SV1 xác nhận lại prompt chi tiết trước khi nộp.
-- **SV3 Nguyễn Bá Hoàng Tuân** bổ sung công cụ đã dùng tại đây nếu có.
+- **SV3 Nguyễn Bá Hoàng Tuân** dùng **Qoder** để dựng các màn cố vấn/quản trị (gồm AI-3 Advisor Copilot), hợp nhất các nhánh còn lại vào `dev` rồi `main`, rà soát asset/console toàn bộ 23 trang, cấu hình GitHub Pages và biên tập tài liệu.
 - Sản phẩm **không gọi LLM/API AI thật**, không dùng API key và không gửi dữ liệu sinh viên ra ngoài.
 
 ## Prompt chính
@@ -21,6 +21,9 @@ Các prompt dưới đây được rút gọn từ hội thoại thật, không 
 5. “Phần dark mode cho tất cả màn hình.” — yêu cầu áp dụng và ghi nhớ theme trên toàn hệ thống.
 6. “Kiểm tra lại bài tập đã đúng với barem chấm chưa.” — dùng AI đối chiếu sản phẩm với rubric.
 7. “Commit AI code còn lại.” — tách commit AI-1/AI-2 khỏi thay đổi giao diện.
+8. “Merge all nhánh vào dev sau đó merge dev vào main, cố gắng giữ đồng bộ.” — yêu cầu hợp nhất 15 nhánh và giữ `dev`/`main` khớp nhau.
+9. “Khi nhìn vào repo người ta thấy nhóm tôi làm như thế nào?” — dùng AI rà soát repo theo góc nhìn người chấm (lịch sử commit, PR, tài liệu, video).
+10. “Chốt 1 danh tính/người cho các commit về sau.” — chuẩn hoá tên/email commit, xoá nhánh trùng, cập nhật báo cáo AI.
 
 ## Phần do AI sinh ra
 
@@ -30,6 +33,8 @@ Các prompt dưới đây được rút gọn từ hội thoại thật, không 
 - **AI-2 (Workload Risk)**
   - `js/modules/workload-engine.js`: đếm tín chỉ, phát hiện môn nặng, môn trùng, thiếu tiên quyết; tính `riskLevel`, độ tin cậy, lý do và gợi ý giảm tải.
   - `js/student-semester-plan.js`: nối kế hoạch đang chọn → engine → trạng thái idle/loading/stale/error → Accept/Reduce/Edit/Reject.
+- **AI-3 (Advisor Copilot)**
+  - `js/modules/advisor-review.js`: tóm tắt kế hoạch theo số tín chỉ (ngưỡng tham khảo 18), sinh câu hỏi gợi ý cho cố vấn, nút “Tạo lại tóm tắt” và ghi nhận “Báo cáo kết quả sai”; quyết định duyệt/từ chối vẫn do cố vấn chọn.
 - **Dùng chung**
   - `css/base.css`: token màu, component app shell, form, card, tag, alert, modal, toast.
   - `js/theme.js` và các override dark mode ở CSS từng màn.
@@ -82,7 +87,7 @@ Các prompt dưới đây được rút gọn từ hội thoại thật, không 
 |---|---|---|---|
 | AI-1 Roadmap Recommender | Rule engine tất định từ hồ sơ + danh mục học phần | **Mock rule-based** | `js/modules/ai-engine.js` |
 | AI-2 Workload Risk | Rule engine tính tín chỉ, môn nặng, tiên quyết, gợi ý giảm tải | **Mock rule-based** | `js/modules/workload-engine.js` |
-| AI-3 (duyệt kế hoạch của cố vấn) | Chưa triển khai | **Deferred** — chưa có trang review của cố vấn | — |
+| AI-3 Advisor Copilot | Rule engine tóm tắt kế hoạch theo tín chỉ, sinh câu hỏi gợi ý; cố vấn tự quyết định | **Mock rule-based** | `js/modules/advisor-review.js` |
 
 - Không có lời gọi mạng tới dịch vụ AI, không có API key trong repo.
 - Dữ liệu đầu vào: `assets/data/courses.json`, `plans`, `planItems`, `aiSuggestions`; lưu qua `js/api.js` + localStorage.
@@ -94,9 +99,9 @@ Các prompt dưới đây được rút gọn từ hội thoại thật, không 
 |---|---|---|---|
 | SV2 Hứa Đình Kiên | Dashboard, Semester Plan (AI-2), AI Roadmap (AI-1), Profile, Settings, shell/dark mode | Qoder hỗ trợ code + QA + docs; tự chốt kiến trúc rule-based, sửa luồng lưu/failure, review diff | Chạy HTTP server + Playwright 11 trang × 2 viewport; test Accept/F5; test dark mode; xem video OBS |
 | SV1 Hồ Trung Anh | Login, Register, Course Catalog, Course Detail, Sample Roadmaps, 403/404 | Codex hỗ trợ dựng màn (theo nhánh `codex/*`); SV1 cần xác nhận prompt | SV1 kiểm thử màn của mình; SV2 review chéo |
-| SV3 Nguyễn Bá Hoàng Tuân | Advisor Dashboard, luồng review/feedback | Cần SV3 bổ sung công cụ/prompt thực tế | SV3 tự kiểm thử + review chéo |
+| SV3 Nguyễn Bá Hoàng Tuân | Advisor Dashboard, 3 màn cố vấn còn lại (gồm AI-3), 4 màn quản trị | Qoder hỗ trợ dựng màn, hợp nhất nhánh, kiểm thử asset/console, cấu hình GitHub Pages, biên tập tài liệu | Tự kiểm thử luồng cố vấn/quản trị; rà soát 23 trang qua HTTP server; xem video OBS của mình |
 
-> Ghi chú trung thực: bảng phân công cần SV1 và SV3 xác nhận trước khi nộp; không tự gán công cụ AI cho phần các bạn không sử dụng.
+> Ghi chú trung thực: bảng phân công cần SV1 xác nhận lại prompt Codex trước khi nộp; không tự gán công cụ AI cho phần các bạn không sử dụng.
 
 ## Bằng chứng
 

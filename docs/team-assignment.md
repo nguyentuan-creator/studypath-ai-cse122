@@ -2,7 +2,7 @@
 
 > **Học phần:** Phát triển ứng dụng web cơ bản — BTL-01 StudyPath AI
 > **Nhóm:** 3 sinh viên · **Hạn nộp / bảo vệ:** 27/10/2026
-> **Cập nhật:** 23/10/2026 · **Kho mã:** `nguyentuan-creator/studypath-ai-cse122` · **Trello:** [lịch trình phân công và làm bài tập LTW](https://trello.com/b/A2ziMN34/lịch-trình-phân-công-và-làm-bài-tập-ltw)
+> **Cập nhật:** 27/10/2026 · **Kho mã:** `nguyentuan-creator/studypath-ai-cse122` · **Trello:** [lịch trình phân công và làm bài tập LTW](https://trello.com/b/A2ziMN34/lịch-trình-phân-công-và-làm-bài-tập-ltw)
 >
 > Tài liệu này là **hợp đồng làm việc** của nhóm: hai thoả thuận D1 và D2 ở dưới được chốt tối 23/10 để cả ba thành viên code song song mà không phải chờ nhau.
 
@@ -11,8 +11,29 @@
 | Mã | Họ tên | GitHub | Phụ trách chính | Trách nhiệm xuyên suốt |
 |---|---|---|---|---|
 | SV1 | Hồ Trung Anh | `trunganhh2530-crypto` | Khách (3 màn) + 5 màn dùng chung | Responsive + kiểm tra giao diện phần mình |
-| SV2 | Hứa Đình Kiên | *(điền username)* | Sinh viên (3 màn) + AI-1, AI-2 | JavaScript / dữ liệu giả lập; giữ `css/base.css` (hệ thống thiết kế) |
+| SV2 | Hứa Đình Kiên | `huadinhkien` | Sinh viên (3 màn) + AI-1, AI-2 | JavaScript / dữ liệu giả lập; giữ `css/base.css` (hệ thống thiết kế) |
 | SV3 | Nguyễn Bá Hoàng Tuân | `nguyentuan-creator` | Cố vấn học tập (4) + Quản trị viên (4) + AI-3 | Tích hợp bố cục, điều hướng, phát hành; đánh giá tính nhất quán toàn dự án |
+
+### 1.1. Chốt danh tính commit (áp dụng từ 27/10/2026)
+
+Lịch sử repo đang có 8 danh tính cho 3 thành viên (đổi tên hiển thị và email giữa các máy), khiến GitHub tách đóng góp và giảng viên khó đối chiếu. Từ 27/10, **mỗi người chỉ commit bằng đúng một cặp tên + email** dưới đây:
+
+| Mã | Danh tính commit chuẩn | Tên/email cũ còn trong lịch sử (không dùng nữa) |
+|---|---|---|
+| SV1 | `Hồ Trung Anh <trunganhh2530@gmail.com>` | `trunganhh2530-crypto` (cùng email) — 3 commit |
+| SV2 | `Hứa Đình Kiên <huadinhkien123@gmail.com>` | `huadinhkien` (cùng email) — 7 commit |
+| SV3 | `Nguyễn Bá Hoàng Tuân <295372213+nguyentuan-creator@users.noreply.github.com>` | `nguyentuan-creator` (25), `Nguyễn Bá Hoàng Tuân` với email cũ (8), `Nguyễn Tuấn Creator` (19) |
+
+- **Không sửa/rewrite commit cũ.** Lịch sử giữ nguyên; chỉ commit mới dùng danh tính chuẩn.
+- Đặt cấu hình theo từng worktree, **không sửa `--global`** để không ảnh hưởng máy mượn:
+  ```bash
+  git config user.name "Hồ Trung Anh"
+  git config user.email "trunganhh2530@gmail.com"
+  # SV2: "Hứa Đình Kiên" / "huadinhkien123@gmail.com"
+  # SV3: "Nguyễn Bá Hoàng Tuân" / "295372213+nguyentuan-creator@users.noreply.github.com"
+  ```
+- Email noreply của SV3 gắn trực tiếp với tài khoản GitHub `nguyentuan-creator`; các email cũ vẫn thuộc cùng tài khoản nên không mất đóng góp đã có.
+- Commit `5cff2a9` (23/10) của `Phạm Đình Tú <tupham151107@gmail.com>` là chỉnh sửa tài liệu D1/D2 từ ngoài nhóm 3 người — không tính vào phân công, cũng không dùng danh tính này cho commit mới.
 
 ## 2. Trạng thái dự án (23/10/2026)
 
